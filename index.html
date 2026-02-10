@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palm & Needle Medical Clinic | Dr. Nina Lippey | Redwood City, CA</title>
+    
+    <!-- External Assets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; margin: 0; padding: 0; }
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+        .bg-sage-light { background-color: #f4f7f5; }
+        .bg-sage-primary { background-color: #8da399; }
+        .bg-sage-dark { background-color: #5b6d64; }
+        .text-gold-muted { color: #c5a059; }
+        .nav-link { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; transition: all 0.3s ease; cursor: pointer; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #8da399; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #5b6d64; }
+
+        /* Fix for hidden content until React loads */
+        #root:empty { min-height: 100vh; background: #f4f7f5; display: flex; align-items: center; justify-content: center; }
+        #root:empty::after { content: ""; width: 80px; height: 80px; background: url('logo.png') no-repeat center; background-size: 140%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+    <div id="root"></div>
+
+    <!-- Application Script (ESM) -->
+    <script type="module">
+        import React, { useState, useEffect, useRef } from 'https://esm.sh/react@19.0.0';
+        import { createRoot } from 'https://esm.sh/react-dom@19.0.0/client';
+        import htm from 'https://esm.sh/htm';
+        import { GoogleGenAI } from 'https://esm.sh/@google/genai@1.40.0';
+
+        // Bind htm to React.createElement to use JSX-like syntax in template literals
+        const html = htm.bind(React.createElement);
+
+        // --- Constants ---
+        const SERVICES = [
+            { title: 'Primary Care', desc: 'Preventive care and chronic disease management focused on your long-term wellbeing.', icon: '🩺' },
+            { title: 'OMM', desc: 'Osteopathic Manipulative Medicine: Hands-on approach to relieve pain and restore balance.', icon: '👐' },
+            { title: 'Acupuncture', desc: 'Integrative therapy to stimulate healing and reduce stress. (Opening late 2025!)', icon: '📍' },
+            { title: 'Direct Care', desc: 'A membership-based model for unhurried, 24/7 direct access to your physician.', icon: '🤝' }
+        ];
+
+        // --- AI Helper ---
+        const askAssistant = async (prompt, history) => {
+            const apiKey = window.process?.env?.API_KEY || "";
+            if (!apiKey) return "I'm currently in demo mode. Please set up an API key to enable full AI assistance!";
+            
+            const ai = new GoogleGenAI({ apiKey });
+            try {
+                const response = await ai.models.generateContent({
+                    model: "gemini-3-flash-preview",
+                    contents: [...history, { role: "user", parts: [{ text: prompt }] }],
+                    config: {
+                        systemInstruction: `You are the Virtual Assistant for "Palm & Needle Medical Clinic" in Redwood City, CA.
+                        Physician: Dr. Nina Lippey, DO.
+                        Specialties: Integrative Primary Care, OMM, Acupuncture.
+                        Business Model: Direct Primary Care (membership, no insurance billing).
+                        Be warm, professional, and invite users to book a 'Meet & Greet'.`,
+                    },
+                });
+                return response.text;
+            } catch (err) {
+                return "I'm sorry, I encountered an error. Please contact us at care@palmandneedle.com.";
+            }
+        };
+
+        // --- Components ---
+
+        const Navbar = () => {
+            const [isOpen, setIsOpen] = useState(false);
+            return html`
+                <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="flex justify-between h-40 items-center">
+                            <div className="hidden md:flex space-x-8 items-center">
+                                <a href="#home" className="text-slate-600 hover:text-[#c5a059] nav-link">Home</a>
+                                <a href="#services" className="text-slate-600 hover:text-[#c5a059] nav-link">Services</a>
+                                <a href="#about" className="text-slate-600 hover:text-[#c5a059] nav-link">Dr. Nina Lippey</a>
+                                <a href="#contact" className="bg-[#5b6d64] text-white px-6 py-2.5 rounded-sm nav-link hover:bg-[#c5a059]">Contact</a>
+                            </div>
+
+                            <div className="md:hidden flex items-center">
+                                <button onClick=${() => setIsOpen(!isOpen)} className="text-[#5b6d64] p-2">
+                                    <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path d=${isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} strokeWidth="2" strokeLinecap="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div className="flex items-center space-x-6">
+                                <div className="text-right hidden sm:block">
+                                    <h2 className="text-4xl font-bold text-[#5b6d64] serif leading-none">Palm & Needle</h2>
+                                    <p className="text-[10px] tracking-[0.4em] uppercase text-[#c5a059] font-bold mt-1">Medical Clinic</p>
+                                </div>
+                                <div className="w-36 h-36 bg-white rounded-sm flex items-center justify-center shadow-xl transform hover:rotate-3 transition-transform cursor-pointer overflow-hidden border-2 border-slate-50">
+                                    <img src="logo.png" className="w-full h-full object-contain scale-[1.3]" alt="Palm & Needle Logo" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    ${isOpen && html`
+                        <div className="md:hidden bg-white border-b border-slate-100 py-6 px-4 space-y-4 animate-fade-in shadow-2xl">
+                            <a href="#home" onClick=${() => setIsOpen(false)} className="block text-slate-600 nav-link">Home</a>
+                            <a href="#services" onClick=${() => setIsOpen(false)} className="block text-slate-600 nav-link">Services</a>
+                            <a href="#about" onClick=${() => setIsOpen(false)} className="block text-slate-600 nav-link">Dr. Nina Lippey</a>
+                            <a href="#contact" onClick=${() => setIsOpen(false)} className="block bg-[#5b6d64] text-white text-center py-3 rounded-sm nav-link">Contact</a>
+                        </div>
+                    `}
+                </nav>
+            `;
+        };
+
+        const ChatAssistant = () => {
+            const [open, setOpen] = useState(false);
+            const [msg, setMsg] = useState("");
+            const [chat, setChat] = useState([{ role: "model", text: "Hello! I'm Dr. Lippey's virtual assistant. How can I help you today?" }]);
+            const [loading, setLoading] = useState(false);
+            const scrollRef = useRef(null);
+
+            useEffect(() => { 
+                if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight; 
+            }, [chat]);
+
+            const handleSend = async () => {
+                if (!msg.trim() || loading) return;
+                const userMsg = { role: "user", text: msg };
+                setChat(prev => [...prev, userMsg]);
+                setMsg("");
+                setLoading(true);
+                const reply = await askAssistant(msg, chat.map(c => ({ role: c.role, parts: [{ text: c.text }] })));
+                setChat(prev => [...prev, { role: "model", text: reply }]);
+                setLoading(false);
+            };
+
+            return html`
+                <div className="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
+                    ${open && html`
+                        <div className="w-[350px] sm:w-[400px] h-[500px] bg-white rounded-lg shadow-2xl border border-slate-100 flex flex-col mb-4 overflow-hidden animate-fade-in">
+                            <div className="bg-[#5b6d64] p-4 text-white flex justify-between items-center">
+                                <div className="flex items-center space-x-2">
+                                    <div className="w-16 h-16 overflow-hidden flex items-center justify-center">
+                                        <img src="logo.png" className="w-full h-full object-contain invert scale-[1.5]" />
+                                    </div>
+                                    <span className="font-bold text-xs tracking-widest uppercase">Clinic Assistant</span>
+                                </div>
+                                <button onClick=${() => setOpen(false)} className="hover:rotate-90 transition-transform">✕</button>
+                            </div>
+                            <div ref=${scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50">
+                                ${chat.map((c, i) => html`
+                                    <div key=${i} className=${`flex ${c.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                                        <div className=${`p-4 rounded-lg text-sm leading-relaxed max-w-[85%] ${c.role === 'user' ? 'bg-[#8da399] text-white shadow-md' : 'bg-white shadow-sm border border-slate-100 text-slate-700'}`}>
+                                            ${c.text}
+                                        </div>
+                                    </div>
+                                `)}
+                                ${loading && html`<div className="text-[10px] text-slate-400 italic px-2">Assistant is typing...</div>`}
+                            </div>
+                            <div className="p-4 border-t bg-white flex space-x-2">
+                                <input value=${msg} onInput=${e => setMsg(e.target.value)} onKeyDown=${e => e.key === 'Enter' && handleSend()} placeholder="Type a message..." className="flex-1 text-sm bg-slate-100 p-3 rounded-sm outline-none focus:ring-1 focus:ring-sage-primary" />
+                                <button onClick=${handleSend} disabled=${loading} className="bg-[#c5a059] text-white px-4 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-[#5b6d64] transition-all">Send</button>
+                            </div>
+                        </div>
+                    `}
+                    <button onClick=${() => setOpen(!open)} className="w-20 h-20 bg-[#5b6d64] rounded-full text-white shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95 group relative overflow-hidden">
+                        <img src="logo.png" className="w-14 h-14 object-contain invert group-hover:rotate-12 transition-transform scale-[1.3]" alt="Assistant" />
+                    </button>
+                </div>
+            `;
+        };
+
+        const App = () => {
+            const [contactForm, setContactForm] = useState({ firstName: '', lastName: '', email: '', inquiry: '' });
+
+            const handleInquirySubmit = (e) => {
+                e.preventDefault();
+                const subject = `New Clinic Inquiry from ${contactForm.firstName} ${contactForm.lastName}`;
+                const body = `Name: ${contactForm.firstName} ${contactForm.lastName}\nEmail: ${contactForm.email}\n\nInquiry:\n${contactForm.inquiry}`;
+                window.location.href = `mailto:care@palmandneedlemed.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            };
+
+            return html`
+                <div className="min-h-screen bg-white">
+                    <${Navbar} />
+                    
+                    <header id="home" className="relative pt-64 pb-24 bg-sage-light overflow-hidden">
+                        <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
+                            <div className="space-y-8 animate-fade-in relative z-10">
+                                <div className="inline-flex items-center space-x-3 bg-white px-6 py-3 rounded-full text-[#c5a059] text-xs font-bold uppercase tracking-[0.2em] shadow-sm border border-slate-100 overflow-hidden">
+                                    <img src="logo.png" className="w-10 h-10 object-contain scale-[1.5]" /><span>Redwood City, California</span>
+                                </div>
+                                <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif leading-tight">
+                                    Healthcare Rooted <br />
+                                    <span className="text-[#8da399]">in Relationship.</span>
+                                </h1>
+                                <p className="text-slate-600 text-lg max-w-lg leading-relaxed">
+                                    Integrative primary care blending modern medical science with hands-on osteopathic healing and traditional acupuncture. 
+                                </p>
+                                <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+                                    <a href="#contact" className="bg-[#5b6d64] text-white px-10 py-5 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#c5a059] transition-all shadow-xl hover:-translate-y-1 text-center">Schedule Meet & Greet</a>
+                                </div>
+                            </div>
+                            <div className="relative animate-fade-in">
+                                <div className="absolute -inset-8 bg-[#8da399] opacity-10 rounded-2xl -rotate-2 blur-3xl"></div>
+                                <img src="building.jpeg" alt="Clinic Office" className="relative z-10 rounded-lg shadow-2xl border-[16px] border-white object-cover aspect-[4/3] w-full" />
+                            </div>
+                        </div>
+                    </header>
+
+                    <section id="services" className="py-32 bg-white">
+                        <div className="max-w-7xl mx-auto px-4">
+                            <div className="text-center mb-20 space-y-4">
+                                <div className="w-80 h-80 bg-sage-light rounded-full flex items-center justify-center mx-auto shadow-inner border border-slate-50 mb-6 overflow-hidden p-0">
+                                    <img src="logo.png" className="w-full h-full object-contain scale-[1.3]" />
+                                </div>
+                                <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs">A Holistic Approach</span>
+                                <h2 className="text-4xl md:text-5xl font-bold text-[#5b6d64] serif">Integrative Paths to Wellness</h2>
+                                <div className="w-16 h-1 bg-[#c5a059] mx-auto rounded-full"></div>
+                            </div>
+                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+                                ${SERVICES.map((s, i) => html`
+                                    <div key=${i} className="group p-10 bg-white rounded-lg border border-slate-100 transition-all hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 p-6 opacity-5 w-64 h-64 transform group-hover:scale-110 transition-transform -translate-y-12 translate-x-12">
+                                            <img src="logo.png" className="w-full h-full object-contain scale-[1.5]" />
+                                        </div>
+                                        <div className="text-5xl mb-10 transform group-hover:scale-110 transition-all">${s.icon}</div>
+                                        <h3 className="text-2xl font-bold text-[#5b6d64] serif mb-4">${s.title}</h3>
+                                        <p className="text-slate-500 text-sm leading-relaxed">${s.desc}</p>
+                                    </div>
+                                `)}
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="about" className="py-32 bg-sage-light/40 relative overflow-hidden">
+                        <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-24 items-center">
+                            <div className="flex justify-center order-2 lg:order-1">
+                                <div className="max-w-xs w-full relative group">
+                                    <div className="absolute -inset-4 bg-[#8da399] opacity-10 rounded-lg rotate-3 group-hover:rotate-0 transition-transform blur-lg"></div>
+                                    <div className="relative z-10 rounded-lg overflow-hidden shadow-2xl border-8 border-white bg-slate-100">
+                                        <img src="nina-lippey.JPG" alt="Dr. Nina Lippey" className="w-full grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 object-cover aspect-[4/5]" />
+                                    </div>
+                                    <div className="absolute -bottom-8 -right-8 bg-[#c5a059] text-white px-8 py-5 rounded shadow-2xl z-20 border-2 border-white/10">
+                                        <p className="font-bold text-lg serif italic leading-none">Dr. Nina Lippey, DO</p>
+                                        <p className="text-[10px] uppercase tracking-[0.2em] font-bold opacity-80 mt-2">Founder & Physician</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="space-y-8 order-1 lg:order-2">
+                                <div className="flex items-center space-x-4">
+                                    <div className="w-20 h-20 overflow-hidden flex items-center justify-center border border-slate-100 rounded-sm">
+                                        <img src="logo.png" className="w-full h-full object-contain scale-[1.5]" />
+                                    </div>
+                                    <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs">Meet Your Doctor</span>
+                                </div>
+                                <h2 className="text-4xl md:text-5xl font-bold text-[#5b6d64] serif leading-tight">Whole-Person Care Rooted in Balance</h2>
+                                <p className="text-slate-600 leading-relaxed italic border-l-4 border-[#8da399] pl-8 py-4 text-xl">
+                                    "I blend modern medical science with traditional wisdom to see the person beyond the symptoms."
+                                </p>
+                                <div className="space-y-6 text-slate-600 leading-relaxed">
+                                    <p>Growing up between the United States and Japan gave Dr. Lippey a unique perspective on healing. She believes that health is an active process of restoring balance across mind, body, and spirit.</p>
+                                    <p>As an Osteopathic physician, she specializes in OMM and acupuncture, using a gentle hands-on approach to improve function and alleviate pain.</p>
+                                </div>
+                                <div className="pt-10 border-t border-slate-200 flex space-x-12 text-[10px] uppercase tracking-[0.3em] font-bold text-slate-400">
+                                    <div>Board Certified</div>
+                                    <div>Redwood City, CA</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="contact" className="py-32 bg-[#5b6d64] text-white relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-24 opacity-5 pointer-events-none -rotate-12 translate-x-1/4">
+                             <img src="logo.png" className="w-[1000px] h-[1000px] object-contain invert scale-[1.5]" />
+                        </div>
+                        <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-24 relative z-10">
+                            <div className="space-y-12">
+                                <h2 className="text-5xl font-bold serif leading-tight">Restore Your Balance</h2>
+                                <p className="text-slate-200 text-xl leading-relaxed max-w-lg opacity-90">
+                                    Join our membership-based practice for personalized, unhurried healthcare.
+                                </p>
+                                <div className="space-y-10 pt-10">
+                                    <div className="flex items-center space-x-6">
+                                        <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center border border-white/20 text-3xl shadow-inner">📍</div>
+                                        <div><p className="font-bold text-xl">400 Seaport Court, Suite 203</p><p className="text-sm opacity-60">Redwood City, CA 94063</p></div>
+                                    </div>
+                                    <div className="flex items-center space-x-6">
+                                        <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center border border-white/20 text-3xl shadow-inner">✉️</div>
+                                        <div><p className="font-bold text-xl">care@palmandneedlemed.com</p><p className="text-sm opacity-60">Membership Inquiries</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="bg-white p-12 rounded shadow-2xl relative text-slate-800">
+                                <div className="absolute -top-44 -left-12 w-48 h-48 bg-white rounded flex items-center justify-center shadow-2xl border-4 border-[#c5a059] transform hover:rotate-12 transition-transform overflow-hidden p-0">
+                                    <img src="logo.png" className="w-full h-full object-contain scale-[1.5]" />
+                                </div>
+                                <form className="space-y-6" onSubmit=${handleInquirySubmit}>
+                                    <div className="grid grid-cols-2 gap-6">
+                                        <input required type="text" placeholder="First Name" value=${contactForm.firstName} onInput=${e => setContactForm({...contactForm, firstName: e.target.value})} className="w-full bg-slate-50 p-5 rounded-sm text-sm border-none outline-none focus:ring-2 focus:ring-[#8da399]" />
+                                        <input required type="text" placeholder="Last Name" value=${contactForm.lastName} onInput=${e => setContactForm({...contactForm, lastName: e.target.value})} className="w-full bg-slate-50 p-5 rounded-sm text-sm border-none outline-none focus:ring-2 focus:ring-[#8da399]" />
+                                    </div>
+                                    <input required type="email" placeholder="Email Address" value=${contactForm.email} onInput=${e => setContactForm({...contactForm, email: e.target.value})} className="w-full bg-slate-50 p-5 rounded-sm text-sm border-none outline-none focus:ring-2 focus:ring-[#8da399]" />
+                                    <textarea required placeholder="How can we help you?" value=${contactForm.inquiry} onInput=${e => setContactForm({...contactForm, inquiry: e.target.value})} className="w-full bg-slate-50 p-5 rounded-sm text-sm border-none outline-none focus:ring-2 focus:ring-[#8da399] min-h-[120px]" />
+                                    <button type="submit" className="w-full bg-[#c5a059] text-white py-6 font-bold uppercase tracking-[0.4em] text-xs hover:bg-[#5b6d64] transition-all shadow-xl hover:-translate-y-1">Send Inquiry</button>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+
+                    <footer className="py-32 bg-slate-900 text-slate-400">
+                        <div className="max-w-7xl mx-auto px-4 text-center">
+                            <div className="flex flex-col items-center mb-16">
+                                <div className="w-80 h-80 bg-white rounded-sm flex items-center justify-center mb-8 shadow-2xl overflow-hidden p-0 border-4 border-slate-800">
+                                    <img src="logo.png" className="w-full h-full object-contain scale-[1.3]" />
+                                </div>
+                                <h3 className="serif text-white text-5xl">Palm & Needle</h3>
+                                <p className="text-[12px] tracking-[0.6em] uppercase text-[#c5a059] font-bold mt-4">Medical Clinic</p>
+                            </div>
+                            <div className="max-w-3xl mx-auto space-y-6">
+                                <p className="text-[10px] opacity-40 leading-loose uppercase tracking-[0.4em]">
+                                    © ${new Date().getFullYear()} Palm & Needle Medical Clinic • Redwood City, CA
+                                </p>
+                            </div>
+                        </div>
+                    </footer>
+
+                    <${ChatAssistant} />
+                </div>
+            `;
+        };
+
+        const root = createRoot(document.getElementById('root'));
+        root.render(html`<${App} />`);
+    </script>
+</body>
+</html>
