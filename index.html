@@ -40,7 +40,6 @@
         import React, { useState, useEffect, useRef } from 'https://esm.sh/react@19.0.0';
         import { createRoot } from 'https://esm.sh/react-dom@19.0.0/client';
         import htm from 'https://esm.sh/htm';
-        import { GoogleGenAI } from 'https://esm.sh/@google/genai@1.40.0';
 
         // Bind htm to React.createElement to use JSX-like syntax in template literals
         const html = htm.bind(React.createElement);
@@ -52,30 +51,6 @@
             { title: 'Acupuncture', desc: 'Integrative therapy to stimulate healing and reduce stress. (Opening late 2025!)', icon: '📍' },
             { title: 'Direct Care', desc: 'A membership-based model for unhurried, 24/7 direct access to your physician.', icon: '🤝' }
         ];
-
-        // --- AI Helper ---
-        const askAssistant = async (prompt, history) => {
-            const apiKey = window.process?.env?.API_KEY || "";
-            if (!apiKey) return "I'm currently in demo mode. Please set up an API key to enable full AI assistance!";
-            
-            const ai = new GoogleGenAI({ apiKey });
-            try {
-                const response = await ai.models.generateContent({
-                    model: "gemini-3-flash-preview",
-                    contents: [...history, { role: "user", parts: [{ text: prompt }] }],
-                    config: {
-                        systemInstruction: `You are the Virtual Assistant for "Palm & Needle Medical Clinic" in Redwood City, CA.
-                        Physician: Dr. Nina Lippey, DO.
-                        Specialties: Integrative Primary Care, OMM, Acupuncture.
-                        Business Model: Direct Primary Care (membership, no insurance billing).
-                        Be warm, professional, and invite users to book a 'Meet & Greet'.`,
-                    },
-                });
-                return response.text;
-            } catch (err) {
-                return "I'm sorry, I encountered an error. Please contact us at care@palmandneedle.com.";
-            }
-        };
 
         // --- Components ---
 
@@ -120,64 +95,6 @@
                         </div>
                     `}
                 </nav>
-            `;
-        };
-
-        const ChatAssistant = () => {
-            const [open, setOpen] = useState(false);
-            const [msg, setMsg] = useState("");
-            const [chat, setChat] = useState([{ role: "model", text: "Hello! I'm Dr. Lippey's virtual assistant. How can I help you today?" }]);
-            const [loading, setLoading] = useState(false);
-            const scrollRef = useRef(null);
-
-            useEffect(() => { 
-                if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight; 
-            }, [chat]);
-
-            const handleSend = async () => {
-                if (!msg.trim() || loading) return;
-                const userMsg = { role: "user", text: msg };
-                setChat(prev => [...prev, userMsg]);
-                setMsg("");
-                setLoading(true);
-                const reply = await askAssistant(msg, chat.map(c => ({ role: c.role, parts: [{ text: c.text }] })));
-                setChat(prev => [...prev, { role: "model", text: reply }]);
-                setLoading(false);
-            };
-
-            return html`
-                <div className="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
-                    ${open && html`
-                        <div className="w-[350px] sm:w-[400px] h-[500px] bg-white rounded-lg shadow-2xl border border-slate-100 flex flex-col mb-4 overflow-hidden animate-fade-in">
-                            <div className="bg-[#5b6d64] p-4 text-white flex justify-between items-center">
-                                <div className="flex items-center space-x-2">
-                                    <div className="w-16 h-16 overflow-hidden flex items-center justify-center">
-                                        <img src="logo.png" className="w-full h-full object-contain invert scale-[1.5]" />
-                                    </div>
-                                    <span className="font-bold text-xs tracking-widest uppercase">Clinic Assistant</span>
-                                </div>
-                                <button onClick=${() => setOpen(false)} className="hover:rotate-90 transition-transform">✕</button>
-                            </div>
-                            <div ref=${scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50">
-                                ${chat.map((c, i) => html`
-                                    <div key=${i} className=${`flex ${c.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                        <div className=${`p-4 rounded-lg text-sm leading-relaxed max-w-[85%] ${c.role === 'user' ? 'bg-[#8da399] text-white shadow-md' : 'bg-white shadow-sm border border-slate-100 text-slate-700'}`}>
-                                            ${c.text}
-                                        </div>
-                                    </div>
-                                `)}
-                                ${loading && html`<div className="text-[10px] text-slate-400 italic px-2">Assistant is typing...</div>`}
-                            </div>
-                            <div className="p-4 border-t bg-white flex space-x-2">
-                                <input value=${msg} onInput=${e => setMsg(e.target.value)} onKeyDown=${e => e.key === 'Enter' && handleSend()} placeholder="Type a message..." className="flex-1 text-sm bg-slate-100 p-3 rounded-sm outline-none focus:ring-1 focus:ring-sage-primary" />
-                                <button onClick=${handleSend} disabled=${loading} className="bg-[#c5a059] text-white px-4 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-[#5b6d64] transition-all">Send</button>
-                            </div>
-                        </div>
-                    `}
-                    <button onClick=${() => setOpen(!open)} className="w-20 h-20 bg-[#5b6d64] rounded-full text-white shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95 group relative overflow-hidden">
-                        <img src="logo.png" className="w-14 h-14 object-contain invert group-hover:rotate-12 transition-transform scale-[1.3]" alt="Assistant" />
-                    </button>
-                </div>
             `;
         };
 
@@ -335,8 +252,6 @@
                             </div>
                         </div>
                     </footer>
-
-                    <${ChatAssistant} />
                 </div>
             `;
         };

@@ -1,8 +1,5 @@
 {
   "name": "Palm and Needle Medical Clinic",
-  "description": "A premium, modern web presence for Palm and Needle Medical Clinic featuring an AI-powered patient assistant, service booking, and holistic health insights.",
-  "requestFramePermissions": [
-    "camera",
-    "microphone"
-  ]
+  "description": "A premium, modern web presence for Palm and Needle Medical Clinic featuring service booking and holistic health insights.",
+  "requestFramePermissions": []
 }
