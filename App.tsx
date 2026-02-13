@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './Navbar';
 import { SERVICES } from './constants';
+import AboutPage from './AboutPage';
 
 const App = () => {
+    const [view, setView] = useState<'home' | 'about'>('home');
     const [contactForm, setContactForm] = useState({ firstName: '', lastName: '', email: '', inquiry: '' });
 
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/6d64e62329402d24158f1ed6765522794adca21d/Logo.png";
     const BUILDING_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/6d64e62329402d24158f1ed6765522794adca21d/Building.jpg";
     const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/6d64e62329402d24158f1ed6765522794adca21d/Nina-Lippey.jpg";
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [view]);
 
     const handleInquirySubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -16,15 +22,23 @@ const App = () => {
         window.location.href = `mailto:care@palmandneedlemed.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     };
 
-    return (
-        <div className="min-h-screen bg-white">
-            <Navbar />
-            
+    const navigateTo = (newView: 'home' | 'about', hash?: string) => {
+        setView(newView);
+        if (hash) {
+            setTimeout(() => {
+                const el = document.getElementById(hash.replace('#', ''));
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+    };
+
+    const LandingPage = () => (
+        <>
             <header id="home" className="relative pt-64 pb-24 bg-sage-light overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
                     <div className="space-y-8 animate-fade-in relative z-10">
                         <div className="inline-flex items-center space-x-3 bg-white px-6 py-3 rounded-full text-[#c5a059] text-xs font-bold uppercase tracking-[0.2em] shadow-sm border border-slate-100 overflow-hidden">
-                            <img src={LOGO_URL} className="w-10 h-10 object-contain scale-[1.5]" /><span>Redwood City, California</span>
+                            <img src={LOGO_URL} className="w-10 h-10 object-contain scale-[1.5]" alt="" /><span>Redwood City, California</span>
                         </div>
                         <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif leading-tight">
                             Healthcare Rooted <br />
@@ -34,7 +48,7 @@ const App = () => {
                             Integrative primary care blending modern medical science with hands-on osteopathic healing and traditional acupuncture. 
                         </p>
                         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-                            <a href="#contact" className="bg-[#5b6d64] text-white px-10 py-5 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#c5a059] transition-all shadow-xl hover:-translate-y-1 text-center">Schedule Meet & Greet</a>
+                            <a href="#contact" onClick={(e) => { e.preventDefault(); navigateTo('home', '#contact'); }} className="bg-[#5b6d64] text-white px-10 py-5 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#c5a059] transition-all shadow-xl hover:-translate-y-1 text-center">Schedule Meet & Greet</a>
                         </div>
                     </div>
                     <div className="relative animate-fade-in">
@@ -48,7 +62,7 @@ const App = () => {
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-20 space-y-4">
                         <div className="w-80 h-80 bg-sage-light rounded-full flex items-center justify-center mx-auto shadow-inner border border-slate-50 mb-6 overflow-hidden p-0">
-                            <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.3]" />
+                            <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.3]" alt="" />
                         </div>
                         <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs">A Comprehensive Approach</span>
                         <h2 className="text-4xl md:text-5xl font-bold text-[#5b6d64] serif">Integrative Paths to Wellness</h2>
@@ -58,7 +72,7 @@ const App = () => {
                         {SERVICES.map((s, i) => (
                             <div key={i} className="group p-10 bg-white rounded-lg border border-slate-100 transition-all hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden">
                                 <div className="absolute top-0 right-0 p-6 opacity-5 w-64 h-64 transform group-hover:scale-110 transition-transform -translate-y-12 translate-x-12">
-                                    <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.5]" />
+                                    <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.5]" alt="" />
                                 </div>
                                 <div className="text-5xl mb-10 transform group-hover:scale-110 transition-all">{s.icon}</div>
                                 <h3 className="text-2xl font-bold text-[#5b6d64] serif mb-4">{s.title}</h3>
@@ -86,7 +100,7 @@ const App = () => {
                     <div className="space-y-8 order-1 lg:order-2">
                         <div className="flex items-center space-x-4">
                             <div className="w-20 h-20 overflow-hidden flex items-center justify-center border border-slate-100 rounded-sm">
-                                <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.5]" />
+                                <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.5]" alt="" />
                             </div>
                             <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs">Meet Your Doctor</span>
                         </div>
@@ -97,6 +111,11 @@ const App = () => {
                         <div className="space-y-6 text-slate-600 leading-relaxed">
                             <p>Growing up between the United States and Japan gave Dr. Lippey a unique perspective on healing. She believes that health is an active process of restoring balance across mind, body, and spirit.</p>
                             <p>As an Osteopathic physician, she specializes in OMM and acupuncture, using a gentle hands-on approach to improve function and alleviate pain.</p>
+                        </div>
+                        <div className="pt-6">
+                             <button onClick={() => navigateTo('about')} className="text-[#c5a059] font-bold text-xs uppercase tracking-[0.2em] hover:text-[#5b6d64] flex items-center group">
+                                Read Full Bio & Mission <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                             </button>
                         </div>
                         <div className="pt-10 border-t border-slate-200 flex space-x-12 text-[10px] uppercase tracking-[0.3em] font-bold text-slate-400">
                             <div>Board Certified</div>
@@ -109,7 +128,7 @@ const App = () => {
             <section id="contact" className="py-32 bg-[#5b6d64] text-white relative z-10">
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
                      <div className="absolute top-0 right-0 p-24 opacity-5 pointer-events-none -rotate-12 translate-x-1/4">
-                          <img src={LOGO_URL} className="w-[1000px] h-[1000px] object-contain invert scale-[1.5]" />
+                          <img src={LOGO_URL} className="w-[1000px] h-[1000px] object-contain invert scale-[1.5]" alt="" />
                      </div>
                 </div>
                 <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-24 relative z-10">
@@ -131,7 +150,7 @@ const App = () => {
                     </div>
                     <div className="bg-white p-12 rounded shadow-2xl relative text-slate-800">
                         <div className="absolute -top-44 -left-12 w-48 h-48 bg-white rounded flex items-center justify-center shadow-2xl border-4 border-[#c5a059] transform hover:rotate-12 transition-transform overflow-hidden p-0 z-20">
-                            <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.5]" />
+                            <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.5]" alt="" />
                         </div>
                         <form className="space-y-6" onSubmit={handleInquirySubmit}>
                             <div className="grid grid-cols-2 gap-6">
@@ -145,12 +164,20 @@ const App = () => {
                     </div>
                 </div>
             </section>
+        </>
+    );
+
+    return (
+        <div className="min-h-screen bg-white">
+            <Navbar onNavigate={navigateTo} />
+            
+            {view === 'home' ? <LandingPage /> : <AboutPage />}
 
             <footer className="py-32 bg-slate-900 text-slate-400">
                 <div className="max-w-7xl mx-auto px-4 text-center">
                     <div className="flex flex-col items-center mb-16">
                         <div className="w-80 h-80 bg-white rounded-sm flex items-center justify-center mb-8 shadow-2xl overflow-hidden p-0 border-4 border-slate-800">
-                            <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.3]" />
+                            <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.3]" alt="" />
                         </div>
                         <h3 className="serif text-white text-5xl">Palm & Needle</h3>
                         <p className="text-[12px] tracking-[0.6em] uppercase text-[#c5a059] font-bold mt-4">Medical Clinic</p>
