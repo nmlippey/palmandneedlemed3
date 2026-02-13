@@ -106,9 +106,11 @@ const App = () => {
                 </div>
             </section>
 
-            <section id="contact" className="py-32 bg-[#5b6d64] text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-24 opacity-5 pointer-events-none -rotate-12 translate-x-1/4">
-                     <img src={LOGO_URL} className="w-[1000px] h-[1000px] object-contain invert scale-[1.5]" />
+            <section id="contact" className="py-32 bg-[#5b6d64] text-white relative z-10">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                     <div className="absolute top-0 right-0 p-24 opacity-5 pointer-events-none -rotate-12 translate-x-1/4">
+                          <img src={LOGO_URL} className="w-[1000px] h-[1000px] object-contain invert scale-[1.5]" />
+                     </div>
                 </div>
                 <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-24 relative z-10">
                     <div className="space-y-12">
@@ -128,7 +130,7 @@ const App = () => {
                         </div>
                     </div>
                     <div className="bg-white p-12 rounded shadow-2xl relative text-slate-800">
-                        <div className="absolute -top-44 -left-12 w-48 h-48 bg-white rounded flex items-center justify-center shadow-2xl border-4 border-[#c5a059] transform hover:rotate-12 transition-transform overflow-hidden p-0">
+                        <div className="absolute -top-44 -left-12 w-48 h-48 bg-white rounded flex items-center justify-center shadow-2xl border-4 border-[#c5a059] transform hover:rotate-12 transition-transform overflow-hidden p-0 z-20">
                             <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.5]" />
                         </div>
                         <form className="space-y-6" onSubmit={handleInquirySubmit}>
