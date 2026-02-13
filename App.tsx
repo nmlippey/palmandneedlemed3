@@ -5,6 +5,10 @@ import { SERVICES } from './constants';
 const App = () => {
     const [contactForm, setContactForm] = useState({ firstName: '', lastName: '', email: '', inquiry: '' });
 
+    const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/6d64e62329402d24158f1ed6765522794adca21d/Logo.png";
+    const BUILDING_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/6d64e62329402d24158f1ed6765522794adca21d/Building.jpg";
+    const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/6d64e62329402d24158f1ed6765522794adca21d/Nina-Lippey.jpg";
+
     const handleInquirySubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const subject = `New Clinic Inquiry from ${contactForm.firstName} ${contactForm.lastName}`;
@@ -20,7 +24,7 @@ const App = () => {
                 <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
                     <div className="space-y-8 animate-fade-in relative z-10">
                         <div className="inline-flex items-center space-x-3 bg-white px-6 py-3 rounded-full text-[#c5a059] text-xs font-bold uppercase tracking-[0.2em] shadow-sm border border-slate-100 overflow-hidden">
-                            <img src="logo.png" className="w-10 h-10 object-contain scale-[1.5]" /><span>Redwood City, California</span>
+                            <img src={LOGO_URL} className="w-10 h-10 object-contain scale-[1.5]" /><span>Redwood City, California</span>
                         </div>
                         <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif leading-tight">
                             Healthcare Rooted <br />
@@ -35,7 +39,7 @@ const App = () => {
                     </div>
                     <div className="relative animate-fade-in">
                         <div className="absolute -inset-8 bg-[#8da399] opacity-10 rounded-2xl -rotate-2 blur-3xl"></div>
-                        <img src="building.jpeg" alt="Clinic Office" className="relative z-10 rounded-lg shadow-2xl border-[16px] border-white object-cover aspect-[4/3] w-full" />
+                        <img src={BUILDING_URL} alt="Clinic Office" className="relative z-10 rounded-lg shadow-2xl border-[16px] border-white object-cover aspect-[4/3] w-full" />
                     </div>
                 </div>
             </header>
@@ -44,7 +48,7 @@ const App = () => {
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-20 space-y-4">
                         <div className="w-80 h-80 bg-sage-light rounded-full flex items-center justify-center mx-auto shadow-inner border border-slate-50 mb-6 overflow-hidden p-0">
-                            <img src="logo.png" className="w-full h-full object-contain scale-[1.3]" />
+                            <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.3]" />
                         </div>
                         <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs">A Holistic Approach</span>
                         <h2 className="text-4xl md:text-5xl font-bold text-[#5b6d64] serif">Integrative Paths to Wellness</h2>
@@ -54,7 +58,7 @@ const App = () => {
                         {SERVICES.map((s, i) => (
                             <div key={i} className="group p-10 bg-white rounded-lg border border-slate-100 transition-all hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden">
                                 <div className="absolute top-0 right-0 p-6 opacity-5 w-64 h-64 transform group-hover:scale-110 transition-transform -translate-y-12 translate-x-12">
-                                    <img src="logo.png" className="w-full h-full object-contain scale-[1.5]" />
+                                    <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.5]" />
                                 </div>
                                 <div className="text-5xl mb-10 transform group-hover:scale-110 transition-all">{s.icon}</div>
                                 <h3 className="text-2xl font-bold text-[#5b6d64] serif mb-4">{s.title}</h3>
@@ -71,7 +75,7 @@ const App = () => {
                         <div className="max-w-xs w-full relative group">
                             <div className="absolute -inset-4 bg-[#8da399] opacity-10 rounded-lg rotate-3 group-hover:rotate-0 transition-transform blur-lg"></div>
                             <div className="relative z-10 rounded-lg overflow-hidden shadow-2xl border-8 border-white bg-slate-100">
-                                <img src="nina-lippey.JPG" alt="Dr. Nina Lippey" className="w-full grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 object-cover aspect-[4/5]" />
+                                <img src={NINA_URL} alt="Dr. Nina Lippey" className="w-full grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 object-cover aspect-[4/5]" />
                             </div>
                             <div className="absolute -bottom-8 -right-8 bg-[#c5a059] text-white px-8 py-5 rounded shadow-2xl z-20 border-2 border-white/10">
                                 <p className="font-bold text-lg serif italic leading-none">Dr. Nina Lippey, DO</p>
@@ -82,7 +86,7 @@ const App = () => {
                     <div className="space-y-8 order-1 lg:order-2">
                         <div className="flex items-center space-x-4">
                             <div className="w-20 h-20 overflow-hidden flex items-center justify-center border border-slate-100 rounded-sm">
-                                <img src="logo.png" className="w-full h-full object-contain scale-[1.5]" />
+                                <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.5]" />
                             </div>
                             <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs">Meet Your Doctor</span>
                         </div>
@@ -104,7 +108,7 @@ const App = () => {
 
             <section id="contact" className="py-32 bg-[#5b6d64] text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-24 opacity-5 pointer-events-none -rotate-12 translate-x-1/4">
-                     <img src="logo.png" className="w-[1000px] h-[1000px] object-contain invert scale-[1.5]" />
+                     <img src={LOGO_URL} className="w-[1000px] h-[1000px] object-contain invert scale-[1.5]" />
                 </div>
                 <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-24 relative z-10">
                     <div className="space-y-12">
@@ -125,7 +129,7 @@ const App = () => {
                     </div>
                     <div className="bg-white p-12 rounded shadow-2xl relative text-slate-800">
                         <div className="absolute -top-44 -left-12 w-48 h-48 bg-white rounded flex items-center justify-center shadow-2xl border-4 border-[#c5a059] transform hover:rotate-12 transition-transform overflow-hidden p-0">
-                            <img src="logo.png" className="w-full h-full object-contain scale-[1.5]" />
+                            <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.5]" />
                         </div>
                         <form className="space-y-6" onSubmit={handleInquirySubmit}>
                             <div className="grid grid-cols-2 gap-6">
@@ -144,7 +148,7 @@ const App = () => {
                 <div className="max-w-7xl mx-auto px-4 text-center">
                     <div className="flex flex-col items-center mb-16">
                         <div className="w-80 h-80 bg-white rounded-sm flex items-center justify-center mb-8 shadow-2xl overflow-hidden p-0 border-4 border-slate-800">
-                            <img src="logo.png" className="w-full h-full object-contain scale-[1.3]" />
+                            <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.3]" />
                         </div>
                         <h3 className="serif text-white text-5xl">Palm & Needle</h3>
                         <p className="text-[12px] tracking-[0.6em] uppercase text-[#c5a059] font-bold mt-4">Medical Clinic</p>
