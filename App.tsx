@@ -2,9 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './Navbar';
 import { SERVICES } from './constants';
 import AboutPage from './AboutPage';
+import DpcPage from './DpcPage';
+import OmmPage from './OmmPage';
+import AcupuncturePage from './AcupuncturePage';
+
+export type ViewType = 'home' | 'about' | 'dpc' | 'omm' | 'acupuncture';
 
 const App = () => {
-    const [view, setView] = useState<'home' | 'about'>('home');
+    const [view, setView] = useState<ViewType>('home');
     const [contactForm, setContactForm] = useState({ firstName: '', lastName: '', email: '', inquiry: '' });
 
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/6d64e62329402d24158f1ed6765522794adca21d/Logo.png";
@@ -22,7 +27,7 @@ const App = () => {
         window.location.href = `mailto:care@palmandneedlemed.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     };
 
-    const navigateTo = (newView: 'home' | 'about', hash?: string) => {
+    const navigateTo = (newView: ViewType, hash?: string) => {
         setView(newView);
         if (hash) {
             setTimeout(() => {
@@ -70,20 +75,25 @@ const App = () => {
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {SERVICES.map((s, i) => (
-                            <div key={i} className="group p-10 bg-white rounded-lg border border-slate-100 transition-all hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden">
+                            <div 
+                                key={i} 
+                                onClick={() => navigateTo(i === 0 ? 'dpc' : i === 1 ? 'omm' : 'acupuncture')}
+                                className="group p-10 bg-white rounded-lg border border-slate-100 transition-all hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden cursor-pointer"
+                            >
                                 <div className="absolute top-0 right-0 p-6 opacity-5 w-64 h-64 transform group-hover:scale-110 transition-transform -translate-y-12 translate-x-12">
                                     <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.5]" alt="" />
                                 </div>
                                 <div className="text-5xl mb-10 transform group-hover:scale-110 transition-all">{s.icon}</div>
                                 <h3 className="text-2xl font-bold text-[#5b6d64] serif mb-4">{s.title}</h3>
-                                <p className="text-slate-500 text-sm leading-relaxed">{s.desc}</p>
+                                <p className="text-slate-500 text-sm leading-relaxed mb-6">{s.desc}</p>
+                                <span className="text-[#c5a059] text-[10px] font-bold uppercase tracking-widest border-b border-transparent group-hover:border-[#c5a059] transition-all">Learn More →</span>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            <section id="about" className="py-32 bg-sage-light/40 relative overflow-hidden">
+            <section id="about-preview" className="py-32 bg-sage-light/40 relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-24 items-center">
                     <div className="flex justify-center order-2 lg:order-1">
                         <div className="max-w-xs w-full relative group">
@@ -167,11 +177,21 @@ const App = () => {
         </>
     );
 
+    const renderContent = () => {
+        switch (view) {
+            case 'about': return <AboutPage />;
+            case 'dpc': return <DpcPage />;
+            case 'omm': return <OmmPage />;
+            case 'acupuncture': return <AcupuncturePage />;
+            default: return <LandingPage />;
+        }
+    };
+
     return (
         <div className="min-h-screen bg-white">
             <Navbar onNavigate={navigateTo} />
             
-            {view === 'home' ? <LandingPage /> : <AboutPage />}
+            {renderContent()}
 
             <footer className="py-32 bg-slate-900 text-slate-400">
                 <div className="max-w-7xl mx-auto px-4 text-center">

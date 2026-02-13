@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+import { ViewType } from './App';
 
 interface NavbarProps {
-    onNavigate: (view: 'home' | 'about', hash?: string) => void;
+    onNavigate: (view: ViewType, hash?: string) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
     const [isOpen, setIsOpen] = useState(false);
     
-    const handleLinkClick = (e: React.MouseEvent, view: 'home' | 'about', hash?: string) => {
+    const handleLinkClick = (e: React.MouseEvent, view: ViewType, hash?: string) => {
         e.preventDefault();
         onNavigate(view, hash);
         setIsOpen(false);
@@ -17,9 +18,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
         <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-40 items-center">
-                    <div className="hidden md:flex space-x-8 items-center">
+                    <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
                         <a href="#home" onClick={(e) => handleLinkClick(e, 'home', '#home')} className="text-slate-600 hover:text-[#c5a059] nav-link">Home</a>
-                        <a href="#services" onClick={(e) => handleLinkClick(e, 'home', '#services')} className="text-slate-600 hover:text-[#c5a059] nav-link">Services</a>
+                        <a href="#dpc" onClick={(e) => handleLinkClick(e, 'dpc')} className="text-slate-600 hover:text-[#c5a059] nav-link">DPC</a>
+                        <a href="#omm" onClick={(e) => handleLinkClick(e, 'omm')} className="text-slate-600 hover:text-[#c5a059] nav-link">OMM</a>
+                        <a href="#acupuncture" onClick={(e) => handleLinkClick(e, 'acupuncture')} className="text-slate-600 hover:text-[#c5a059] nav-link">Acupuncture</a>
                         <a href="#about" onClick={(e) => handleLinkClick(e, 'about')} className="text-slate-600 hover:text-[#c5a059] nav-link">Meet Dr. Lippey</a>
                         <a href="#contact" onClick={(e) => handleLinkClick(e, 'home', '#contact')} className="bg-[#5b6d64] text-white px-6 py-2.5 rounded-sm nav-link hover:bg-[#c5a059]">Contact</a>
                     </div>
@@ -44,9 +47,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                 </div>
             </div>
             {isOpen && (
-                <div className="md:hidden bg-white border-b border-slate-100 py-6 px-4 space-y-4 animate-fade-in shadow-2xl">
+                <div className="md:hidden bg-white border-b border-slate-100 py-6 px-4 space-y-4 animate-fade-in shadow-2xl overflow-y-auto max-h-[calc(100vh-160px)]">
                     <a href="#home" onClick={(e) => handleLinkClick(e, 'home', '#home')} className="block text-slate-600 nav-link">Home</a>
-                    <a href="#services" onClick={(e) => handleLinkClick(e, 'home', '#services')} className="block text-slate-600 nav-link">Services</a>
+                    <a href="#dpc" onClick={(e) => handleLinkClick(e, 'dpc')} className="block text-slate-600 nav-link">DPC</a>
+                    <a href="#omm" onClick={(e) => handleLinkClick(e, 'omm')} className="block text-slate-600 nav-link">OMM</a>
+                    <a href="#acupuncture" onClick={(e) => handleLinkClick(e, 'acupuncture')} className="block text-slate-600 nav-link">Acupuncture</a>
                     <a href="#about" onClick={(e) => handleLinkClick(e, 'about')} className="block text-slate-600 nav-link">Meet Dr. Lippey</a>
                     <a href="#contact" onClick={(e) => handleLinkClick(e, 'home', '#contact')} className="block bg-[#5b6d64] text-white text-center py-3 rounded-sm nav-link">Contact</a>
                 </div>
