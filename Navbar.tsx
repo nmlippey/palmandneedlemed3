@@ -9,7 +9,7 @@ export const Navbar = () => {
                     <div className="hidden md:flex space-x-8 items-center">
                         <a href="#home" className="text-slate-600 hover:text-[#c5a059] nav-link">Home</a>
                         <a href="#services" className="text-slate-600 hover:text-[#c5a059] nav-link">Services</a>
-                        <a href="#about" className="text-slate-600 hover:text-[#c5a059] nav-link">Dr. Nina Lippey</a>
+                        <a href="#about" className="text-slate-600 hover:text-[#c5a059] nav-link">Meet Dr. Lippey</a>
                         <a href="#contact" className="bg-[#5b6d64] text-white px-6 py-2.5 rounded-sm nav-link hover:bg-[#c5a059]">Contact</a>
                     </div>
 
@@ -36,7 +36,7 @@ export const Navbar = () => {
                 <div className="md:hidden bg-white border-b border-slate-100 py-6 px-4 space-y-4 animate-fade-in shadow-2xl">
                     <a href="#home" onClick={() => setIsOpen(false)} className="block text-slate-600 nav-link">Home</a>
                     <a href="#services" onClick={() => setIsOpen(false)} className="block text-slate-600 nav-link">Services</a>
-                    <a href="#about" onClick={() => setIsOpen(false)} className="block text-slate-600 nav-link">Dr. Nina Lippey</a>
+                    <a href="#about" onClick={() => setIsOpen(false)} className="block text-slate-600 nav-link">Meet Dr. Lippey</a>
                     <a href="#contact" onClick={() => setIsOpen(false)} className="block bg-[#5b6d64] text-white text-center py-3 rounded-sm nav-link">Contact</a>
                 </div>
             )}
