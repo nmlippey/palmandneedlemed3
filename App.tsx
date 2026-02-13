@@ -50,7 +50,7 @@ const App = () => {
                         <div className="w-80 h-80 bg-sage-light rounded-full flex items-center justify-center mx-auto shadow-inner border border-slate-50 mb-6 overflow-hidden p-0">
                             <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.3]" />
                         </div>
-                        <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs">A Holistic Approach</span>
+                        <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs">A Comprehensive Approach</span>
                         <h2 className="text-4xl md:text-5xl font-bold text-[#5b6d64] serif">Integrative Paths to Wellness</h2>
                         <div className="w-16 h-1 bg-[#c5a059] mx-auto rounded-full"></div>
                     </div>
