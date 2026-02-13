@@ -65,10 +65,10 @@ const App = () => {
                             <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.3]" alt="" />
                         </div>
                         <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs">A Comprehensive Approach</span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-[#5b6d64] serif">Integrative Paths to Wellness</h2>
+                        <h2 className="text-4xl md:text-5xl font-bold text-[#5b6d64] serif">Services</h2>
                         <div className="w-16 h-1 bg-[#c5a059] mx-auto rounded-full"></div>
                     </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {SERVICES.map((s, i) => (
                             <div key={i} className="group p-10 bg-white rounded-lg border border-slate-100 transition-all hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden">
                                 <div className="absolute top-0 right-0 p-6 opacity-5 w-64 h-64 transform group-hover:scale-110 transition-transform -translate-y-12 translate-x-12">
