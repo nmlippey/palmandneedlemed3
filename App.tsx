@@ -12,9 +12,9 @@ const App = () => {
     const [view, setView] = useState<ViewType>('home');
     const [contactForm, setContactForm] = useState({ firstName: '', lastName: '', email: '', inquiry: '' });
 
-    const LOGO_URL = "https://github.com/nmlippey/palmandneedlemed-assets/blob/main/Logo.png";
-    const BUILDING_URL = "https://github.com/nmlippey/palmandneedlemed-assets/blob/main/Building.jpg";
-    const NINA_URL = "https://github.com/nmlippey/palmandneedlemed-assets/blob/main/Nina-Lippey.jpg";
+    const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo.png";
+    const BUILDING_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Building.jpg";
+    const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Nina-Lippey.jpg";
 
     useEffect(() => {
         window.scrollTo(0, 0);

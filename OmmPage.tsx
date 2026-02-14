@@ -1,7 +1,7 @@
 import React from 'react';
 
 const OmmPage = () => {
-    const LOGO_URL = "https://github.com/nmlippey/palmandneedlemed-assets/blob/main/Logo.png";
+    const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo.png";
 
     return (
         <div className="animate-fade-in">
