@@ -46,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                             <p className="text-[10px] tracking-[0.4em] uppercase text-[#c5a059] font-bold mt-1">Medical Clinic</p>
                         </div>
                         <div onClick={(e) => handleLinkClick(e as any, 'home', '#home')} className="w-36 h-36 bg-white rounded-sm flex items-center justify-center shadow-xl transform hover:rotate-3 transition-transform cursor-pointer overflow-hidden border-2 border-slate-50">
-                            <img src="https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/6d64e62329402d24158f1ed6765522794adca21d/Logo.png" className="w-full h-full object-contain scale-[1.3]" alt="Palm & Needle Logo" />
+                            <img src="https://github.com/nmlippey/palmandneedlemed-assets/blob/main/Logo.png" className="w-full h-full object-contain scale-[1.3]" alt="Palm & Needle Logo" />
                         </div>
                     </div>
                 </div>

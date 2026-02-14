@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AcupuncturePage = () => {
-    const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/6d64e62329402d24158f1ed6765522794adca21d/Logo.png";
+    const LOGO_URL = "https://github.com/nmlippey/palmandneedlemed-assets/blob/main/Logo.png";
 
     return (
         <div className="animate-fade-in">

@@ -1,8 +1,8 @@
 import React from 'react';
 
 const AboutPage = () => {
-    const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/6d64e62329402d24158f1ed6765522794adca21d/Logo.png";
-    const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/6d64e62329402d24158f1ed6765522794adca21d/Nina-Lippey.jpg";
+    const LOGO_URL = "https://github.com/nmlippey/palmandneedlemed-assets/blob/main/Logo.png";
+    const NINA_URL = "https://github.com/nmlippey/palmandneedlemed-assets/blob/main/Nina-Lippey.jpg";
 
     return (
         <div className="animate-fade-in">
