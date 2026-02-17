@@ -67,9 +67,6 @@ const App = () => {
             <header id="home" className="relative pt-72 pb-24 bg-sage-light overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
                     <div className="space-y-8 animate-fade-in relative z-10">
-                        <div className="inline-flex items-center space-x-3 bg-white px-6 py-3 rounded-full text-[#c5a059] text-xs font-bold uppercase tracking-[0.2em] shadow-sm border border-slate-100 overflow-hidden">
-                            <img src={LOGO_URL} className="w-10 h-10 object-contain scale-[1.5]" alt="" /><span>Redwood City, California</span>
-                        </div>
                         <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif leading-tight">
                             Healthcare Rooted <br />
                             <span className="text-[#8da399]">in Relationship.</span>
@@ -105,9 +102,6 @@ const App = () => {
                                 onClick={() => navigateTo(i === 0 ? 'dpc' : i === 1 ? 'omm' : 'acupuncture')}
                                 className="group p-10 bg-white rounded-lg border border-slate-100 transition-all hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden cursor-pointer"
                             >
-                                <div className="absolute top-0 right-0 p-6 opacity-5 w-64 h-64 transform group-hover:scale-110 transition-transform -translate-y-12 translate-x-12">
-                                    <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.5]" alt="" />
-                                </div>
                                 <div className="text-5xl mb-10 transform group-hover:scale-110 transition-all">{s.icon}</div>
                                 <h3 className="text-2xl font-bold text-[#5b6d64] serif mb-4">{s.title}</h3>
                                 <p className="text-slate-500 text-sm leading-relaxed mb-6">{s.desc}</p>
@@ -134,9 +128,6 @@ const App = () => {
                     </div>
                     <div className="space-y-8 order-1 lg:order-2">
                         <div className="flex items-center space-x-4">
-                            <div className="w-20 h-20 overflow-hidden flex items-center justify-center border border-slate-100 rounded-sm">
-                                <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.5]" alt="" />
-                            </div>
                             <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs">Meet Your Doctor</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold text-[#5b6d64] serif leading-tight">Whole-Person Care Rooted in Balance</h2>
@@ -151,10 +142,6 @@ const App = () => {
                              <button onClick={() => navigateTo('about')} className="text-[#c5a059] font-bold text-xs uppercase tracking-[0.2em] hover:text-[#5b6d64] flex items-center group">
                                 Read Full Bio & Mission <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                              </button>
-                        </div>
-                        <div className="pt-10 border-t border-slate-200 flex space-x-12 text-[10px] uppercase tracking-[0.3em] font-bold text-slate-400">
-                            <div>Board Certified</div>
-                            <div>Redwood City, CA</div>
                         </div>
                     </div>
                 </div>
