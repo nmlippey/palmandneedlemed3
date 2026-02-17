@@ -25,11 +25,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                         <a href="#dpc" onClick={(e) => handleLinkClick(e, 'dpc')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">DPC</a>
                         <a href="#omm" onClick={(e) => handleLinkClick(e, 'omm')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">OMM</a>
                         <a href="#acupuncture" onClick={(e) => handleLinkClick(e, 'acupuncture')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Acupuncture</a>
-                        <a href="#about" onClick={(e) => handleLinkClick(e, 'about')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap text-[10px]">Meet Dr. Lippey</a>
-                        <a href="#referrals" onClick={(e) => handleLinkClick(e, 'referrals')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap text-[10px]">Referrals</a>
+                        <a href="#about" onClick={(e) => handleLinkClick(e, 'about')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Meet Dr. Lippey</a>
+                        <a href="#referrals" onClick={(e) => handleLinkClick(e, 'referrals')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Referrals</a>
                         <div className="flex space-x-2">
-                            <a href="#contact" onClick={(e) => handleLinkClick(e, 'home', '#contact')} className="bg-[#5b6d64] text-white px-4 py-2.5 rounded-sm nav-link hover:bg-[#c5a059] whitespace-nowrap text-[10px]">Contact</a>
-                            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="bg-[#c5a059] text-white px-4 py-2.5 rounded-sm nav-link hover:bg-[#5b6d64] whitespace-nowrap text-[10px]">Schedule Appointment</a>
+                            <a href="#contact" onClick={(e) => handleLinkClick(e, 'home', '#contact')} className="bg-[#5b6d64] text-white px-4 py-2.5 rounded-sm nav-link hover:bg-[#c5a059] whitespace-nowrap">Contact</a>
+                            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="bg-[#c5a059] text-white px-4 py-2.5 rounded-sm nav-link hover:bg-[#5b6d64] whitespace-nowrap">Schedule Appointment</a>
                         </div>
                     </div>
 
