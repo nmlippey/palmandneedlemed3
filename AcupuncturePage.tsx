@@ -6,7 +6,7 @@ const AcupuncturePage = () => {
     return (
         <div className="animate-fade-in">
             {/* Hero Section */}
-            <section className="pt-64 pb-24 bg-sage-light relative overflow-hidden min-h-[70vh] flex items-center">
+            <section className="pt-72 pb-24 bg-sage-light relative overflow-hidden min-h-[70vh] flex items-center">
                 <div className="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-center">
                     <img src={LOGO_URL} className="w-1/2 object-contain scale-[2]" alt="" />
                 </div>

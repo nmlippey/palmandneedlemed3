@@ -6,7 +6,7 @@ const DpcPage = () => {
     return (
         <div className="animate-fade-in">
             {/* Hero Section */}
-            <section className="pt-64 pb-24 bg-sage-light relative overflow-hidden">
+            <section className="pt-72 pb-24 bg-sage-light relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-1/4 h-full opacity-5 pointer-events-none">
                     <img src={LOGO_URL} className="w-full h-full object-contain scale-150 transform -translate-x-1/2" alt="" />
                 </div>

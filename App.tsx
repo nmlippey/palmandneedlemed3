@@ -5,8 +5,33 @@ import AboutPage from './AboutPage';
 import DpcPage from './DpcPage';
 import OmmPage from './OmmPage';
 import AcupuncturePage from './AcupuncturePage';
+import ReferralsPage from './ReferralsPage';
 
-export type ViewType = 'home' | 'about' | 'dpc' | 'omm' | 'acupuncture';
+export type ViewType = 'home' | 'about' | 'dpc' | 'omm' | 'acupuncture' | 'referrals';
+
+const Marquee = () => {
+    const text = "Pre-Enrollment Now Open!";
+    // Restored to 10 items for a denser, more continuous marquee effect
+    const repeatedItems = Array(10).fill(text);
+    
+    return (
+        <div className="fixed top-24 w-full bg-[#c5a059] text-white py-2 z-40 overflow-hidden border-b border-white/10 shadow-md">
+            <div className="animate-marquee whitespace-nowrap">
+                {repeatedItems.map((item, i) => (
+                    <span key={i} className="mx-8 text-[10px] font-bold uppercase tracking-[0.4em]">
+                        {item}
+                    </span>
+                ))}
+                {/* Second set for seamless loop */}
+                {repeatedItems.map((item, i) => (
+                    <span key={`loop-${i}`} className="mx-8 text-[10px] font-bold uppercase tracking-[0.4em]">
+                        {item}
+                    </span>
+                ))}
+            </div>
+        </div>
+    );
+};
 
 const App = () => {
     const [view, setView] = useState<ViewType>('home');
@@ -39,7 +64,7 @@ const App = () => {
 
     const LandingPage = () => (
         <>
-            <header id="home" className="relative pt-64 pb-24 bg-sage-light overflow-hidden">
+            <header id="home" className="relative pt-72 pb-24 bg-sage-light overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
                     <div className="space-y-8 animate-fade-in relative z-10">
                         <div className="inline-flex items-center space-x-3 bg-white px-6 py-3 rounded-full text-[#c5a059] text-xs font-bold uppercase tracking-[0.2em] shadow-sm border border-slate-100 overflow-hidden">
@@ -53,7 +78,7 @@ const App = () => {
                             Integrative primary care blending modern medical science with hands-on osteopathic healing and traditional acupuncture. 
                         </p>
                         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-                            <a href="#contact" onClick={(e) => { e.preventDefault(); navigateTo('home', '#contact'); }} className="bg-[#5b6d64] text-white px-10 py-5 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#c5a059] transition-all shadow-xl hover:-translate-y-1 text-center">Schedule Meet & Greet</a>
+                            <a href="#contact" onClick={(e) => { e.preventDefault(); navigateTo('home', '#contact'); }} className="bg-[#5b6d64] text-white px-10 py-5 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#c5a059] transition-all shadow-xl hover:-translate-y-1 text-center">Schedule Meet & Greet by email</a>
                         </div>
                     </div>
                     <div className="relative animate-fade-in">
@@ -183,6 +208,7 @@ const App = () => {
             case 'dpc': return <DpcPage />;
             case 'omm': return <OmmPage />;
             case 'acupuncture': return <AcupuncturePage />;
+            case 'referrals': return <ReferralsPage />;
             default: return <LandingPage />;
         }
     };
@@ -190,6 +216,7 @@ const App = () => {
     return (
         <div className="min-h-screen bg-white">
             <Navbar onNavigate={navigateTo} />
+            <Marquee />
             
             {renderContent()}
 

@@ -7,7 +7,7 @@ const AboutPage = () => {
     return (
         <div className="animate-fade-in">
             {/* Header Section */}
-            <section className="pt-64 pb-20 bg-sage-light relative overflow-hidden">
+            <section className="pt-72 pb-20 bg-sage-light relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none">
                     <img src={LOGO_URL} className="w-full h-full object-contain scale-150 transform translate-x-1/2" alt="" />
                 </div>
