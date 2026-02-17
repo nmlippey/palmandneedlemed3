@@ -1,7 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ReferralsPage = () => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo.png";
+
+    const [formData, setFormData] = useState({
+        patientFirstName: '',
+        patientLastName: '',
+        patientDob: '',
+        patientPhone: '',
+        patientEmail: '',
+        clinicianFirstName: '',
+        clinicianLastName: '',
+        clinicianPractice: '',
+        clinicianPhone: '',
+        clinicianFax: '',
+        reason: '',
+        urgency: 'Routine'
+    });
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        const subject = `New Patient Referral from ${formData.clinicianFirstName} ${formData.clinicianLastName}`;
+        const body = `
+REFERRAL FORM DETAILS
+
+PATIENT INFORMATION
+Name: ${formData.patientFirstName} ${formData.patientLastName}
+DOB: ${formData.patientDob}
+Phone: ${formData.patientPhone}
+Email: ${formData.patientEmail}
+
+REFERRING CLINICIAN INFORMATION
+Name: ${formData.clinicianFirstName} ${formData.clinicianLastName}
+Practice: ${formData.clinicianPractice}
+Phone: ${formData.clinicianPhone}
+Fax: ${formData.clinicianFax}
+
+REFERRAL DETAILS
+Reason for Referral: ${formData.reason}
+Urgency: ${formData.urgency}
+        `;
+        window.location.href = `mailto:care@palmandneedlemed.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    };
+
+    const inputClasses = "w-full bg-slate-50 p-4 rounded-sm text-sm border border-slate-200 outline-none focus:ring-2 focus:ring-[#8da399] transition-all";
+    const labelClasses = "block text-[10px] uppercase tracking-widest font-bold text-slate-500 mb-2";
 
     return (
         <div className="animate-fade-in">
@@ -12,84 +55,114 @@ const ReferralsPage = () => {
                 </div>
                 <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
                     <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs mb-6 block">Coordinated Care</span>
-                    <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif mb-8">Referrals & Imaging</h1>
-                    <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto serif italic">
-                        "Expert guidance across the broader medical landscape, coordinated with your primary care."
-                    </p>
+                    <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif mb-8">Referrals</h1>
                 </div>
             </section>
 
-            {/* Content Section */}
+            {/* Form Section */}
             <section className="py-24 bg-white">
-                <div className="max-w-5xl mx-auto px-4">
-                    <div className="grid lg:grid-cols-2 gap-16 items-start mb-24">
+                <div className="max-w-3xl mx-auto px-4">
+                    <div className="text-center mb-16 space-y-6">
+                        <p className="text-xl text-slate-700 leading-relaxed font-light">
+                            Do you think your patient would benefit from OMM, acupuncture, or both?
+                        </p>
+                        <p className="text-slate-500 uppercase tracking-widest text-xs font-bold">
+                            If so, please fill out the information below:
+                        </p>
+                    </div>
+
+                    <form onSubmit={handleSubmit} className="space-y-16">
+                        {/* Patient Information */}
                         <div className="space-y-8">
-                            <h2 className="text-4xl font-bold text-[#5b6d64] serif leading-tight">Specialty Coordination</h2>
-                            <p className="text-xl text-[#8da399] font-medium leading-relaxed">
-                                Seamless connection to specialists when you need them.
-                            </p>
-                            <div className="prose prose-lg text-slate-700 leading-relaxed">
-                                <p>
-                                    As your primary care physician, I act as your health navigator. If you require specialized care, I coordinate directly with top specialists in the Redwood City area and beyond.
-                                </p>
-                                <p>
-                                    In the Direct Primary Care model, I have the time to research the best providers for your specific condition, share your medical history securely (with your consent), and follow up after your consultation to ensure the specialist's recommendations are integrated into your overall care plan.
-                                </p>
+                            <div className="flex items-center space-x-4">
+                                <h2 className="text-2xl font-bold text-[#5b6d64] serif">Patient Information</h2>
+                                <div className="flex-grow h-px bg-slate-100"></div>
+                            </div>
+                            
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label className={labelClasses}>First Name (required)</label>
+                                    <input required type="text" value={formData.patientFirstName} onChange={e => setFormData({...formData, patientFirstName: e.target.value})} className={inputClasses} />
+                                </div>
+                                <div>
+                                    <label className={labelClasses}>Last Name (required)</label>
+                                    <input required type="text" value={formData.patientLastName} onChange={e => setFormData({...formData, patientLastName: e.target.value})} className={inputClasses} />
+                                </div>
+                            </div>
+
+                            <div className="grid md:grid-cols-3 gap-6">
+                                <div>
+                                    <label className={labelClasses}>Date of Birth</label>
+                                    <input type="text" placeholder="MM/DD/YYYY" value={formData.patientDob} onChange={e => setFormData({...formData, patientDob: e.target.value})} className={inputClasses} />
+                                </div>
+                                <div>
+                                    <label className={labelClasses}>Phone (required)</label>
+                                    <input required type="tel" value={formData.patientPhone} onChange={e => setFormData({...formData, patientPhone: e.target.value})} className={inputClasses} />
+                                </div>
+                                <div>
+                                    <label className={labelClasses}>Email</label>
+                                    <input type="email" value={formData.patientEmail} onChange={e => setFormData({...formData, patientEmail: e.target.value})} className={inputClasses} />
+                                </div>
                             </div>
                         </div>
-                        <div className="bg-slate-50 p-12 rounded-lg border border-slate-100 space-y-8">
-                            <h3 className="text-2xl font-bold text-[#5b6d64] serif">How Referrals Work</h3>
-                            <ul className="space-y-6">
-                                <li className="flex items-start space-x-4">
-                                    <div className="w-8 h-8 rounded-full bg-[#c5a059] text-white flex items-center justify-center flex-shrink-0 font-bold">1</div>
-                                    <p className="text-slate-700"><strong>Evaluation:</strong> We discuss your needs during an unhurried visit to determine the right path forward.</p>
-                                </li>
-                                <li className="flex items-start space-x-4">
-                                    <div className="w-8 h-8 rounded-full bg-[#c5a059] text-white flex items-center justify-center flex-shrink-0 font-bold">2</div>
-                                    <p className="text-slate-700"><strong>Coordination:</strong> I facilitate the referral, ensuring the specialist has the context they need to help you best.</p>
-                                </li>
-                                <li className="flex items-start space-x-4">
-                                    <div className="w-8 h-8 rounded-full bg-[#c5a059] text-white flex items-center justify-center flex-shrink-0 font-bold">3</div>
-                                    <p className="text-slate-700"><strong>Integration:</strong> We review the specialist's findings together and adjust your primary care plan accordingly.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
 
-                    <div className="grid lg:grid-cols-3 gap-12">
-                        <div className="p-8 bg-white border border-slate-100 shadow-sm rounded-lg hover:shadow-md transition-shadow">
-                            <div className="text-4xl mb-6">🩻</div>
-                            <h3 className="text-xl font-bold text-[#5b6d64] serif mb-4">Imaging Services</h3>
-                            <p className="text-slate-600 text-sm leading-relaxed">
-                                Need an X-ray, MRI, or CT scan? I coordinate with local imaging centers. Through our DPC network, we often secure significant cash-pay discounts for our members.
-                            </p>
-                        </div>
-                        <div className="p-8 bg-white border border-slate-100 shadow-sm rounded-lg hover:shadow-md transition-shadow">
-                            <div className="text-4xl mb-6">🧪</div>
-                            <h3 className="text-xl font-bold text-[#5b6d64] serif mb-4">Laboratory Tests</h3>
-                            <p className="text-slate-600 text-sm leading-relaxed">
-                                Routine and specialized blood work is easy to arrange. I can help you find the most cost-effective lab options, whether using insurance or low-cost cash pricing.
-                            </p>
-                        </div>
-                        <div className="p-8 bg-white border border-slate-100 shadow-sm rounded-lg hover:shadow-md transition-shadow">
-                            <div className="text-4xl mb-6">📋</div>
-                            <h3 className="text-xl font-bold text-[#5b6d64] serif mb-4">Direct Communication</h3>
-                            <p className="text-slate-600 text-sm leading-relaxed">
-                                Unlike traditional practices where communication breaks down between providers, I am committed to staying connected with your whole medical team.
-                            </p>
-                        </div>
-                    </div>
+                        {/* Referring Clinician Information */}
+                        <div className="space-y-8">
+                            <div className="flex items-center space-x-4">
+                                <h2 className="text-2xl font-bold text-[#5b6d64] serif">Referring Clinician Information</h2>
+                                <div className="flex-grow h-px bg-slate-100"></div>
+                            </div>
 
-                    <div className="mt-24 bg-[#5b6d64] text-white p-12 rounded shadow-2xl text-center max-w-4xl mx-auto">
-                        <h2 className="text-3xl font-bold serif mb-6">Transparent & Cost-Effective</h2>
-                        <p className="text-lg opacity-90 leading-relaxed mb-8">
-                            Many patients find that the cash-pay prices we negotiate for imaging and labs are significantly lower than what they would pay out-of-pocket using insurance before meeting a deductible.
-                        </p>
-                        <div className="w-16 h-1 bg-[#c5a059] mx-auto mb-8"></div>
-                        <p className="italic font-light">
-                            "I believe navigating the medical system shouldn't be stressful. I'm here to handle the details so you can focus on getting well."
-                        </p>
-                    </div>
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label className={labelClasses}>First Name (required)</label>
+                                    <input required type="text" value={formData.clinicianFirstName} onChange={e => setFormData({...formData, clinicianFirstName: e.target.value})} className={inputClasses} />
+                                </div>
+                                <div>
+                                    <label className={labelClasses}>Last Name (required)</label>
+                                    <input required type="text" value={formData.clinicianLastName} onChange={e => setFormData({...formData, clinicianLastName: e.target.value})} className={inputClasses} />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label className={labelClasses}>Practice Name</label>
+                                <input type="text" value={formData.clinicianPractice} onChange={e => setFormData({...formData, clinicianPractice: e.target.value})} className={inputClasses} />
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label className={labelClasses}>Phone</label>
+                                    <input type="tel" value={formData.clinicianPhone} onChange={e => setFormData({...formData, clinicianPhone: e.target.value})} className={inputClasses} />
+                                </div>
+                                <div>
+                                    <label className={labelClasses}>Fax</label>
+                                    <input type="tel" value={formData.clinicianFax} onChange={e => setFormData({...formData, clinicianFax: e.target.value})} className={inputClasses} />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label className={labelClasses}>Reason for Referral (required)</label>
+                                <textarea required rows={4} value={formData.reason} onChange={e => setFormData({...formData, reason: e.target.value})} className={inputClasses} placeholder="Please describe the patient's condition and goals for OMM/Acupuncture..." />
+                            </div>
+
+                            <div>
+                                <label className={labelClasses}>Urgency</label>
+                                <select value={formData.urgency} onChange={e => setFormData({...formData, urgency: e.target.value})} className={inputClasses}>
+                                    <option value="Routine">Routine</option>
+                                    <option value="Urgent">Urgent</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div className="pt-8">
+                            <button type="submit" className="w-full bg-[#c5a059] text-white py-6 font-bold uppercase tracking-[0.4em] text-xs hover:bg-[#5b6d64] transition-all shadow-xl hover:-translate-y-1 rounded-sm">
+                                Submit Referral
+                            </button>
+                            <p className="mt-4 text-center text-slate-400 text-[10px] uppercase tracking-widest">
+                                This will open your default email client to send the referral details.
+                            </p>
+                        </div>
+                    </form>
                 </div>
             </section>
         </div>

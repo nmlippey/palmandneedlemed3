@@ -22,10 +22,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                 <div className="flex justify-between h-24 items-center">
                     <div className="hidden md:flex space-x-4 lg:space-x-6 items-center">
                         <a href="#home" onClick={(e) => handleLinkClick(e, 'home', '#home')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Home</a>
+                        <a href="#about" onClick={(e) => handleLinkClick(e, 'about')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Meet Dr. Lippey</a>
                         <a href="#dpc" onClick={(e) => handleLinkClick(e, 'dpc')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">DPC</a>
                         <a href="#omm" onClick={(e) => handleLinkClick(e, 'omm')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">OMM</a>
                         <a href="#acupuncture" onClick={(e) => handleLinkClick(e, 'acupuncture')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Acupuncture</a>
-                        <a href="#about" onClick={(e) => handleLinkClick(e, 'about')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Meet Dr. Lippey</a>
                         <a href="#referrals" onClick={(e) => handleLinkClick(e, 'referrals')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Referrals</a>
                         <div className="flex space-x-2">
                             <a href="#contact" onClick={(e) => handleLinkClick(e, 'home', '#contact')} className="bg-[#5b6d64] text-white px-4 py-2.5 rounded-sm nav-link hover:bg-[#c5a059] whitespace-nowrap">Contact</a>
@@ -52,10 +52,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
             {isOpen && (
                 <div className="md:hidden bg-white border-b border-slate-100 py-6 px-4 space-y-4 animate-fade-in shadow-2xl overflow-y-auto max-h-[calc(100vh-96px)]">
                     <a href="#home" onClick={(e) => handleLinkClick(e, 'home', '#home')} className="block text-slate-600 nav-link">Home</a>
+                    <a href="#about" onClick={(e) => handleLinkClick(e, 'about')} className="block text-slate-600 nav-link">Meet Dr. Lippey</a>
                     <a href="#dpc" onClick={(e) => handleLinkClick(e, 'dpc')} className="block text-slate-600 nav-link">DPC</a>
                     <a href="#omm" onClick={(e) => handleLinkClick(e, 'omm')} className="block text-slate-600 nav-link">OMM</a>
                     <a href="#acupuncture" onClick={(e) => handleLinkClick(e, 'acupuncture')} className="block text-slate-600 nav-link">Acupuncture</a>
-                    <a href="#about" onClick={(e) => handleLinkClick(e, 'about')} className="block text-slate-600 nav-link">Meet Dr. Lippey</a>
                     <a href="#referrals" onClick={(e) => handleLinkClick(e, 'referrals')} className="block text-slate-600 nav-link">Referrals</a>
                     <a href="#contact" onClick={(e) => handleLinkClick(e, 'home', '#contact')} className="block bg-[#5b6d64] text-white text-center py-3 rounded-sm nav-link">Contact</a>
                     <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="block bg-[#c5a059] text-white text-center py-3 rounded-sm nav-link">Schedule Appointment</a>
