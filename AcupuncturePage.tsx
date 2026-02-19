@@ -15,13 +15,13 @@ const AcupuncturePage = () => {
                     <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs mb-6 block">Integrative Care</span>
                     <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif mb-8">Acupuncture</h1>
                     <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto serif italic">
-                        "Finding balance through ancient wisdom and modern clinical insight."
+                        "Finding balance through traditional Chinese medicine and modern clinical insight."
                     </p>
                 </div>
             </section>
 
-            {/* Featured Image Section - Acupuncture_1.jpg */}
-            <section className="relative h-[60vh] w-full overflow-hidden">
+            {/* Featured Image Section - Enhanced Bottom Visibility */}
+            <section className="relative h-[80vh] w-full overflow-hidden">
                 <div className="absolute inset-0 bg-sage-light"></div>
                 <img 
                     src={ACU1_URL} 
@@ -29,7 +29,8 @@ const AcupuncturePage = () => {
                     alt="Acupuncture Session" 
                 />
                 <div className="absolute inset-0 z-20 bg-gradient-to-b from-sage-light via-transparent to-white pointer-events-none"></div>
-                <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent z-20"></div>
+                {/* Reduced gradient height to show more of the bottom of the picture */}
+                <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent z-20"></div>
             </section>
 
             {/* Content Section */}

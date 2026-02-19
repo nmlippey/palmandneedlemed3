@@ -2,12 +2,15 @@ import React from 'react';
 
 const DpcPage = () => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo.png";
-    const PIC3_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Pic_3.jpg";
+    const CARD2_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Card_2.jpg";
+    const DPC1_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/DPC_1.jpg";
+    const DPC2_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/DPC_2.jpg";
+    const TOYS1_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Toys_1.jpg";
 
     return (
         <div className="animate-fade-in relative min-h-screen bg-white">
             <div className="relative z-10">
-                {/* Hero Section - Focused on the Title */}
+                {/* Hero Section */}
                 <section className="pt-72 pb-16 bg-sage-light relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-1/4 h-full opacity-5 pointer-events-none">
                         <img src={LOGO_URL} className="w-full h-full object-contain scale-150 transform -translate-x-1/2" alt="" />
@@ -21,139 +24,164 @@ const DpcPage = () => {
                     </div>
                 </section>
 
-                {/* Featured Image Section - Now under the header and highly visible */}
-                <section className="relative h-[60vh] w-full overflow-hidden">
-                    <div className="absolute inset-0 bg-sage-light"></div>
-                    <img 
-                        src={PIC3_URL} 
-                        className="w-full h-full object-cover object-center shadow-inner relative z-10 opacity-90" 
-                        alt="Clinic Interior" 
-                    />
-                    {/* Artistic overlays to blend the obvious image back into the sage/white aesthetic */}
-                    <div className="absolute inset-0 z-20 bg-gradient-to-b from-sage-light via-transparent to-white pointer-events-none"></div>
-                    <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent z-20"></div>
-                </section>
-
-                {/* Main Content */}
-                <section className="py-12 bg-white relative">
-                    {/* Faint continuation of the image in the background of the content for unity */}
-                    <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none overflow-hidden">
-                         <img src={PIC3_URL} className="w-full h-full object-cover" alt="" />
-                    </div>
-
-                    <div className="max-w-5xl mx-auto px-4 relative z-10">
-                        <div className="space-y-12">
-                            <div className="prose prose-lg max-w-none text-slate-700 leading-relaxed">
-                                <p className="text-xl font-light">
-                                    Through Direct Primary Care (DPC), I offer unhurried, relationship-based healthcare designed around your needs. Your membership provides access to preventive care, routine visits, chronic disease management, and ongoing support, with predictable, transparent pricing. When appropriate, I can also provide a superbill for possible out-of-network insurance reimbursement. This model allows me to spend more time with you, build a strong doctor–patient relationship, and focus on your overall health—not paperwork.
-                                </p>
-                            </div>
-
-                            <div className="bg-slate-50/95 p-12 rounded-lg border border-slate-100 backdrop-blur-md shadow-sm">
-                                <h2 className="text-3xl font-bold text-[#5b6d64] serif mb-8 text-center">What is Direct Primary Care (DPC)?</h2>
-                                <div className="space-y-6 text-center max-w-3xl mx-auto">
-                                    <p className="text-lg font-medium text-[#8da399]">Direct Primary Care restores time, access, and connection to healthcare.</p>
-                                    <p className="text-slate-600">Direct Primary Care is a healthcare model built around a direct relationship between you and your physician—without insurance in the middle.</p>
-                                    <p className="text-slate-600">Instead of billing your insurance for each visit, Direct Primary Care works through a simple monthly membership fee. This covers most primary care services and allows me to focus on what matters most: your health, your time, and our relationship.</p>
-                                    <p className="text-lg serif italic text-[#5b6d64]">Direct Primary Care allows me to truly know my patients and care for them over time.</p>
+                {/* Main Content with Scattered Small Images */}
+                <section className="py-24 bg-white relative">
+                    <div className="max-w-6xl mx-auto px-4 relative z-10">
+                        <div className="space-y-32">
+                            
+                            {/* Section 1: Intro with DPC_1 (Reduced Size) */}
+                            <div className="grid lg:grid-cols-12 gap-16 items-center">
+                                <div className="lg:col-span-8 space-y-8">
+                                    <div className="prose prose-lg max-w-none text-slate-700 leading-relaxed">
+                                        <p className="text-2xl font-light text-[#5b6d64] serif">
+                                            Unhurried, relationship-based healthcare designed around your needs.
+                                        </p>
+                                        <p className="text-slate-600 mt-6">
+                                            Your membership provides access to preventive care, routine visits, chronic disease management, and ongoing support, with predictable, transparent pricing. When appropriate, I can also provide a superbill for possible out-of-network insurance reimbursement. This model allows me to spend more time with you, build a strong doctor–patient relationship, and focus on your overall health—not paperwork.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="lg:col-span-4 flex justify-center lg:justify-end">
+                                    <div className="relative group max-w-[320px]">
+                                        <div className="absolute -inset-3 bg-sage-light rounded-lg rotate-3 group-hover:rotate-0 transition-transform blur-lg opacity-40"></div>
+                                        <img src={DPC1_URL} className="relative z-10 w-full h-auto object-cover rounded shadow-xl border-4 border-white" alt="Clinic Consultation Room" />
+                                    </div>
                                 </div>
                             </div>
 
-                            {/* How DPC is different */}
-                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12">
-                                {[
-                                    { title: 'No Insurance Billing', text: 'I do not bill insurance for routine care. This means fewer administrative barriers, more transparency, and more time spent with you—not paperwork.' },
-                                    { title: 'Longer, Unhurried Visits', text: 'Appointments are not rushed. We take the time needed to fully address your concerns, ask questions, and create thoughtful care plans.' },
-                                    { title: 'Direct Access to Your Doctor', text: 'You have easier access to me for questions, follow-ups, and guidance—often without needing an office visit.' },
-                                    { title: 'Clear, Upfront Pricing', text: 'Your membership fee is predictable and transparent. There are no surprise bills or copays.' },
-                                    { title: 'Care Focused on You, Not Volume', text: 'Because I care for a smaller number of patients, I can provide more personalized, attentive care.' }
-                                ].map((item, i) => (
-                                    <div key={i} className="border-l-2 border-[#c5a059] pl-6 py-4 bg-white/60 rounded-r backdrop-blur-[2px] shadow-sm">
-                                        <h3 className="text-lg font-bold text-[#5b6d64] serif mb-2">{item.title}</h3>
-                                        <p className="text-slate-600 text-sm leading-relaxed">{item.text}</p>
-                                    </div>
-                                ))}
+                            {/* Definition Box */}
+                            <div className="bg-slate-50/95 p-16 rounded-lg border border-slate-100 backdrop-blur-md shadow-sm text-center relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none transform translate-x-1/2 -translate-y-1/2">
+                                    <img src={LOGO_URL} className="w-full h-full object-contain" alt="" />
+                                </div>
+                                <h2 className="text-3xl font-bold text-[#5b6d64] serif mb-8">What is Direct Primary Care (DPC)?</h2>
+                                <div className="space-y-6 max-w-3xl mx-auto">
+                                    <p className="text-xl font-medium text-[#8da399]">Direct Primary Care restores time, access, and connection to healthcare.</p>
+                                    <p className="text-slate-600 text-lg">Direct Primary Care is a healthcare model built around a direct relationship between you and your physician—without insurance in the middle.</p>
+                                    <p className="text-slate-600">Instead of billing your insurance for each visit, Direct Primary Care works through a simple monthly membership fee. This covers most primary care services and allows me to focus on what matters most: your health, your time, and our relationship.</p>
+                                    <p className="text-xl serif italic text-[#5b6d64] pt-4">"Direct Primary Care allows me to truly know my patients and care for them over time."</p>
+                                </div>
                             </div>
 
-                            {/* Coverage Section */}
-                            <div className="py-16 border-t border-slate-100">
-                                <h2 className="text-3xl font-bold text-[#5b6d64] serif mb-10">What DPC Covers</h2>
-                                <div className="grid md:grid-cols-2 gap-12 items-center">
-                                    <ul className="space-y-4">
+                            {/* Section 2: Features Grid */}
+                            <div className="space-y-12">
+                                <div className="text-center">
+                                    <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-[10px] mb-2 block">The Difference</span>
+                                    <h2 className="text-3xl font-bold text-[#5b6d64] serif">How DPC is Different</h2>
+                                </div>
+                                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                    {[
+                                        { title: 'No Insurance Billing', text: 'I do not bill insurance for routine care. This means fewer administrative barriers, more transparency, and more time spent with you—not paperwork.' },
+                                        { title: 'Longer, Unhurried Visits', text: 'Appointments are not rushed. We take the time needed to fully address your concerns, ask questions, and create thoughtful care plans.' },
+                                        { title: 'Direct Access to Your Doctor', text: 'You have easier access to me for questions, follow-ups, and guidance—often without needing an office visit.' },
+                                        { title: 'Clear, Upfront Pricing', text: 'Your membership fee is predictable and transparent. There are no surprise bills or copays.' },
+                                        { title: 'Care Focused on You, Not Volume', text: 'Because I care for a smaller number of patients, I can provide more personalized, attentive care.' }
+                                    ].map((item, i) => (
+                                        <div key={i} className="border-l-2 border-[#c5a059] pl-6 py-6 bg-white rounded shadow-sm hover:shadow-md transition-shadow">
+                                            <h3 className="text-lg font-bold text-[#5b6d64] serif mb-3">{item.title}</h3>
+                                            <p className="text-slate-600 text-sm leading-relaxed">{item.text}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Section 3: Coverage with Toys_1 (Small) */}
+                            <div className="grid lg:grid-cols-12 gap-16 items-center">
+                                <div className="lg:col-span-4 flex justify-center lg:justify-start order-2 lg:order-1">
+                                    <div className="relative group max-w-[280px]">
+                                        <div className="absolute -inset-2 bg-[#8da399]/10 rounded rotate-[-4deg] group-hover:rotate-0 transition-transform blur-lg opacity-40"></div>
+                                        <img src={TOYS1_URL} className="relative z-10 w-full rounded shadow-lg border-2 border-white" alt="Family Friendly Atmosphere" />
+                                    </div>
+                                </div>
+                                <div className="lg:col-span-8 order-1 lg:order-2 space-y-10">
+                                    <h2 className="text-4xl font-bold text-[#5b6d64] serif">What DPC Covers</h2>
+                                    <ul className="space-y-6">
                                         {[
                                             'Preventive care and wellness visits',
-                                            'Acute care (same-day or next-day visits when available)',
+                                            'Acute care (same-day or next-day visits)',
                                             'Chronic disease management',
                                             'Coordination of care with specialists',
-                                            'Osteopathic manipulative treatment and integrative therapies, when appropriate'
+                                            'Osteopathic manipulative treatment'
                                         ].map((item, i) => (
-                                            <li key={i} className="flex items-start space-x-3 text-slate-700">
-                                                <span className="text-[#c5a059] mt-1">•</span>
-                                                <span>{item}</span>
+                                            <li key={i} className="flex items-start space-x-4 text-slate-700">
+                                                <span className="w-2 h-2 rounded-full bg-[#c5a059] mt-2.5 shrink-0"></span>
+                                                <span className="text-lg font-light">{item}</span>
                                             </li>
                                         ))}
                                     </ul>
-                                    <div className="bg-sage-light/85 p-8 rounded border border-slate-200 backdrop-blur-md shadow-inner">
-                                        <p className="text-xs text-slate-500 italic uppercase tracking-wider mb-2">Note</p>
+                                    <div className="bg-sage-light/50 p-6 rounded border-l-4 border-[#8da399] max-w-2xl">
                                         <p className="text-sm text-slate-600 leading-relaxed">
+                                            <span className="font-bold uppercase tracking-wider text-[10px] block mb-1">Clinic Policy</span>
                                             Services outside primary care—such as imaging, labs, or specialty care—are not included but are often available at reduced cash prices.
                                         </p>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Comparison Table */}
-                            <div className="py-16">
-                                <h2 className="text-3xl font-bold text-[#5b6d64] serif mb-10 text-center">Direct Primary Care vs. Traditional Primary Care</h2>
-                                <div className="overflow-x-auto rounded-lg shadow-sm border border-slate-200">
-                                    <table className="w-full border-collapse">
-                                        <thead>
-                                            <tr className="bg-slate-900 text-white text-xs uppercase tracking-[0.2em]">
-                                                <th className="p-6 text-left border-r border-slate-800">Feature</th>
-                                                <th className="p-6 text-left border-r border-slate-800">Direct Primary Care (DPC)</th>
-                                                <th className="p-6 text-left">Traditional Primary Care</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody className="text-sm text-slate-700">
-                                            {[
-                                                ['Pricing', 'Monthly membership fee with clear, predictable pricing', 'Visits billed to insurance with copays, deductibles, and surprise bills'],
-                                                ['Insurance', 'No insurance billing for routine care', 'Care driven by insurance requirements and billing codes'],
-                                                ['Appointments', 'Longer, unhurried appointments', 'Short, time-limited visits'],
-                                                ['Patient Volume', 'Smaller patient panel', 'Large patient panels'],
-                                                ['Access', 'Easier access to your doctor for questions and follow-up', 'Limited access outside scheduled visits'],
-                                                ['Philosophy', 'Focus on relationship-based, personalized care', 'Focus on visit volume and documentation'],
-                                                ['Focus Area', 'Emphasis on prevention and root causes', 'Often focused on problem-based visits'],
-                                                ['Transparency', 'Transparent pricing for visits and services', 'Costs often unclear until after the visit'],
-                                                ['Integrative Care', 'Integrative care options such as OMM and acupuncture', 'Limited time or coverage for integrative therapies']
-                                            ].map((row, i) => (
-                                                <tr key={i} className={i % 2 === 0 ? 'bg-white/95 backdrop-blur-[1px]' : 'bg-slate-50/95 backdrop-blur-[1px]'}>
-                                                    <td className="p-6 font-bold text-[#5b6d64] serif border-r border-slate-200">{row[0]}</td>
-                                                    <td className="p-6 border-r border-slate-200">{row[1]}</td>
-                                                    <td className="p-6">{row[2]}</td>
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
+                            {/* Section 4: Comparison Table with Card_2 (Small) */}
+                            <div className="space-y-16">
+                                <div className="text-center max-w-3xl mx-auto space-y-4">
+                                    <h2 className="text-4xl font-bold text-[#5b6d64] serif">Direct Primary Care vs. Traditional Care</h2>
+                                    <p className="text-slate-500">A side-by-side look at the membership experience.</p>
                                 </div>
-                            </div>
-
-                            {/* Insurance Info */}
-                            <div className="py-24 border-t border-slate-100">
-                                <div className="max-w-4xl mx-auto space-y-8">
-                                    <h2 className="text-3xl font-bold text-[#5b6d64] serif text-center">Do I Still Need Insurance?</h2>
-                                    <p className="text-slate-700 leading-relaxed text-center text-lg">
-                                        Direct Primary Care is not insurance, but it works well alongside it. I encourage patients to carry a high-deductible or catastrophic insurance plan for added peace of mind in the event of emergencies, hospitalizations, or specialty care.
-                                    </p>
-                                    <div className="bg-[#5b6d64]/95 text-white p-12 rounded shadow-xl backdrop-blur-md">
-                                        <p className="leading-relaxed">
-                                            Direct Primary Care is designed to meet your everyday healthcare needs—preventive care, routine visits, and chronic condition management—with an emphasis on access and personalized attention. When appropriate, I can also provide a superbill for services you receive, which you may submit to your insurance company for possible out-of-network reimbursement, depending on your plan.
-                                        </p>
-                                        <p className="mt-6 leading-relaxed opacity-90 italic">
-                                            This approach allows you to enjoy the benefits of direct, relationship-based primary care while still having insurance coverage for life’s unexpected events.
-                                        </p>
+                                
+                                <div className="grid lg:grid-cols-12 gap-12 items-center">
+                                    <div className="lg:col-span-9 overflow-x-auto rounded-lg shadow-sm border border-slate-200">
+                                        <table className="w-full border-collapse">
+                                            <thead>
+                                                <tr className="bg-slate-900 text-white text-[10px] uppercase tracking-[0.2em]">
+                                                    <th className="p-6 text-left border-r border-slate-800">Feature</th>
+                                                    <th className="p-6 text-left border-r border-slate-800">DPC Membership</th>
+                                                    <th className="p-6 text-left">Traditional Care</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody className="text-sm text-slate-700">
+                                                {[
+                                                    ['Pricing', 'Monthly fee, predictable', 'Copays & surprise bills'],
+                                                    ['Insurance', 'No insurance middleman', 'Care driven by billing codes'],
+                                                    ['Appointments', 'Longer, unhurried', 'Short, time-limited'],
+                                                    ['Access', 'Direct and easy', 'Limited outside visits'],
+                                                    ['Philosophy', 'Relationship-based', 'Volume-based']
+                                                ].map((row, i) => (
+                                                    <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                                                        <td className="p-5 font-bold text-[#5b6d64] serif border-r border-slate-200">{row[0]}</td>
+                                                        <td className="p-5 border-r border-slate-200">{row[1]}</td>
+                                                        <td className="p-5">{row[2]}</td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div className="lg:col-span-3 space-y-4 flex flex-col items-center">
+                                        <div className="relative rounded overflow-hidden shadow-lg border-2 border-white max-w-[200px] rotate-2">
+                                            <img src={CARD2_URL} className="w-full h-auto" alt="Membership Card" />
+                                        </div>
+                                        <p className="text-[10px] uppercase tracking-widest text-[#c5a059] font-bold text-center">Membership Model</p>
                                     </div>
                                 </div>
                             </div>
+
+                            {/* Section 5: Closing with DPC_2 (Small) */}
+                            <div className="grid lg:grid-cols-12 gap-16 items-center border-t border-slate-100 pt-32">
+                                <div className="lg:col-span-8 space-y-8">
+                                    <h2 className="text-4xl font-bold text-[#5b6d64] serif">Do I Still Need Insurance?</h2>
+                                    <p className="text-slate-600 text-lg leading-relaxed">
+                                        Direct Primary Care is not insurance, but it works well alongside it. I encourage patients to carry a high-deductible or catastrophic insurance plan for added peace of mind in the event of emergencies, hospitalizations, or specialty care.
+                                    </p>
+                                    <div className="bg-[#5b6d64] text-white p-8 rounded shadow-lg max-w-2xl">
+                                        <p className="leading-relaxed opacity-95 text-sm">
+                                            This approach allows you to enjoy the benefits of direct, relationship-based primary care while still having insurance coverage for life’s unexpected events. When appropriate, I can also provide a superbill for services you receive.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="lg:col-span-4 flex justify-center lg:justify-end">
+                                    <div className="relative group max-w-[300px]">
+                                        <div className="absolute -inset-2 bg-[#c5a059]/10 rounded-lg rotate-1 group-hover:rotate-0 transition-transform blur-lg opacity-40"></div>
+                                        <img src={DPC2_URL} className="relative z-10 w-full h-auto rounded shadow-xl border-4 border-white" alt="Attentive Medical Care" />
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </section>
