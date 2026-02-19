@@ -23,7 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                     <div className="hidden md:flex space-x-4 lg:space-x-6 items-center">
                         <a href="#home" onClick={(e) => handleLinkClick(e, 'home', '#home')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Home</a>
                         <a href="#about" onClick={(e) => handleLinkClick(e, 'about')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Meet Dr. Lippey</a>
-                        <a href="#dpc" onClick={(e) => handleLinkClick(e, 'dpc')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">DPC</a>
+                        <a href="#dpc" onClick={(e) => handleLinkClick(e, 'dpc')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Direct Primary Care</a>
                         <a href="#omm" onClick={(e) => handleLinkClick(e, 'omm')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">OMM</a>
                         <a href="#acupuncture" onClick={(e) => handleLinkClick(e, 'acupuncture')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Acupuncture</a>
                         <a href="#referrals" onClick={(e) => handleLinkClick(e, 'referrals')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Referrals</a>
@@ -53,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                 <div className="md:hidden bg-white border-b border-slate-100 py-6 px-4 space-y-4 animate-fade-in shadow-2xl overflow-y-auto max-h-[calc(100vh-96px)]">
                     <a href="#home" onClick={(e) => handleLinkClick(e, 'home', '#home')} className="block text-slate-600 nav-link">Home</a>
                     <a href="#about" onClick={(e) => handleLinkClick(e, 'about')} className="block text-slate-600 nav-link">Meet Dr. Lippey</a>
-                    <a href="#dpc" onClick={(e) => handleLinkClick(e, 'dpc')} className="block text-slate-600 nav-link">DPC</a>
+                    <a href="#dpc" onClick={(e) => handleLinkClick(e, 'dpc')} className="block text-slate-600 nav-link">Direct Primary Care</a>
                     <a href="#omm" onClick={(e) => handleLinkClick(e, 'omm')} className="block text-slate-600 nav-link">OMM</a>
                     <a href="#acupuncture" onClick={(e) => handleLinkClick(e, 'acupuncture')} className="block text-slate-600 nav-link">Acupuncture</a>
                     <a href="#referrals" onClick={(e) => handleLinkClick(e, 'referrals')} className="block text-slate-600 nav-link">Referrals</a>
