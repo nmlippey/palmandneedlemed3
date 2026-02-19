@@ -2,29 +2,68 @@ import React from 'react';
 
 const AcupuncturePage = () => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo.png";
+    const ACU1_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Acupuncture_1.jpg";
 
     return (
-        <div className="animate-fade-in">
+        <div className="animate-fade-in bg-white">
             {/* Hero Section */}
-            <section className="pt-72 pb-24 bg-sage-light relative overflow-hidden min-h-[70vh] flex items-center">
-                <div className="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-center">
-                    <img src={LOGO_URL} className="w-1/2 object-contain scale-[2]" alt="" />
+            <section className="pt-72 pb-16 bg-sage-light relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none text-right">
+                    <img src={LOGO_URL} className="inline-block h-full object-contain scale-150 transform translate-x-1/2" alt="" />
                 </div>
                 <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
-                    <div className="inline-block px-4 py-1 bg-[#c5a059] text-white text-[10px] font-bold uppercase tracking-[0.3em] rounded-full mb-8">
-                        Expanding Soon
-                    </div>
+                    <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs mb-6 block">Integrative Care</span>
                     <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif mb-8">Acupuncture</h1>
-                    <p className="text-2xl text-slate-600 leading-relaxed max-w-2xl mx-auto serif italic mb-12">
-                        Integrative care expanding soon—acupuncture coming to support your health.
+                    <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto serif italic">
+                        "Finding balance through ancient wisdom and modern clinical insight."
                     </p>
-                    <div className="max-w-2xl mx-auto bg-white/80 backdrop-blur-sm p-12 rounded shadow-2xl border border-white/50 space-y-8">
-                        <p className="text-slate-700 leading-relaxed text-lg">
-                            I am currently training in acupuncture and look forward to offering this service as part of my practice soon. Acupuncture is a gentle, integrative therapy that can help with pain relief, stress reduction, and overall wellness by stimulating the body’s natural healing processes.
-                        </p>
-                        <p className="text-slate-600 leading-relaxed">
-                            While I continue my training, I focus on providing comprehensive primary care and osteopathic manipulative medicine, ensuring you receive personalized, hands-on care tailored to your needs. I am excited to expand my services with acupuncture in the near future to further support your health and wellbeing.
-                        </p>
+                </div>
+            </section>
+
+            {/* Featured Image Section - Acupuncture_1.jpg */}
+            <section className="relative h-[60vh] w-full overflow-hidden">
+                <div className="absolute inset-0 bg-sage-light"></div>
+                <img 
+                    src={ACU1_URL} 
+                    className="w-full h-full object-cover object-center shadow-inner relative z-10 opacity-90" 
+                    alt="Acupuncture Session" 
+                />
+                <div className="absolute inset-0 z-20 bg-gradient-to-b from-sage-light via-transparent to-white pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent z-20"></div>
+            </section>
+
+            {/* Content Section */}
+            <section className="py-24 bg-white relative">
+                <div className="max-w-4xl mx-auto px-4 relative z-10">
+                    <div className="text-center space-y-12">
+                        <div className="inline-block px-6 py-2 bg-[#c5a059] text-white text-[10px] font-bold uppercase tracking-[0.3em] rounded-full shadow-lg">
+                            Expanding Soon
+                        </div>
+                        
+                        <div className="space-y-8 text-left">
+                            <p className="text-2xl text-slate-700 leading-relaxed font-light text-center">
+                                Integrative care is expanding—acupuncture is coming to support your health.
+                            </p>
+                            
+                            <div className="grid md:grid-cols-2 gap-12 pt-8">
+                                <div className="space-y-6">
+                                    <h3 className="text-2xl font-bold text-[#5b6d64] serif border-l-4 border-[#8da399] pl-6">Deepening My Practice</h3>
+                                    <p className="text-slate-600 leading-relaxed">
+                                        I am currently undergoing advanced training in acupuncture and look forward to offering this service as a core part of my practice soon. Acupuncture is a gentle, evidence-based integrative therapy that stimulates the body’s natural healing processes.
+                                    </p>
+                                </div>
+                                <div className="space-y-6">
+                                    <h3 className="text-2xl font-bold text-[#5b6d64] serif border-l-4 border-[#8da399] pl-6">Holistic Benefits</h3>
+                                    <p className="text-slate-600 leading-relaxed">
+                                        Once available, these services will focus on pain management, stress reduction, and overall constitutional wellness. It will seamlessly complement our current osteopathic and primary care offerings.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-slate-50 p-12 rounded-lg border border-slate-100 shadow-sm mt-16 italic text-slate-600">
+                            "While I continue my training, I remain focused on providing comprehensive primary care and OMM, ensuring you receive personalized care tailored to your immediate needs."
+                        </div>
                     </div>
                 </div>
             </section>

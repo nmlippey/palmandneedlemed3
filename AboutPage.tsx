@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutPage = () => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo.png";
-    const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Headshot_15.jpg";
+    const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Headshot_1.jpg";
 
     return (
         <div className="animate-fade-in">
@@ -72,13 +72,15 @@ const AboutPage = () => {
             {/* Bio */}
             <section className="py-32 bg-white">
                 <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-12 gap-16 items-start">
-                    <div className="lg:col-span-5 sticky top-48">
-                        <div className="relative group">
+                    {/* Smaller Image Container */}
+                    <div className="lg:col-span-4 sticky top-48">
+                        <div className="relative group max-w-sm mx-auto lg:mx-0">
                             <div className="absolute -inset-4 bg-[#8da399] opacity-10 rounded-lg rotate-2 blur-lg"></div>
                             <img src={NINA_URL} alt="Dr. Nina Lippey" className="relative z-10 w-full rounded-lg shadow-2xl border-8 border-white object-cover aspect-[4/5]" />
                         </div>
                     </div>
-                    <div className="lg:col-span-7 space-y-8">
+                    {/* Expanded Text Column */}
+                    <div className="lg:col-span-8 space-y-8">
                         <div className="flex items-center space-x-4">
                             <img src={LOGO_URL} className="w-12 h-12 object-contain" alt="" />
                             <h2 className="text-4xl font-bold text-[#5b6d64] serif">Biography</h2>

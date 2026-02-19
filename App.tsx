@@ -38,8 +38,8 @@ const App = () => {
     const [contactForm, setContactForm] = useState({ firstName: '', lastName: '', email: '', inquiry: '' });
 
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo.png";
-    const BUILDING_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Building.jpg";
-    const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Headshot_15.jpg";
+    const BUILDING_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Pic_2.jpg";
+    const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Nina-Lippey.jpg";
 
     useEffect(() => {
         window.scrollTo(0, 0);
