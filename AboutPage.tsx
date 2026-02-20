@@ -146,9 +146,6 @@ const AboutPage = () => {
 
             {/* Footer Section */}
             <section className="py-24 bg-[#5b6d64] text-white relative overflow-hidden">
-                <div className="absolute inset-0 opacity-5 pointer-events-none">
-                    <img src={LOGO_3_URL} className="w-full h-full object-contain scale-150" alt="" />
-                </div>
                 <div className="max-w-7xl mx-auto px-4 relative z-10">
                     <div className="grid md:grid-cols-3 gap-12 items-center text-center md:text-left">
                         <div className="space-y-4">
@@ -165,11 +162,9 @@ const AboutPage = () => {
                         <div className="space-y-2">
                             <p className="text-xs uppercase tracking-widest opacity-60 font-bold">Contact</p>
                             <p className="text-lg font-bold">care@palmandneedlemed.com</p>
-                            <p className="text-sm opacity-80 italic">Restoring balance, one patient at a time.</p>
                         </div>
                     </div>
                     <div className="mt-16 pt-8 border-t border-white/10 text-center">
-                        <p className="text-[10px] uppercase tracking-[0.4em] opacity-40">© 2024 Palm & Needle Medical Clinic. All Rights Reserved.</p>
                     </div>
                 </div>
             </section>
