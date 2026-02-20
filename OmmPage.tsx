@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer';
 
 const OmmPage = () => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
@@ -97,6 +98,7 @@ const OmmPage = () => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </div>
     );
 };

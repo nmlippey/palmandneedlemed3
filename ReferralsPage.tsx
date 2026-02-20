@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Footer from './Footer';
 
 const ReferralsPage = () => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
@@ -165,6 +166,7 @@ Urgency: ${formData.urgency}
                     </form>
                 </div>
             </section>
+            <Footer />
         </div>
     );
 };

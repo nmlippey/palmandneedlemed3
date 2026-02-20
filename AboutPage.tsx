@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer';
 
 const AboutPage = () => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
@@ -144,29 +145,7 @@ const AboutPage = () => {
             </section>
 
             {/* Footer Section */}
-            <section className="py-24 bg-[#5b6d64] text-white relative overflow-hidden">
-                <div className="max-w-7xl mx-auto px-4 relative z-10">
-                    <div className="grid md:grid-cols-3 gap-12 items-center text-center md:text-left">
-                        <div className="space-y-4">
-                            <div className="flex items-center justify-center md:justify-start space-x-4">
-                                <img src={LOGO_3_URL} className="w-24 h-24 rounded shadow-lg border-2 border-white/20" alt="Palm & Needle Logo" />
-                                <h3 className="text-xl font-bold serif">Palm & Needle<br/>Medical Clinic</h3>
-                            </div>
-                        </div>
-                        <div className="space-y-2">
-                            <p className="text-xs uppercase tracking-widest opacity-60 font-bold">Location</p>
-                            <p className="text-lg">400 Seaport Court, Suite 203</p>
-                            <p className="text-sm opacity-80">Redwood City, CA 94063</p>
-                        </div>
-                        <div className="space-y-2">
-                            <p className="text-xs uppercase tracking-widest opacity-60 font-bold">Contact</p>
-                            <p className="text-lg font-bold">care@palmandneedlemed.com</p>
-                        </div>
-                    </div>
-                    <div className="mt-16 pt-8 border-t border-white/10 text-center">
-                    </div>
-                </div>
-            </section>
+            <Footer />
         </div>
     );
 };

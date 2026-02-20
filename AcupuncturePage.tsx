@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer';
 
 const AcupuncturePage = () => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
@@ -68,6 +69,7 @@ const AcupuncturePage = () => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </div>
     );
 };
