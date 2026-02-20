@@ -99,7 +99,6 @@ const AboutPage = () => {
                     {/* Text Column */}
                     <div className="lg:col-span-8 space-y-8">
                         <div className="flex items-center space-x-4">
-                            <img src={LOGO_URL} className="w-12 h-12 object-contain" alt="" />
                             <h2 className="text-4xl font-bold text-[#5b6d64] serif">Biography</h2>
                         </div>
                         
@@ -150,7 +149,7 @@ const AboutPage = () => {
                     <div className="grid md:grid-cols-3 gap-12 items-center text-center md:text-left">
                         <div className="space-y-4">
                             <div className="flex items-center justify-center md:justify-start space-x-4">
-                                <img src={LOGO_3_URL} className="w-16 h-16 rounded shadow-lg border-2 border-white/20" alt="Palm & Needle Logo" />
+                                <img src={LOGO_3_URL} className="w-24 h-24 rounded shadow-lg border-2 border-white/20" alt="Palm & Needle Logo" />
                                 <h3 className="text-xl font-bold serif">Palm & Needle<br/>Medical Clinic</h3>
                             </div>
                         </div>
