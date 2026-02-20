@@ -41,11 +41,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                         </button>
                     </div>
 
-                    <div className="flex items-center">
+                    <div className="flex items-center space-x-4">
                         <div className="text-right">
                             <h2 className="text-3xl sm:text-4xl font-bold text-[#5b6d64] serif leading-none cursor-pointer hover:text-[#c5a059] transition-colors" onClick={(e) => handleLinkClick(e as any, 'home', '#home')}>Palm & Needle</h2>
                             <p className="text-[10px] tracking-[0.4em] uppercase text-[#c5a059] font-bold mt-1">Medical Clinic</p>
                         </div>
+                        <img 
+                            src="https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo.png" 
+                            alt="Palm & Needle Logo" 
+                            className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                            referrerPolicy="no-referrer"
+                        />
                     </div>
                 </div>
             </div>
