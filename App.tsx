@@ -15,7 +15,7 @@ const Marquee = () => {
     const repeatedItems = Array(10).fill(text);
     
     return (
-        <div className="fixed top-24 w-full bg-[#c5a059] text-white py-2 z-40 overflow-hidden border-b border-white/10 shadow-md">
+        <div className="fixed top-32 w-full bg-[#c5a059] text-white py-2 z-40 overflow-hidden border-b border-white/10 shadow-md">
             <div className="animate-marquee whitespace-nowrap">
                 {repeatedItems.map((item, i) => (
                     <span key={i} className="mx-8 text-[10px] font-bold uppercase tracking-[0.4em]">
@@ -64,13 +64,19 @@ const App = () => {
 
     const LandingPage = () => (
         <>
-            <header id="home" className="relative pt-72 pb-24 bg-sage-light overflow-hidden">
+            <header id="home" className="relative pt-80 pb-24 bg-sage-light overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
                     <div className="space-y-8 animate-fade-in relative z-10">
-                        <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif leading-tight">
-                            Healthcare Rooted <br />
-                            <span className="text-[#8da399]">in Relationship.</span>
-                        </h1>
+                        <div className="space-y-4">
+                            <div className="text-left">
+                                <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif leading-tight">Palm & Needle</h1>
+                                <p className="text-xl md:text-2xl tracking-[0.4em] uppercase text-[#c5a059] font-bold mt-2">Medical Clinic</p>
+                            </div>
+                            <h2 className="text-3xl md:text-4xl font-bold text-[#8da399] serif leading-tight italic">
+                                Healthcare Rooted <br className="hidden md:block" />
+                                in Relationship.
+                            </h2>
+                        </div>
                         <p className="text-slate-600 text-lg max-w-lg leading-relaxed">
                             Integrative primary care blending modern medical science with hands-on osteopathic healing and traditional acupuncture. 
                         </p>

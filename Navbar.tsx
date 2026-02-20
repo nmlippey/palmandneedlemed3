@@ -19,7 +19,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
     return (
         <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-24 items-center">
+                <div className="flex justify-between h-32 items-center">
                     <div className="hidden md:flex space-x-4 lg:space-x-6 items-center">
                         <a href="#home" onClick={(e) => handleLinkClick(e, 'home', '#home')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Home</a>
                         <a href="#about" onClick={(e) => handleLinkClick(e, 'about')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Meet Dr. Lippey</a>
@@ -41,15 +41,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                         </button>
                     </div>
 
-                    <div className="flex items-center space-x-4">
-                        <div className="text-right">
-                            <h2 className="text-3xl sm:text-4xl font-bold text-[#5b6d64] serif leading-none cursor-pointer hover:text-[#c5a059] transition-colors" onClick={(e) => handleLinkClick(e as any, 'home', '#home')}>Palm & Needle</h2>
-                            <p className="text-[10px] tracking-[0.4em] uppercase text-[#c5a059] font-bold mt-1">Medical Clinic</p>
-                        </div>
+                    <div className="flex items-center">
                         <img 
                             src="https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo.png" 
                             alt="Palm & Needle Logo" 
-                            className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                            className="w-20 h-20 sm:w-32 sm:h-32 object-contain cursor-pointer scale-125"
+                            onClick={(e) => handleLinkClick(e as any, 'home', '#home')}
                             referrerPolicy="no-referrer"
                         />
                     </div>
