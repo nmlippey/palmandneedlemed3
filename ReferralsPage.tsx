@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const ReferralsPage = () => {
-    const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo.png";
+    const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
 
     const [formData, setFormData] = useState({
         patientFirstName: '',

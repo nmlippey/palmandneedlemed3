@@ -37,7 +37,7 @@ const App = () => {
     const [view, setView] = useState<ViewType>('home');
     const [contactForm, setContactForm] = useState({ firstName: '', lastName: '', email: '', inquiry: '' });
 
-    const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo.png";
+    const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
     const BUILDING_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Pic_2.jpg";
     const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Nina-Lippey.jpg";
 
@@ -72,14 +72,14 @@ const App = () => {
                                 <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif leading-tight">Palm & Needle</h1>
                                 <p className="text-xl md:text-2xl tracking-[0.4em] uppercase text-[#c5a059] font-bold mt-2">Medical Clinic</p>
                             </div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-[#8da399] serif leading-tight italic">
+                            <p className="text-[#5b6d64] text-2xl md:text-3xl font-bold serif italic">
+                                Nina Lippey, DO
+                            </p>
+                            <h2 className="text-2xl md:text-3xl font-bold text-[#8da399] serif leading-tight italic">
                                 Healthcare Rooted <br className="hidden md:block" />
                                 in Relationship.
                             </h2>
                         </div>
-                        <p className="text-slate-600 text-lg max-w-lg leading-relaxed">
-                            Integrative primary care blending modern medical science with hands-on osteopathic healing and traditional acupuncture. 
-                        </p>
                         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
                             <a href="#contact" onClick={(e) => { e.preventDefault(); navigateTo('home', '#contact'); }} className="bg-[#5b6d64] text-white px-10 py-5 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#c5a059] transition-all shadow-xl hover:-translate-y-1 text-center">Schedule Meet & Greet by email</a>
                         </div>

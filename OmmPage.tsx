@@ -1,7 +1,7 @@
 import React from 'react';
 
 const OmmPage = () => {
-    const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo.png";
+    const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
     const OMM2_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/OMM_2.jpg";
     const OMM9_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/OMM_9.jpg";
     const OMM11_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/OMM_11.jpg";
