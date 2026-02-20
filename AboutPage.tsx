@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutPage = () => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
-    const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Headshot_1.jpg";
+    const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Headshot_14.jpg";
 
     return (
         <div className="animate-fade-in">
@@ -12,7 +12,17 @@ const AboutPage = () => {
                     <img src={LOGO_URL} className="w-full h-full object-contain scale-150 transform translate-x-1/2" alt="" />
                 </div>
                 <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-                    <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs mb-6 block">Our Foundation</span>
+                    <div className="mb-12 flex justify-center">
+                        <div className="relative group">
+                            <div className="absolute -inset-4 bg-[#8da399] opacity-10 rounded-full blur-lg"></div>
+                            <img 
+                                src={NINA_URL} 
+                                alt="Dr. Nina Lippey" 
+                                className="relative z-10 w-48 h-48 md:w-64 md:h-64 rounded-full shadow-2xl border-8 border-white object-cover object-center" 
+                                referrerPolicy="no-referrer"
+                            />
+                        </div>
+                    </div>
                     <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif mb-8">Dr. Nina Lippey, DO</h1>
                     <p className="text-xl text-slate-600 serif italic leading-relaxed max-w-2xl mx-auto">
                         "Healthcare is a collaboration—an active process of restoring balance across mind, body, and spirit."
@@ -71,16 +81,8 @@ const AboutPage = () => {
 
             {/* Bio */}
             <section className="py-32 bg-white">
-                <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-12 gap-16 items-start">
-                    {/* Smaller Image Container */}
-                    <div className="lg:col-span-4 sticky top-48">
-                        <div className="relative group max-w-sm mx-auto lg:mx-0">
-                            <div className="absolute -inset-4 bg-[#8da399] opacity-10 rounded-lg rotate-2 blur-lg"></div>
-                            <img src={NINA_URL} alt="Dr. Nina Lippey" className="relative z-10 w-full rounded-lg shadow-2xl border-8 border-white object-cover aspect-[4/5]" />
-                        </div>
-                    </div>
-                    {/* Expanded Text Column */}
-                    <div className="lg:col-span-8 space-y-8">
+                <div className="max-w-4xl mx-auto px-4">
+                    <div className="space-y-8">
                         <div className="flex items-center space-x-4">
                             <img src={LOGO_URL} className="w-12 h-12 object-contain" alt="" />
                             <h2 className="text-4xl font-bold text-[#5b6d64] serif">Biography</h2>

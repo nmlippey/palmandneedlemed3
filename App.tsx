@@ -119,7 +119,7 @@ const App = () => {
                         <div className="max-w-xs w-full relative group">
                             <div className="absolute -inset-4 bg-[#8da399] opacity-10 rounded-lg rotate-3 group-hover:rotate-0 transition-transform blur-lg"></div>
                             <div className="relative z-10 rounded-lg overflow-hidden shadow-2xl border-8 border-white bg-slate-100">
-                                <img src={NINA_URL} alt="Dr. Nina Lippey" className="w-full grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 object-cover aspect-[4/5]" />
+                                <img src={NINA_URL} alt="Dr. Nina Lippey" className="w-full grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 object-cover object-[70%_center] aspect-[4/5]" />
                             </div>
                             <div className="absolute -bottom-8 -right-8 bg-[#c5a059] text-white px-8 py-5 rounded shadow-2xl z-20 border-2 border-white/10">
                                 <p className="font-bold text-lg serif italic leading-none">Dr. Nina Lippey, DO</p>
@@ -132,12 +132,9 @@ const App = () => {
                             <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs">Meet Your Doctor</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold text-[#5b6d64] serif leading-tight">Whole-Person Care Rooted in Balance</h2>
-                        <p className="text-slate-600 leading-relaxed italic border-l-4 border-[#8da399] pl-8 py-4 text-xl">
-                            "I blend modern medical science with traditional wisdom to see the person beyond the symptoms."
-                        </p>
                         <div className="space-y-6 text-slate-600 leading-relaxed">
                             <p>Growing up between the United States and Japan gave Dr. Lippey a unique perspective on healing. She believes that health is an active process of restoring balance across mind, body, and spirit.</p>
-                            <p>As an Osteopathic physician, she specializes in OMM and acupuncture, using a gentle hands-on approach to improve function and alleviate pain.</p>
+                            <p>As a family medicine physician, she provides comprehensive primary care to patients of all ages, from newborns to seniors. As a DO, or osteopathic physician, Dr. Lippey specializes in OMM. She will be offering acupuncture soon.</p>
                         </div>
                         <div className="pt-6">
                              <button onClick={() => navigateTo('about')} className="text-[#c5a059] font-bold text-xs uppercase tracking-[0.2em] hover:text-[#5b6d64] flex items-center group">
