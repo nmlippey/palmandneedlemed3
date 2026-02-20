@@ -2,6 +2,7 @@ import React from 'react';
 
 const AboutPage = () => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
+    const LOGO_3_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_3.jpg";
     const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Headshot_14.jpg";
     const BIO_IMG_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Headshot_11.jpg";
 
@@ -107,7 +108,7 @@ const AboutPage = () => {
                                 I bring an integrative approach to primary care shaped by growing up in both the United States and Japan. Being immersed in two cultures from an early age influenced my interest in blending Western medicine with Eastern healing traditions and in caring for patients as whole individuals.
                             </p>
                             <p>
-                                I completed my undergraduate education at Brown University, earned my Doctor of Osteopathic Medicine degree from Marian College of Osteopathic Medicine, and completed my Family Medicine residency at St. Joseph’s Medical Center in Stockton, California, where I received comprehensive training in full-spectrum primary care.
+                                I completed my undergraduate education at Brown University in Neuroscience, earned my Doctor of Osteopathic Medicine degree from Marian University College of Osteopathic Medicine, and completed my Family Medicine residency at St. Joseph’s Medical Center in Stockton, CA.
                             </p>
                             <p>
                                 I have always been drawn to family medicine because of its emphasis on whole-person care, continuity, and cultural awareness. I believe health is influenced not only by physical symptoms, but also by lifestyle, environment, and personal values. Incorporating osteopathic manipulative medicine (OMM) and acupuncture into my practice allows me to offer integrative, evidence-informed options for pain, stress-related conditions, and chronic illness.
@@ -116,30 +117,59 @@ const AboutPage = () => {
                                 I chose to practice Direct Primary Care (DPC) because it allows me to practice medicine in alignment with my values. By removing the constraints of insurance-based care, the DPC model allows for longer visits, improved access, and a stronger patient–physician relationship. This enables me to focus on prevention, education, and individualized care rather than treating symptoms in isolation.
                             </p>
                             <p>
-                                My goal is to provide thoughtful, culturally responsive, and comprehensive primary care that supports patients throughout their healthcare journey.
+                                My goal is to provide thoughtful, inclusive, and culturally responsive comprehensive primary care that supports patients throughout their healthcare journey.
                             </p>
                         </div>
 
-                        <div className="pt-12 border-t border-slate-100">
-                             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                                <div>
-                                    <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-2">Education</p>
-                                    <p className="serif text-[#5b6d64]">Brown University</p>
-                                </div>
-                                <div>
-                                    <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-2">Medical Degree</p>
-                                    <p className="serif text-[#5b6d64]">Marian College</p>
-                                </div>
-                                <div>
-                                    <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-2">Residency</p>
-                                    <p className="serif text-[#5b6d64]">St. Joseph's</p>
-                                </div>
-                                <div>
-                                    <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-2">Focus</p>
-                                    <p className="serif text-[#5b6d64]">Integrative DPC</p>
-                                </div>
-                             </div>
+                        {/* Booking Buttons */}
+                        <div className="pt-12 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center lg:justify-start">
+                            <a 
+                                href="https://calendly.com/nlippey-palmandneedlemed" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="bg-[#c5a059] text-white px-8 py-4 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#5b6d64] transition-all shadow-lg hover:-translate-y-1 text-center"
+                            >
+                                Schedule Appointment
+                            </a>
+                            <a 
+                                href="https://calendly.com/nlippey-palmandneedlemed" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="border-2 border-[#5b6d64] text-[#5b6d64] px-8 py-4 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#5b6d64] hover:text-white transition-all shadow-lg hover:-translate-y-1 text-center"
+                            >
+                                Schedule Meet & Greet
+                            </a>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Footer Section */}
+            <section className="py-24 bg-[#5b6d64] text-white relative overflow-hidden">
+                <div className="absolute inset-0 opacity-5 pointer-events-none">
+                    <img src={LOGO_3_URL} className="w-full h-full object-contain scale-150" alt="" />
+                </div>
+                <div className="max-w-7xl mx-auto px-4 relative z-10">
+                    <div className="grid md:grid-cols-3 gap-12 items-center text-center md:text-left">
+                        <div className="space-y-4">
+                            <div className="flex items-center justify-center md:justify-start space-x-4">
+                                <img src={LOGO_3_URL} className="w-16 h-16 rounded shadow-lg border-2 border-white/20" alt="Palm & Needle Logo" />
+                                <h3 className="text-xl font-bold serif">Palm & Needle<br/>Medical Clinic</h3>
+                            </div>
+                        </div>
+                        <div className="space-y-2">
+                            <p className="text-xs uppercase tracking-widest opacity-60 font-bold">Location</p>
+                            <p className="text-lg">400 Seaport Court, Suite 203</p>
+                            <p className="text-sm opacity-80">Redwood City, CA 94063</p>
+                        </div>
+                        <div className="space-y-2">
+                            <p className="text-xs uppercase tracking-widest opacity-60 font-bold">Contact</p>
+                            <p className="text-lg font-bold">care@palmandneedlemed.com</p>
+                            <p className="text-sm opacity-80 italic">Restoring balance, one patient at a time.</p>
+                        </div>
+                    </div>
+                    <div className="mt-16 pt-8 border-t border-white/10 text-center">
+                        <p className="text-[10px] uppercase tracking-[0.4em] opacity-40">© 2024 Palm & Needle Medical Clinic. All Rights Reserved.</p>
                     </div>
                 </div>
             </section>
