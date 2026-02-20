@@ -35,22 +35,16 @@ const Marquee = () => {
 
 const App = () => {
     const [view, setView] = useState<ViewType>('home');
-    const [contactForm, setContactForm] = useState({ firstName: '', lastName: '', email: '', inquiry: '' });
 
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
+    const CARD1_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Card_1.jpg";
     const BUILDING_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Pic_2.jpg";
-    const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Nina-Lippey.jpg";
+    const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Headshot_1.jpg";
+    const OMM10_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/OMM_10.jpg";
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [view]);
-
-    const handleInquirySubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        const subject = `New Clinic Inquiry from ${contactForm.firstName} ${contactForm.lastName}`;
-        const body = `Name: ${contactForm.firstName} ${contactForm.lastName}\nEmail: ${contactForm.email}\n\nInquiry:\n${contactForm.inquiry}`;
-        window.location.href = `mailto:care@palmandneedlemed.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    };
 
     const navigateTo = (newView: ViewType, hash?: string) => {
         setView(newView);
@@ -81,7 +75,7 @@ const App = () => {
                             </h2>
                         </div>
                         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-                            <a href="#contact" onClick={(e) => { e.preventDefault(); navigateTo('home', '#contact'); }} className="bg-[#5b6d64] text-white px-10 py-5 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#c5a059] transition-all shadow-xl hover:-translate-y-1 text-center">Schedule Meet & Greet by email</a>
+                            <a href="#about" onClick={(e) => { e.preventDefault(); navigateTo('about'); }} className="bg-[#5b6d64] text-white px-10 py-5 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#c5a059] transition-all shadow-xl hover:-translate-y-1 text-center">About Dr. Lippey</a>
                         </div>
                     </div>
                     <div className="relative animate-fade-in">
@@ -93,13 +87,15 @@ const App = () => {
 
             <section id="services" className="py-32 bg-white">
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="text-center mb-20 space-y-4">
-                        <div className="w-80 h-80 bg-sage-light rounded-full flex items-center justify-center mx-auto shadow-inner border border-slate-50 mb-6 overflow-hidden p-0">
-                            <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.3]" alt="" />
+                    <div className="text-center mb-20 space-y-8">
+                        <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-[12px] border-white bg-white">
+                            <img src={CARD1_URL} className="w-full h-auto" alt="Clinic Services" />
                         </div>
-                        <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs">A Comprehensive Approach</span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-[#5b6d64] serif">Services</h2>
-                        <div className="w-16 h-1 bg-[#c5a059] mx-auto rounded-full"></div>
+                        <div className="space-y-4">
+                            <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs">A Comprehensive Approach</span>
+                            <h2 className="text-4xl md:text-5xl font-bold text-[#5b6d64] serif">Services</h2>
+                            <div className="w-16 h-1 bg-[#c5a059] mx-auto rounded-full"></div>
+                        </div>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {SERVICES.map((s, i) => (
@@ -108,7 +104,6 @@ const App = () => {
                                 onClick={() => navigateTo(i === 0 ? 'dpc' : i === 1 ? 'omm' : 'acupuncture')}
                                 className="group p-10 bg-white rounded-lg border border-slate-100 transition-all hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden cursor-pointer"
                             >
-                                <div className="text-5xl mb-10 transform group-hover:scale-110 transition-all">{s.icon}</div>
                                 <h3 className="text-2xl font-bold text-[#5b6d64] serif mb-4">{s.title}</h3>
                                 <p className="text-slate-500 text-sm leading-relaxed mb-6">{s.desc}</p>
                                 <span className="text-[#c5a059] text-[10px] font-bold uppercase tracking-widest border-b border-transparent group-hover:border-[#c5a059] transition-all">Learn More →</span>
@@ -161,14 +156,18 @@ const App = () => {
                 </div>
                 <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-24 relative z-10">
                     <div className="space-y-12">
-                        <h2 className="text-5xl font-bold serif leading-tight">Restore Your Balance</h2>
+                        <h2 className="text-5xl font-bold serif leading-tight">Schedule Your Appointment</h2>
                         <p className="text-slate-200 text-xl leading-relaxed max-w-lg opacity-90">
                             Join our membership-based practice for personalized, unhurried healthcare.
                         </p>
                         <div className="space-y-10 pt-10">
                             <div className="flex items-center space-x-6">
                                 <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center border border-white/20 text-3xl shadow-inner">📍</div>
-                                <div><p className="font-bold text-xl">400 Seaport Court, Suite 203</p><p className="text-sm opacity-60">Redwood City, CA 94063</p></div>
+                                <div>
+                                    <p className="font-bold text-xl">400 Seaport Court, Suite 203</p>
+                                    <p className="text-sm opacity-60">Redwood City, CA 94063</p>
+                                    <p className="text-xs italic opacity-80 mt-2 max-w-[280px]">Turn right upon entering the marina, and look for the sign "Seaport Health Collective"</p>
+                                </div>
                             </div>
                             <div className="flex items-center space-x-6">
                                 <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center border border-white/20 text-3xl shadow-inner">✉️</div>
@@ -176,19 +175,27 @@ const App = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="bg-white p-12 rounded shadow-2xl relative text-slate-800">
+                    <div className="bg-white p-12 rounded shadow-2xl relative text-slate-800 flex flex-col items-center justify-center min-h-[300px]">
                         <div className="absolute -top-44 -left-12 w-48 h-48 bg-white rounded flex items-center justify-center shadow-2xl border-4 border-[#c5a059] transform hover:rotate-12 transition-transform overflow-hidden p-0 z-20">
                             <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.5]" alt="" />
                         </div>
-                        <form className="space-y-6" onSubmit={handleInquirySubmit}>
-                            <div className="grid grid-cols-2 gap-6">
-                                <input required type="text" placeholder="First Name" value={contactForm.firstName} onChange={e => setContactForm({...contactForm, firstName: e.target.value})} className="w-full bg-slate-50 p-5 rounded-sm text-sm border-none outline-none focus:ring-2 focus:ring-[#8da399]" />
-                                <input required type="text" placeholder="Last Name" value={contactForm.lastName} onChange={e => setContactForm({...contactForm, lastName: e.target.value})} className="w-full bg-slate-50 p-5 rounded-sm text-sm border-none outline-none focus:ring-2 focus:ring-[#8da399]" />
+                        <div className="text-center space-y-8 w-full">
+                            <p className="text-slate-600 serif italic text-lg">Ready to begin your journey to better health?</p>
+                            <button 
+                                onClick={() => window.location.href = 'mailto:care@palmandneedlemed.com?subject=Appointment Inquiry'}
+                                className="w-full bg-[#c5a059] text-white py-6 font-bold uppercase tracking-[0.4em] text-xs hover:bg-[#5b6d64] transition-all shadow-xl hover:-translate-y-1"
+                            >
+                                Schedule your appointment now
+                            </button>
+                            <div className="pt-8">
+                                <img 
+                                    src={OMM10_URL} 
+                                    alt="Osteopathic Treatment" 
+                                    className="w-full h-48 object-cover rounded shadow-md border border-slate-100"
+                                    referrerPolicy="no-referrer"
+                                />
                             </div>
-                            <input required type="email" placeholder="Email Address" value={contactForm.email} onChange={e => setContactForm({...contactForm, email: e.target.value})} className="w-full bg-slate-50 p-5 rounded-sm text-sm border-none outline-none focus:ring-2 focus:ring-[#8da399]" />
-                            <textarea required placeholder="How can we help you?" value={contactForm.inquiry} onChange={e => setContactForm({...contactForm, inquiry: e.target.value})} className="w-full bg-slate-50 p-5 rounded-sm text-sm border-none outline-none focus:ring-2 focus:ring-[#8da399] min-h-[120px]" />
-                            <button type="submit" className="w-full bg-[#c5a059] text-white py-6 font-bold uppercase tracking-[0.4em] text-xs hover:bg-[#5b6d64] transition-all shadow-xl hover:-translate-y-1">Send Inquiry</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -212,23 +219,6 @@ const App = () => {
             <Marquee />
             
             {renderContent()}
-
-            <footer className="py-32 bg-slate-900 text-slate-400">
-                <div className="max-w-7xl mx-auto px-4 text-center">
-                    <div className="flex flex-col items-center mb-16">
-                        <div className="w-80 h-80 bg-white rounded-sm flex items-center justify-center mb-8 shadow-2xl overflow-hidden p-0 border-4 border-slate-800">
-                            <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.3]" alt="" />
-                        </div>
-                        <h3 className="serif text-white text-5xl">Palm & Needle</h3>
-                        <p className="text-[12px] tracking-[0.6em] uppercase text-[#c5a059] font-bold mt-4">Medical Clinic</p>
-                    </div>
-                    <div className="max-w-3xl mx-auto space-y-6">
-                        <p className="text-[10px] opacity-40 leading-loose uppercase tracking-[0.4em]">
-                            © {new Date().getFullYear()} Palm & Needle Medical Clinic • Redwood City, CA
-                        </p>
-                    </div>
-                </div>
-            </footer>
         </div>
     );
 };
