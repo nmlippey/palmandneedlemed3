@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from './Footer';
 
 const OmmPage = () => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
@@ -18,9 +17,20 @@ const OmmPage = () => {
                 <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
                     <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs mb-6 block">Hands-On Healing</span>
                     <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif mb-8">Osteopathic Manipulative Medicine</h1>
-                    <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto serif italic">
-                        "The body is a unit; the person is a unit of body, mind, and spirit."
-                    </p>
+                    <div className="text-slate-600 leading-relaxed max-w-3xl mx-auto text-left space-y-8">
+                        <p className="text-lg">
+                            Osteopathic manipulative medicine (OMM) was developed in 1874 by Dr. Andrew Taylor Still, who founded the American School of Osteopathy to teach a hands-on approach emphasizing the body’s structure–function relationship and self-healing capacity. Over time, it became a core component of osteopathic medical training in the United States, integrated with modern medical science and practiced by Doctors of Osteopathic Medicine (DOs) as part of comprehensive patient care.
+                        </p>
+                        <div className="space-y-6">
+                            <p className="font-bold text-[#5b6d64] serif text-xl">The Four Tenets of OMM express the underlying philosophy of osteopathic medicine:</p>
+                            <div className="space-y-4 pl-6 border-l-2 border-[#c5a059]">
+                                <p>1. The body is a unit; the person is a unit of body, mind and spirit.</p>
+                                <p>2. The body is capable of self-regulation, self-healing and health maintenance.</p>
+                                <p>3. Structure and function are reciprocally interrelated.</p>
+                                <p>4. Rational treatment is based upon an understanding of the basic principles of body unity, self-regulation and the interrelationship of structure and function.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -98,7 +108,122 @@ const OmmPage = () => {
                     </div>
                 </div>
             </section>
-            <Footer />
+
+            {/* Common Conditions Treated */}
+            <section className="py-24 bg-slate-50 border-t border-slate-100">
+                <div className="max-w-5xl mx-auto px-4">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold text-[#5b6d64] serif">Common Conditions Treated</h2>
+                        <div className="w-24 h-1 bg-[#c5a059] mx-auto mt-6"></div>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-x-16 gap-y-6 max-w-4xl mx-auto">
+                        {[
+                            "Acute pain",
+                            "Back/neck pain",
+                            "Joint pain",
+                            "Musculoskeletal pain",
+                            "Headaches/migraines",
+                            "Chronic conditions such as GI issues (reflux, constipation, IBS), fibromyalgia, breathing difficulties due to rib dysfunction or diaphragm restriction",
+                            "Pregnancy-related or postpartum pain",
+                            "Infants: torticollis, plagiocephaly, feeding difficulties, reflux"
+                        ].map((item, i) => (
+                            <div key={i} className="flex items-start space-x-3">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#c5a059] mt-2 shrink-0"></span>
+                                <span className="text-slate-700 leading-relaxed">{item}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* OMM Pricing */}
+            <section className="py-24 bg-white border-t border-slate-100">
+                <div className="max-w-5xl mx-auto px-4">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold text-[#5b6d64] serif">OMM Pricing</h2>
+                        <p className="text-[#c5a059] font-bold mt-4 uppercase tracking-widest text-sm">DPC members: free as OMM is included</p>
+                    </div>
+                    
+                    <div className="max-w-4xl mx-auto">
+                        <h3 className="text-2xl font-bold text-[#5b6d64] serif mb-8 text-center">Non-members:</h3>
+                        <div className="grid md:grid-cols-2 gap-8">
+                            {[
+                                { title: "New Patient Visit: Adult 18+", time: "60 minutes", price: "$350" },
+                                { title: "New Patient Visit: Ages 0-17", time: "60 minutes", price: "$200" },
+                                { title: "Follow-up Patient Visit: Adult 18+", time: "40 minutes", price: "$250" },
+                                { title: "Follow-up Patient Visit: Ages 0-17", time: "40 minutes", price: "$100" }
+                            ].map((item, i) => (
+                                <div key={i} className="bg-slate-50 p-8 rounded border border-slate-100 shadow-sm hover:shadow-md transition-shadow text-center space-y-2">
+                                    <h4 className="font-bold text-[#5b6d64] serif text-lg">{item.title}</h4>
+                                    <p className="text-slate-500 text-sm">{item.time}</p>
+                                    <p className="text-2xl font-bold text-[#c5a059] pt-2">{item.price}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="text-center pt-16">
+                        <a 
+                            href="https://calendly.com/nlippey-palmandneedlemed" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-block bg-[#5b6d64] text-white px-10 py-4 rounded-sm font-bold hover:bg-[#c5a059] transition-colors uppercase tracking-widest text-sm"
+                        >
+                            schedule here
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            {/* OMM FAQ Section */}
+            <section className="py-24 bg-slate-50 border-t border-slate-100">
+                <div className="max-w-4xl mx-auto px-4">
+                    <div className="grid md:grid-cols-2 gap-12">
+                        <div className="space-y-4">
+                            <h3 className="text-xl font-bold text-[#5b6d64] serif">How often will I receive OMM?</h3>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                New/acute conditions can sometimes be treated in one visit. In the beginning, I typically see patients more frequently- about every 3-4 weeks (sooner if needed). For chronic conditions, I will usually start by treating you 2-3 times to see if OMM is beneficial. Chronic/more complicated conditions often need visits every 4-6 weeks for maintenance if the condition does not resolve and OMM is helping. If you graduate, you can always come back and see me on an as-needed basis without being considered a new patient. You can also do physical therapy while doing OMM.
+                            </p>
+                        </div>
+                        <div className="space-y-4">
+                            <h3 className="text-xl font-bold text-[#5b6d64] serif">Do you accept insurance for visits?</h3>
+                            <div className="space-y-4">
+                                <p className="text-slate-600 text-sm leading-relaxed">
+                                    You will pay for the visit fee up front, and I can give you a receipt (superbill). Many patients send this to their insurance company and sometimes receive reimbursement through their out-of-network coverage.
+                                </p>
+                                <div className="bg-white p-4 rounded border border-slate-200">
+                                    <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2">Typical Codes:</p>
+                                    <p className="text-sm text-slate-600 font-mono">99213, 99214, 99204</p>
+                                    <p className="text-sm text-slate-600 font-mono">98926, 98927, 98928</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Footer Section */}
+            <section className="py-24 bg-[#5b6d64] text-white relative overflow-hidden">
+                <div className="max-w-7xl mx-auto px-4 relative z-10">
+                    <div className="grid md:grid-cols-3 gap-12 items-center text-center md:text-left">
+                        <div className="space-y-4">
+                            <div className="flex items-center justify-center md:justify-start space-x-4">
+                                <img src="https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_3.jpg" className="w-24 h-24 rounded shadow-lg border-2 border-white/20" alt="Palm & Needle Logo" />
+                                <h3 className="text-xl font-bold serif">Palm & Needle<br/>Medical Clinic</h3>
+                            </div>
+                        </div>
+                        <div className="space-y-2">
+                            <p className="text-xs uppercase tracking-widest opacity-60 font-bold">Location</p>
+                            <p className="text-lg">400 Seaport Court, Suite 203</p>
+                            <p className="text-sm opacity-80">Redwood City, CA 94063</p>
+                        </div>
+                        <div className="space-y-2">
+                            <p className="text-xs uppercase tracking-widest opacity-60 font-bold">Contact</p>
+                            <p className="text-lg font-bold">care@palmandneedlemed.com</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };
