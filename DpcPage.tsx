@@ -240,6 +240,53 @@ const DpcPage = () => {
                                 </div>
                             </div>
 
+                            {/* Membership Pricing Section */}
+                            <div className="space-y-12 pt-16 border-t border-slate-100">
+                                <div className="text-center max-w-3xl mx-auto space-y-6">
+                                    <h2 className="text-4xl font-bold text-[#5b6d64] serif">Membership Pricing</h2>
+                                    <div className="bg-slate-50 p-8 rounded-lg space-y-4">
+                                        <p className="text-xl font-bold text-[#5b6d64] serif">Monthly Membership Pricing:</p>
+                                        <ul className="space-y-2 text-slate-700">
+                                            <li>Adults (18+): $400/month</li>
+                                            <li>Families of Two: $500/month</li>
+                                            <li>Children: $25/month with parent membership</li>
+                                        </ul>
+                                        <div className="pt-4 text-sm text-slate-500 italic space-y-1">
+                                            <p>*Please reach out with questions or concerns regarding pricing.</p>
+                                            <p>First Enrollment fee waived. Any cancellations with reenrollment will be $150 to reenroll.</p>
+                                        </div>
+                                    </div>
+                                    <div className="pt-4">
+                                        <a 
+                                            href="https://calendly.com/nlippey-palmandneedlemed" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="inline-block bg-[#c5a059] text-white px-8 py-4 rounded-sm font-bold hover:bg-[#5b6d64] transition-colors uppercase tracking-widest text-sm"
+                                        >
+                                            schedule meet & greet
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Previous Patients Section */}
+                            <div className="space-y-8 pt-16 border-t border-slate-100 text-center max-w-3xl mx-auto">
+                                <h2 className="text-4xl font-bold text-[#5b6d64] serif">Previous Patients</h2>
+                                <p className="text-slate-600 leading-relaxed">
+                                    If you are a previous patient of mine and would prefer to skip the Meet & Greet, you can schedule your appointment directly using the link below. I look forward to continuing your care at Palm & Needle Medical Clinic!
+                                </p>
+                                <div className="pt-4">
+                                    <a 
+                                        href="https://calendly.com/nlippey-palmandneedlemed" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="inline-block bg-[#5b6d64] text-white px-8 py-4 rounded-sm font-bold hover:bg-[#c5a059] transition-colors uppercase tracking-widest text-sm"
+                                    >
+                                        schedule appointment
+                                    </a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </section>
