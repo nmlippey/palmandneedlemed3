@@ -168,6 +168,36 @@ const DpcPage = () => {
                                 </div>
                             </div>
 
+                            {/* Section: How Does DPC Save You Money? */}
+                            <div className="space-y-16 py-16 border-t border-slate-100">
+                                <div className="text-center max-w-3xl mx-auto space-y-4">
+                                    <h2 className="text-4xl font-bold text-[#5b6d64] serif">How Does DPC Save You Money?</h2>
+                                    <p className="text-slate-500">Investing in your health today can prevent significant costs tomorrow.</p>
+                                </div>
+
+                                <div className="grid md:grid-cols-3 gap-8">
+                                    <div className="bg-white p-8 rounded-lg border border-slate-100 shadow-sm hover:shadow-md transition-shadow space-y-4">
+                                        <h3 className="text-xl font-bold text-[#5b6d64] serif">Emergency Room</h3>
+                                        <p className="text-slate-600 text-sm leading-relaxed">
+                                            A single ER visit can cost $1000-$3000 or more. Sometimes, this is necessary, but oftentimes, patients are unsure if their symptoms warrant immediate medical attention. Here, you have direct access to your doctor even after hours to assess possible medical emergencies and potentially save you a couple thousand dollars.
+                                        </p>
+                                    </div>
+                                    <div className="bg-white p-8 rounded-lg border border-slate-100 shadow-sm hover:shadow-md transition-shadow space-y-4">
+                                        <h3 className="text-xl font-bold text-[#5b6d64] serif">Urgent Care</h3>
+                                        <p className="text-slate-600 text-sm leading-relaxed">
+                                            Many patients go to urgent care because the wait times to see their primary care doctor are so long or they do not have insurance. A single urgent care visit can cost $100-$300 out of pocket (even before additional testing). If follow-up treatment is needed, that could cost another couple hundred dollars. Here we offer same-day or next-day appointments, you don't need insurance, and your visits are included.
+                                        </p>
+                                    </div>
+                                    <div className="bg-white p-8 rounded-lg border border-slate-100 shadow-sm hover:shadow-md transition-shadow space-y-4">
+                                        <h3 className="text-xl font-bold text-[#5b6d64] serif">Prevention</h3>
+                                        <p className="text-slate-600 text-sm leading-relaxed">
+                                            Early intervention can avert bigger health issues later. If you're a member, you've already removed the barrier to access timely preventative care, and you can focus on a healthier you. Treating smaller issues early on is usually much easier and cheaper than what those smaller issues can grow into later.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             {/* Section 5: Closing with DPC_2 (Small) */}
                             <div className="grid lg:grid-cols-12 gap-16 items-center border-t border-slate-100 pt-32">
                                 <div className="lg:col-span-8 space-y-8">
