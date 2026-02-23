@@ -198,23 +198,44 @@ const DpcPage = () => {
                             </div>
 
 
-                            {/* Section 5: Closing with DPC_2 (Small) */}
-                            <div className="grid lg:grid-cols-12 gap-16 items-center border-t border-slate-100 pt-32">
-                                <div className="lg:col-span-8 space-y-8">
-                                    <h2 className="text-4xl font-bold text-[#5b6d64] serif">Do I Still Need Insurance?</h2>
-                                    <p className="text-slate-600 text-lg leading-relaxed">
-                                        Direct Primary Care is not insurance, but it works well alongside it. I encourage patients to carry a high-deductible or catastrophic insurance plan for added peace of mind in the event of emergencies, hospitalizations, or specialty care.
-                                    </p>
-                                    <div className="bg-[#5b6d64] text-white p-8 rounded shadow-lg max-w-2xl">
-                                        <p className="leading-relaxed opacity-95 text-sm">
-                                            This approach allows you to enjoy the benefits of direct, relationship-based primary care while still having insurance coverage for life’s unexpected events. When appropriate, I can also provide a superbill for services you receive.
+                            {/* FAQ Section */}
+                            <div className="space-y-12 pt-16 border-t border-slate-100">
+                                <div className="grid md:grid-cols-2 gap-12">
+                                    <div className="space-y-4">
+                                        <h3 className="text-xl font-bold text-[#5b6d64] serif">Do I Still Need Insurance?</h3>
+                                        <p className="text-slate-600 text-sm leading-relaxed">
+                                            Direct Primary Care is not insurance, but it works well alongside it. I encourage patients to have health insurance, such as a PPO, high-deductible health plan, or catastrophic insurance plan for added peace of mind in the event of emergencies, hospitalizations, or specialty care. We recommend against HMO plans with our membership, which can make referrals challenging. This approach allows you to enjoy the benefits of direct, relationship-based primary care while still having insurance coverage for life’s unexpected events.
                                         </p>
                                     </div>
-                                </div>
-                                <div className="lg:col-span-4 flex justify-center lg:justify-end">
-                                    <div className="relative group max-w-[300px]">
-                                        <div className="absolute -inset-2 bg-[#c5a059]/10 rounded-lg rotate-1 group-hover:rotate-0 transition-transform blur-lg opacity-40"></div>
-                                        <img src={DPC2_URL} className="relative z-10 w-full h-auto rounded shadow-xl border-4 border-white" alt="Attentive Medical Care" />
+                                    <div className="space-y-4">
+                                        <h3 className="text-xl font-bold text-[#5b6d64] serif">How is DPC different from concierge medicine?</h3>
+                                        <p className="text-slate-600 text-sm leading-relaxed">
+                                            DPC is generally more affordable and insurance-free. DPC charges a simple monthly fee without billing insurance, while concierge medicine typically has higher fees to be a member, and still bills insurance.
+                                        </p>
+                                    </div>
+                                    <div className="space-y-4">
+                                        <h3 className="text-xl font-bold text-[#5b6d64] serif">How is the fee structure set?</h3>
+                                        <p className="text-slate-600 text-sm leading-relaxed">
+                                            As a Direct Primary Care clinic, Palm & Needle Medical Clinic has a straightforward monthly billing structure after an additional enrollment fee to start being seen. You can cancel at anytime with advanced notice. You can also pay quarterly if this is preferred.
+                                        </p>
+                                    </div>
+                                    <div className="space-y-4">
+                                        <h3 className="text-xl font-bold text-[#5b6d64] serif">Do you take Flexible Spending Account (FSA)/Health Savings Account (HSA) cards?</h3>
+                                        <p className="text-slate-600 text-sm leading-relaxed">
+                                            Yes. You can use your HSA or FSA card for your membership and visit fees. We can then provide receipts if your plan requires any documentation.
+                                        </p>
+                                    </div>
+                                    <div className="space-y-4">
+                                        <h3 className="text-xl font-bold text-[#5b6d64] serif">How do labs, referrals, and imaging work?</h3>
+                                        <p className="text-slate-600 text-sm leading-relaxed">
+                                            I can place referrals, lab orders, and imaging orders that can be billed through your insurance, permitting you do not have an HMO insurance plan.
+                                        </p>
+                                    </div>
+                                    <div className="space-y-4">
+                                        <h3 className="text-xl font-bold text-[#5b6d64] serif">Are OMM and acupuncture included in the DPC membership?</h3>
+                                        <p className="text-slate-600 text-sm leading-relaxed">
+                                            Yes. They can be included as part of your Direct Primary Care (DPC) membership when it is medically appropriate for your care.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
