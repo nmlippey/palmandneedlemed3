@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from './Footer';
 
 const DpcPage = () => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
@@ -20,7 +19,7 @@ const DpcPage = () => {
                         <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs mb-6 block">Care Redefined</span>
                         <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif mb-8">Direct Primary Care</h1>
                         <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto serif italic">
-                            "Healthcare is about time, access, and connection. Direct Primary Care restores all three."
+                            Healthcare is about time, access, and connection. Direct Primary Care restores all three.
                         </p>
                     </div>
                 </section>
@@ -30,6 +29,20 @@ const DpcPage = () => {
                     <div className="max-w-6xl mx-auto px-4 relative z-10">
                         <div className="space-y-32">
                             
+                            {/* Definition Box */}
+                            <div className="bg-slate-50/95 p-16 rounded-lg border border-slate-100 backdrop-blur-md shadow-sm text-center relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none transform translate-x-1/2 -translate-y-1/2">
+                                    <img src={LOGO_URL} className="w-full h-full object-contain" alt="" />
+                                </div>
+                                <h2 className="text-3xl font-bold text-[#5b6d64] serif mb-8">What is Direct Primary Care (DPC)?</h2>
+                                <div className="space-y-6 max-w-3xl mx-auto">
+                                    <p className="text-xl font-medium text-[#8da399]">Direct Primary Care restores time, access, and connection to healthcare.</p>
+                                    <p className="text-slate-600 text-lg">Direct Primary Care is a healthcare model built around a direct relationship between you and your physician—without insurance in the middle.</p>
+                                    <p className="text-slate-600">Instead of billing your insurance for each visit, Direct Primary Care works through a simple monthly membership fee. This covers most primary care services and allows me to focus on what matters most: your health, your time, and our relationship.</p>
+                                    <p className="text-xl serif italic text-[#5b6d64] pt-4">"Direct Primary Care allows me to truly know my patients and care for them over time."</p>
+                                </div>
+                            </div>
+
                             {/* Section 1: Intro with DPC_1 (Reduced Size) */}
                             <div className="grid lg:grid-cols-12 gap-16 items-center">
                                 <div className="lg:col-span-8 space-y-8">
@@ -50,20 +63,6 @@ const DpcPage = () => {
                                 </div>
                             </div>
 
-                            {/* Definition Box */}
-                            <div className="bg-slate-50/95 p-16 rounded-lg border border-slate-100 backdrop-blur-md shadow-sm text-center relative overflow-hidden">
-                                <div className="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none transform translate-x-1/2 -translate-y-1/2">
-                                    <img src={LOGO_URL} className="w-full h-full object-contain" alt="" />
-                                </div>
-                                <h2 className="text-3xl font-bold text-[#5b6d64] serif mb-8">What is Direct Primary Care (DPC)?</h2>
-                                <div className="space-y-6 max-w-3xl mx-auto">
-                                    <p className="text-xl font-medium text-[#8da399]">Direct Primary Care restores time, access, and connection to healthcare.</p>
-                                    <p className="text-slate-600 text-lg">Direct Primary Care is a healthcare model built around a direct relationship between you and your physician—without insurance in the middle.</p>
-                                    <p className="text-slate-600">Instead of billing your insurance for each visit, Direct Primary Care works through a simple monthly membership fee. This covers most primary care services and allows me to focus on what matters most: your health, your time, and our relationship.</p>
-                                    <p className="text-xl serif italic text-[#5b6d64] pt-4">"Direct Primary Care allows me to truly know my patients and care for them over time."</p>
-                                </div>
-                            </div>
-
                             {/* Section 2: Features Grid */}
                             <div className="space-y-12">
                                 <div className="text-center">
@@ -74,7 +73,7 @@ const DpcPage = () => {
                                     {[
                                         { title: 'No Insurance Billing', text: 'I do not bill insurance for routine care. This means fewer administrative barriers, more transparency, and more time spent with you—not paperwork.' },
                                         { title: 'Longer, Unhurried Visits', text: 'Appointments are not rushed. We take the time needed to fully address your concerns, ask questions, and create thoughtful care plans.' },
-                                        { title: 'Direct Access to Your Doctor', text: 'You have easier access to me for questions, follow-ups, and guidance—often without needing an office visit.' },
+                                        { title: 'Direct Access to Your Doctor', text: 'You can schedule same day or next day appointments, as well as telehealth visits. You have easier access to me for questions, follow-ups, and guidance—often without needing an office visit.' },
                                         { title: 'Clear, Upfront Pricing', text: 'Your membership fee is predictable and transparent. There are no surprise bills or copays.' },
                                         { title: 'Care Focused on You, Not Volume', text: 'Because I care for a smaller number of patients, I can provide more personalized, attentive care.' }
                                     ].map((item, i) => (
@@ -98,11 +97,18 @@ const DpcPage = () => {
                                     <h2 className="text-4xl font-bold text-[#5b6d64] serif">What DPC Covers</h2>
                                     <ul className="space-y-6">
                                         {[
-                                            'Preventive care and wellness visits',
-                                            'Acute care (same-day or next-day visits)',
+                                            'Same-day or next-day appointments (in-person and virtual visits) when needed',
+                                            'Extended appointment times',
+                                            'Annual physical exams/wellness visits',
+                                            'Well woman exams with pap smear',
+                                            'Preventative care, exercise, and nutritional counseling',
                                             'Chronic disease management',
+                                            'Acute care (injuries, rashes, infections, UTIs, etc.)',
+                                            'Basic procedures (joint injections, earwax removal, skin biopsies, OMM, acupuncture, etc.)',
                                             'Coordination of care with specialists',
-                                            'Osteopathic manipulative treatment'
+                                            'Transparent costs for additional services',
+                                            'In office lab drawing',
+                                            'Select medications offered at cost'
                                         ].map((item, i) => (
                                             <li key={i} className="flex items-start space-x-4 text-slate-700">
                                                 <span className="w-2 h-2 rounded-full bg-[#c5a059] mt-2.5 shrink-0"></span>
@@ -186,7 +192,6 @@ const DpcPage = () => {
                         </div>
                     </div>
                 </section>
-                <Footer />
             </div>
         </div>
     );
