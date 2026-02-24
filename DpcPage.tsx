@@ -85,7 +85,7 @@ const DpcPage = () => {
                             {/* Section 3: Coverage with Toys_1 (Small) */}
                             <div className="grid lg:grid-cols-12 gap-16 items-center">
                                 <div className="lg:col-span-4 flex justify-center lg:justify-start order-2 lg:order-1">
-                                    <div className="relative group max-w-[280px]">
+                                    <div className="relative group max-w-[400px]">
                                         <div className="absolute -inset-2 bg-[#8da399]/10 rounded rotate-[-4deg] group-hover:rotate-0 transition-transform blur-lg opacity-40"></div>
                                         <img src={TOYS1_URL} className="relative z-10 w-full rounded shadow-lg border-2 border-white" alt="Family Friendly Atmosphere" />
                                     </div>
@@ -151,7 +151,7 @@ const DpcPage = () => {
                                         </table>
                                     </div>
                                     <div className="flex justify-center">
-                                        <div className="relative rounded overflow-hidden shadow-lg border-2 border-white max-w-[200px] rotate-2">
+                                        <div className="relative rounded overflow-hidden shadow-lg border-2 border-white max-w-[300px] rotate-2">
                                             <img src={CARD2_URL} className="w-full h-auto" alt="Membership Card" />
                                         </div>
                                     </div>
@@ -223,15 +223,15 @@ const DpcPage = () => {
                                         </p>
                                     </div>
                                     <div className="space-y-4">
-                                        <h3 className="text-xl font-bold text-[#5b6d64] serif">Do you take Flexible Spending Account (FSA)/Health Savings Account (HSA) cards?</h3>
-                                        <p className="text-slate-600 text-sm leading-relaxed">
-                                            Yes. You can use your HSA or FSA card for your membership and visit fees. We can then provide receipts if your plan requires any documentation.
-                                        </p>
-                                    </div>
-                                    <div className="space-y-4">
                                         <h3 className="text-xl font-bold text-[#5b6d64] serif">How do labs, referrals, and imaging work?</h3>
                                         <p className="text-slate-600 text-sm leading-relaxed">
                                             Referrals, labs, and imaging orders can be placed by me that can then be billed through your insurance (provided you are not enrolled in an HMO plan).
+                                        </p>
+                                    </div>
+                                    <div className="space-y-4">
+                                        <h3 className="text-xl font-bold text-[#5b6d64] serif">Do you take Flexible Spending Account (FSA)/Health Savings Account (HSA) cards?</h3>
+                                        <p className="text-slate-600 text-sm leading-relaxed">
+                                            Yes. You can use your HSA or FSA card for your membership and visit fees. We can then provide receipts if your plan requires any documentation.
                                         </p>
                                     </div>
                                     <div className="space-y-4">
@@ -250,8 +250,8 @@ const DpcPage = () => {
                                     <div className="bg-slate-50 p-8 rounded-lg space-y-4">
                                         <p className="text-xl font-bold text-[#5b6d64] serif">Monthly Membership Pricing:</p>
                                         <ul className="space-y-2 text-slate-700">
-                                            <li>Adults (18+): $400/month</li>
-                                            <li>Families of Two: $500/month</li>
+                                            <li>Adults (18+): $400/month <span className="text-[#c5a059] font-bold">(pre-enrollment price: $350)</span></li>
+                                            <li>Families of Two: $500/month <span className="text-[#c5a059] font-bold">(pre-enrollment price: $450)</span></li>
                                             <li>Children: $25/month with parent membership</li>
                                         </ul>
                                         <div className="pt-4 text-sm text-slate-500 italic space-y-1">

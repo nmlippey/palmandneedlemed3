@@ -151,16 +151,31 @@ const AboutPage = () => {
 
                 {/* Additional Images Gallery */}
                 <div className="max-w-7xl mx-auto px-4 mt-24">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                        {[ADD4_URL, ADD6_URL, ADD7_URL, ADD5_URL].map((url, i) => (
-                            <div key={i} className="relative group aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <div className="flex flex-wrap md:flex-nowrap overflow-hidden rounded-xl shadow-2xl">
+                        {[
+                            { url: ADD4_URL, pos: 'center' },
+                            { url: ADD6_URL, pos: 'center' },
+                            { url: ADD7_URL, pos: 'center 20%', credit: true },
+                            { url: ADD5_URL, pos: 'center' }
+                        ].map((item, i) => (
+                            <div key={i} className="relative group aspect-square flex-1 min-w-[50%] md:min-w-0 overflow-hidden border-r border-white/10 last:border-0">
                                 <img 
-                                    src={url} 
+                                    src={item.url} 
                                     alt={`Life outside work ${i + 1}`} 
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    style={{ objectPosition: item.pos }}
                                     referrerPolicy="no-referrer"
                                 />
-                                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500"></div>
+                                {item.credit && (
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/40 backdrop-blur-[2px]">
+                                        <div className="text-center text-white p-4">
+                                            <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-1 opacity-60">Photography</p>
+                                            <p className="text-sm font-bold serif">PC: Job Olguin</p>
+                                            <p className="text-xs opacity-80 mt-1">@job_olguin</p>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>
