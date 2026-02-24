@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const ReferralsPage = () => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
-    const PIC3_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Pic_3.jpg";
+    const OMM7_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/OMM_7.jpg";
 
     const [formData, setFormData] = useState({
         patientFirstName: '',
@@ -70,7 +70,7 @@ Urgency: ${formData.urgency}
                             <div className="relative group">
                                 <div className="absolute -inset-4 bg-[#8da399] opacity-10 rounded-lg rotate-2 blur-lg"></div>
                                 <img 
-                                    src={PIC3_URL} 
+                                    src={OMM7_URL} 
                                     alt="Clinician Collaboration" 
                                     className="relative z-10 w-full rounded-lg shadow-2xl border-8 border-white object-cover" 
                                     referrerPolicy="no-referrer"
@@ -94,7 +94,7 @@ Urgency: ${formData.urgency}
                                 <div className="relative group max-w-sm">
                                     <div className="absolute -inset-4 bg-[#8da399] opacity-10 rounded-lg rotate-2 blur-lg"></div>
                                     <img 
-                                        src={PIC3_URL} 
+                                        src={OMM7_URL} 
                                         alt="Clinician Collaboration" 
                                         className="relative z-10 w-full rounded-lg shadow-2xl border-8 border-white object-cover" 
                                         referrerPolicy="no-referrer"

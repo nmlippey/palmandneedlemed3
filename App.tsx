@@ -89,7 +89,7 @@ const App = () => {
             <section id="services" className="py-32 bg-white">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-20 space-y-8">
-                        <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-[12px] border-white bg-white">
+                        <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-[12px] border-white bg-white">
                             <img src={CARD1_URL} className="w-full h-auto" alt="Clinic Services" />
                         </div>
                         <div className="space-y-4">
@@ -151,7 +151,7 @@ const App = () => {
                         <img 
                             src={ADD2_URL} 
                             alt="Dr. Lippey's Practice" 
-                            className="w-full h-auto" 
+                            className="w-full aspect-[21/9] object-cover object-center" 
                             referrerPolicy="no-referrer"
                         />
                         <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
