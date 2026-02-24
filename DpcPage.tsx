@@ -113,11 +113,6 @@ const DpcPage = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <div className="bg-sage-light/50 p-6 rounded border-l-4 border-[#8da399] max-w-2xl">
-                                        <p className="text-sm text-slate-600 leading-relaxed">
-                                            Services outside primary care—such as imaging, labs, or specialty care—are not included but are often available at reduced cash prices.
-                                        </p>
-                                    </div>
                                 </div>
                             </div>
 
@@ -128,8 +123,8 @@ const DpcPage = () => {
                                     <p className="text-slate-500">A side-by-side look at the membership experience.</p>
                                 </div>
                                 
-                                <div className="grid lg:grid-cols-12 gap-12 items-center">
-                                    <div className="lg:col-span-9 overflow-x-auto rounded-lg shadow-sm border border-slate-200">
+                                <div className="space-y-12">
+                                    <div className="overflow-x-auto rounded-lg shadow-sm border border-slate-200">
                                         <table className="w-full border-collapse">
                                             <thead>
                                                 <tr className="bg-slate-900 text-white text-[10px] uppercase tracking-[0.2em]">
@@ -155,7 +150,7 @@ const DpcPage = () => {
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div className="lg:col-span-3 space-y-4 flex flex-col items-center">
+                                    <div className="flex justify-center">
                                         <div className="relative rounded overflow-hidden shadow-lg border-2 border-white max-w-[200px] rotate-2">
                                             <img src={CARD2_URL} className="w-full h-auto" alt="Membership Card" />
                                         </div>
@@ -212,7 +207,7 @@ const DpcPage = () => {
                                     <div className="space-y-4">
                                         <h3 className="text-xl font-bold text-[#5b6d64] serif">Do I Still Need Insurance?</h3>
                                         <p className="text-slate-600 text-sm leading-relaxed">
-                                            Direct Primary Care is not insurance, but it works well alongside it. I encourage patients to have health insurance, such as a PPO, high-deductible health plan, or catastrophic insurance plan for added peace of mind in the event of emergencies, hospitalizations, or specialty care. We recommend against HMO plans with our membership, which can make referrals challenging. This approach allows you to enjoy the benefits of direct, relationship-based primary care while still having insurance coverage for life’s unexpected events.
+                                            Direct Primary Care is not insurance, but it works well alongside it. I encourage patients to have health insurance, such as a PPO, high-deductible health plan, or catastrophic insurance plan for added peace of mind in the event of emergencies, hospitalizations, or specialty care. I do not recommend HMO plans with our membership, which can make referrals more difficult. This approach allows you to enjoy the benefits of direct, relationship-based primary care while still having insurance coverage for life’s unexpected events.
                                         </p>
                                     </div>
                                     <div className="space-y-4">
@@ -224,7 +219,7 @@ const DpcPage = () => {
                                     <div className="space-y-4">
                                         <h3 className="text-xl font-bold text-[#5b6d64] serif">How is the fee structure set?</h3>
                                         <p className="text-slate-600 text-sm leading-relaxed">
-                                            As a Direct Primary Care clinic, Palm & Needle Medical Clinic has a straightforward monthly billing structure after an additional enrollment fee to start being seen. You can cancel at anytime with advanced notice. You can also pay quarterly if this is preferred.
+                                            There is a simple monthly billing structure after the additional enrollment fee to start being seen. You can cancel at any time with advanced notice. You can also pay quarterly if this is preferred.
                                         </p>
                                     </div>
                                     <div className="space-y-4">
@@ -236,13 +231,13 @@ const DpcPage = () => {
                                     <div className="space-y-4">
                                         <h3 className="text-xl font-bold text-[#5b6d64] serif">How do labs, referrals, and imaging work?</h3>
                                         <p className="text-slate-600 text-sm leading-relaxed">
-                                            I can place referrals, lab orders, and imaging orders that can be billed through your insurance, permitting you do not have an HMO insurance plan.
+                                            Referrals, labs, and imaging orders can be placed by me that can then be billed through your insurance (provided you are not enrolled in an HMO plan).
                                         </p>
                                     </div>
                                     <div className="space-y-4">
                                         <h3 className="text-xl font-bold text-[#5b6d64] serif">Are OMM and acupuncture included in the DPC membership?</h3>
                                         <p className="text-slate-600 text-sm leading-relaxed">
-                                            Yes. They can be included as part of your Direct Primary Care (DPC) membership when it is medically appropriate for your care.
+                                            Yes. They can be included as part of your membership when it is medically appropriate for your care.
                                         </p>
                                     </div>
                                 </div>
