@@ -6,6 +6,7 @@ const DpcPage = () => {
     const DPC1_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/DPC_1.jpg";
     const DPC2_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/DPC_2.jpg";
     const TOYS1_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Toys_1.jpg";
+    const ADD1_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Additional_1.jpeg";
 
     return (
         <div className="animate-fade-in relative min-h-screen bg-white">
@@ -191,6 +192,19 @@ const DpcPage = () => {
                                             Early intervention can avert bigger health issues later. If you're a member, you've already removed the barrier to access timely preventative care, and you can focus on a healthier you. Treating smaller issues early on is usually much easier and cheaper than what those smaller issues can grow into later.
                                         </p>
                                     </div>
+                                </div>
+                            </div>
+
+                            {/* Featured Image Break */}
+                            <div className="py-12 flex justify-center">
+                                <div className="relative group max-w-4xl w-full">
+                                    <div className="absolute -inset-4 bg-[#8da399] opacity-10 rounded-lg rotate-1 blur-lg"></div>
+                                    <img 
+                                        src={ADD1_URL} 
+                                        alt="Clinic Environment" 
+                                        className="relative z-10 w-full rounded-lg shadow-2xl border-8 border-white object-cover aspect-[21/9]" 
+                                        referrerPolicy="no-referrer"
+                                    />
                                 </div>
                             </div>
 
