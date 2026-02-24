@@ -151,7 +151,7 @@ const App = () => {
                         <img 
                             src={ADD2_URL} 
                             alt="Dr. Lippey's Practice" 
-                            className="w-full h-auto object-cover max-h-[600px]" 
+                            className="w-full h-auto" 
                             referrerPolicy="no-referrer"
                         />
                         <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
