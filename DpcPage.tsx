@@ -41,9 +41,9 @@ const DpcPage = () => {
                                 </div>
                             </div>
 
-                            {/* Section 1: Intro with DPC_1 (Reduced Size) */}
+                            {/* Section 1: Intro with DPC_1 */}
                             <div className="grid lg:grid-cols-12 gap-16 items-center">
-                                <div className="lg:col-span-8 space-y-8">
+                                <div className="lg:col-span-7 space-y-8">
                                     <div className="prose prose-lg max-w-none text-slate-700 leading-relaxed">
                                         <p className="text-2xl font-light text-[#5b6d64] serif">
                                             Unhurried, relationship-based healthcare designed around your needs.
@@ -53,8 +53,8 @@ const DpcPage = () => {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="lg:col-span-4 flex justify-center lg:justify-end">
-                                    <div className="relative group max-w-[320px]">
+                                <div className="lg:col-span-5 flex justify-center lg:justify-end">
+                                    <div className="relative group max-w-[400px]">
                                         <div className="absolute -inset-3 bg-sage-light rounded-lg rotate-3 group-hover:rotate-0 transition-transform blur-lg opacity-40"></div>
                                         <img src={DPC1_URL} className="relative z-10 w-full h-auto object-cover rounded shadow-xl border-4 border-white" alt="Clinic Consultation Room" />
                                     </div>
@@ -64,10 +64,9 @@ const DpcPage = () => {
                             {/* Section 2: Features Grid */}
                             <div className="space-y-12">
                                 <div className="text-center">
-                                    <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-[10px] mb-2 block">The Difference</span>
                                     <h2 className="text-3xl font-bold text-[#5b6d64] serif">How DPC is Different</h2>
                                 </div>
-                                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
                                     {[
                                         { title: 'No Insurance Billing', text: 'I do not bill insurance for routine care. This means fewer administrative barriers, more transparency, and more time spent with you—not paperwork.' },
                                         { title: 'Longer, Unhurried Visits', text: 'Appointments are not rushed. We take the time needed to fully address your concerns, ask questions, and create thoughtful care plans.' },
@@ -116,7 +115,6 @@ const DpcPage = () => {
                                     </ul>
                                     <div className="bg-sage-light/50 p-6 rounded border-l-4 border-[#8da399] max-w-2xl">
                                         <p className="text-sm text-slate-600 leading-relaxed">
-                                            <span className="font-bold uppercase tracking-wider text-[10px] block mb-1">Clinic Policy</span>
                                             Services outside primary care—such as imaging, labs, or specialty care—are not included but are often available at reduced cash prices.
                                         </p>
                                     </div>
@@ -126,7 +124,7 @@ const DpcPage = () => {
                             {/* Section 4: Comparison Table with Card_2 (Small) */}
                             <div className="space-y-16">
                                 <div className="text-center max-w-3xl mx-auto space-y-4">
-                                    <h2 className="text-4xl font-bold text-[#5b6d64] serif">Direct Primary Care vs. Traditional Care</h2>
+                                    <h2 className="text-4xl font-bold text-[#5b6d64] serif">Direct Primary Care vs. Traditional Insurance-Based Care</h2>
                                     <p className="text-slate-500">A side-by-side look at the membership experience.</p>
                                 </div>
                                 
@@ -161,7 +159,6 @@ const DpcPage = () => {
                                         <div className="relative rounded overflow-hidden shadow-lg border-2 border-white max-w-[200px] rotate-2">
                                             <img src={CARD2_URL} className="w-full h-auto" alt="Membership Card" />
                                         </div>
-                                        <p className="text-[10px] uppercase tracking-widest text-[#c5a059] font-bold text-center">Membership Model</p>
                                     </div>
                                 </div>
                             </div>
