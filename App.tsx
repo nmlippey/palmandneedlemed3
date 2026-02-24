@@ -10,7 +10,7 @@ import ReferralsPage from './ReferralsPage';
 export type ViewType = 'home' | 'about' | 'dpc' | 'omm' | 'acupuncture' | 'referrals';
 
 const Marquee = () => {
-    const text = "Pre-Enrollment Now Open!";
+    const text = "Opening April 9th, 2026. Pre-enrollment now open!";
     // Restored to 10 items for a denser, more continuous marquee effect
     const repeatedItems = Array(10).fill(text);
     

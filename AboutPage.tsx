@@ -114,7 +114,7 @@ const AboutPage = () => {
                                 I completed my undergraduate education at Brown University in Neuroscience, earned my Doctor of Osteopathic Medicine degree from Marian University College of Osteopathic Medicine, and completed my Family Medicine residency at St. Joseph’s Medical Center in Stockton, CA.
                             </p>
                             <p>
-                                I have always been drawn to family medicine because of its emphasis on whole-person care, continuity, and cultural awareness. I believe health is influenced not only by physical symptoms, but also by lifestyle, environment, and personal values. Incorporating osteopathic manipulative medicine (OMM) and acupuncture into my practice allows me to offer integrative, evidence-informed options for pain, stress-related conditions, and chronic illness.
+                                I have always been drawn to family medicine because of its emphasis on whole-person care, continuity, and cultural awareness. I believe health is influenced not only by physical symptoms, but also by lifestyle, environment, and personal values. Incorporating osteopathic manipulative medicine (OMM) and acupuncture into my practice allows me to offer integrative, patient-centered options for pain, stress-related conditions, and chronic illness.
                             </p>
                             <p>
                                 I chose to practice Direct Primary Care (DPC) because it allows me to practice medicine in alignment with my values. By removing the constraints of insurance-based care, the DPC model allows for longer visits, improved access, and a stronger patient–physician relationship. This enables me to focus on prevention, education, and individualized care rather than treating symptoms in isolation.
@@ -152,7 +152,7 @@ const AboutPage = () => {
                 {/* Additional Images Gallery */}
                 <div className="max-w-7xl mx-auto px-4 mt-24">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                        {[ADD4_URL, ADD5_URL, ADD6_URL, ADD7_URL].map((url, i) => (
+                        {[ADD4_URL, ADD6_URL, ADD7_URL, ADD5_URL].map((url, i) => (
                             <div key={i} className="relative group aspect-square overflow-hidden rounded-lg shadow-lg">
                                 <img 
                                     src={url} 
