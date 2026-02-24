@@ -15,7 +15,7 @@ const AcupuncturePage = () => {
                     <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs mb-6 block">Integrative Care</span>
                     <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif mb-8">Acupuncture</h1>
                     <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto serif italic">
-                        "Finding balance through traditional Chinese medicine and modern clinical insight."
+                        Finding balance through traditional Chinese medicine and modern clinical insight.
                     </p>
                 </div>
             </section>
@@ -63,7 +63,7 @@ const AcupuncturePage = () => {
                         </div>
 
                         <div className="bg-slate-50 p-12 rounded-lg border border-slate-100 shadow-sm mt-16 italic text-slate-600">
-                            "While I continue my training, I remain focused on providing comprehensive primary care and OMM, ensuring you receive personalized care tailored to your immediate needs."
+                            While I continue my training, I remain focused on providing comprehensive primary care and OMM, ensuring you receive personalized care tailored to your immediate needs.
                         </div>
                     </div>
                 </div>

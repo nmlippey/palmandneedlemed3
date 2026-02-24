@@ -77,9 +77,6 @@ const OmmPage = () => {
                         <div className="lg:col-span-5 space-y-12">
                             <div className="bg-slate-50 p-12 rounded-lg border border-slate-100 space-y-8 relative overflow-hidden">
                                 <div className="w-16 h-px bg-[#c5a059]"></div>
-                                <p className="text-slate-800 leading-relaxed text-lg">
-                                    OMM is a gentle, hands-on approach that helps the body heal itself. Using specific techniques, I assess and treat areas of tension, misalignment, or restricted movement to relieve pain, improve mobility, enhance circulation, and restore balance. 
-                                </p>
                                 
                                 {/* Scattered Image 3: OMM_11 (Small, inside box flow) */}
                                 <div className="flex justify-center">
@@ -141,7 +138,7 @@ const OmmPage = () => {
                 <div className="max-w-5xl mx-auto px-4">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-[#5b6d64] serif">OMM Pricing</h2>
-                        <p className="text-[#c5a059] font-bold mt-4 uppercase tracking-widest text-sm">DPC members: free as OMM is included</p>
+                        <h3 className="text-2xl font-bold text-[#5b6d64] serif mt-8">DPC members: free as OMM is included</h3>
                     </div>
                     
                     <div className="max-w-4xl mx-auto">

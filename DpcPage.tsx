@@ -18,9 +18,6 @@ const DpcPage = () => {
                     <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
                         <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs mb-6 block">Care Redefined</span>
                         <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif mb-8">Direct Primary Care</h1>
-                        <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto serif italic">
-                            Healthcare is about time, access, and connection. Direct Primary Care restores all three.
-                        </p>
                     </div>
                 </section>
 
