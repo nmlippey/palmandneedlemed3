@@ -57,34 +57,52 @@ Urgency: ${formData.urgency}
                 <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
                     <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs mb-6 block">Coordinated Care</span>
                     <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif mb-8">Referrals</h1>
-                    <p className="text-2xl text-[#c5a059] serif italic mb-12">For other clinicians</p>
-                    <div className="flex justify-center">
-                        <div className="relative group max-w-md">
-                            <div className="absolute -inset-4 bg-[#8da399] opacity-10 rounded-lg rotate-2 blur-lg"></div>
-                            <img 
-                                src={PIC3_URL} 
-                                alt="Clinician Collaboration" 
-                                className="relative z-10 w-full rounded-lg shadow-2xl border-8 border-white object-cover" 
-                                referrerPolicy="no-referrer"
-                            />
-                        </div>
-                    </div>
+                    <p className="text-xl text-[#5b6d64] leading-relaxed max-w-2xl mx-auto serif italic mb-12">For other clinicians</p>
                 </div>
             </section>
 
             {/* Form Section */}
             <section className="py-24 bg-white">
-                <div className="max-w-3xl mx-auto px-4">
-                    <div className="text-center mb-16 space-y-6">
-                        <p className="text-xl text-slate-700 leading-relaxed font-light">
-                            Do you think your patient would benefit from OMM, acupuncture, or both?
-                        </p>
-                        <p className="text-slate-500 uppercase tracking-widest text-xs font-bold">
-                            If so, please fill out the information below:
-                        </p>
-                    </div>
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="grid lg:grid-cols-12 gap-16 items-start">
+                        {/* Image Column */}
+                        <div className="lg:col-span-4 sticky top-48 hidden lg:block">
+                            <div className="relative group">
+                                <div className="absolute -inset-4 bg-[#8da399] opacity-10 rounded-lg rotate-2 blur-lg"></div>
+                                <img 
+                                    src={PIC3_URL} 
+                                    alt="Clinician Collaboration" 
+                                    className="relative z-10 w-full rounded-lg shadow-2xl border-8 border-white object-cover" 
+                                    referrerPolicy="no-referrer"
+                                />
+                            </div>
+                        </div>
 
-                    <form onSubmit={handleSubmit} className="space-y-16">
+                        {/* Form Column */}
+                        <div className="lg:col-span-8">
+                            <div className="text-center lg:text-left mb-16 space-y-6">
+                                <p className="text-xl text-slate-700 leading-relaxed font-light">
+                                    Do you think your patient would benefit from OMM, acupuncture, or both?
+                                </p>
+                                <p className="text-slate-500 uppercase tracking-widest text-xs font-bold">
+                                    If so, please fill out the information below:
+                                </p>
+                            </div>
+
+                            {/* Mobile Image (Visible only on small screens) */}
+                            <div className="lg:hidden mb-12 flex justify-center">
+                                <div className="relative group max-w-sm">
+                                    <div className="absolute -inset-4 bg-[#8da399] opacity-10 rounded-lg rotate-2 blur-lg"></div>
+                                    <img 
+                                        src={PIC3_URL} 
+                                        alt="Clinician Collaboration" 
+                                        className="relative z-10 w-full rounded-lg shadow-2xl border-8 border-white object-cover" 
+                                        referrerPolicy="no-referrer"
+                                    />
+                                </div>
+                            </div>
+
+                            <form onSubmit={handleSubmit} className="space-y-16">
                         {/* Patient Information */}
                         <div className="space-y-8">
                             <div className="flex items-center space-x-4">
@@ -177,7 +195,9 @@ Urgency: ${formData.urgency}
                         </div>
                     </form>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
             {/* Footer Section */}
             <section className="py-24 bg-[#5b6d64] text-white relative overflow-hidden">
