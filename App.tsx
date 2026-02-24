@@ -41,6 +41,7 @@ const App = () => {
     const BUILDING_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Pic_2.jpg";
     const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Headshot_1.jpg";
     const OMM10_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/OMM_10.jpg";
+    const ADD2_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Additional_2.jpg";
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -141,6 +142,19 @@ const App = () => {
                                 Read Full Bio & Mission <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                              </button>
                         </div>
+                    </div>
+                </div>
+
+                {/* Additional Image below the section */}
+                <div className="max-w-7xl mx-auto px-4 mt-24">
+                    <div className="relative group overflow-hidden rounded-lg shadow-2xl border-8 border-white">
+                        <img 
+                            src={ADD2_URL} 
+                            alt="Dr. Lippey's Practice" 
+                            className="w-full h-auto object-cover max-h-[600px]" 
+                            referrerPolicy="no-referrer"
+                        />
+                        <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
                     </div>
                 </div>
             </section>
