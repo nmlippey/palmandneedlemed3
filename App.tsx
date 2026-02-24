@@ -60,28 +60,28 @@ const App = () => {
     const LandingPage = () => (
         <>
             <header id="home" className="relative pt-80 pb-24 bg-sage-light overflow-hidden">
-                <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
-                    <div className="space-y-8 animate-fade-in relative z-10">
+                <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-12 gap-16 items-center">
+                    <div className="lg:col-span-4 space-y-8 animate-fade-in relative z-10">
                         <div className="space-y-4">
                             <div className="text-left">
                                 <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif leading-tight">Palm & Needle</h1>
                                 <p className="text-xl md:text-2xl tracking-[0.4em] uppercase text-[#c5a059] font-bold mt-2">Medical Clinic</p>
                             </div>
-                            <p className="text-[#5b6d64] text-2xl md:text-3xl font-bold serif italic">
+                            <p className="text-[#5b6d64] text-2xl md:text-3xl font-bold serif">
                                 Nina Lippey, DO
                             </p>
                             <h2 className="text-2xl md:text-3xl font-bold text-[#8da399] serif leading-tight italic">
                                 Healthcare Rooted <br className="hidden md:block" />
-                                in Relationship.
+                                <span className="text-[#5b6d64]">in Relationship.</span>
                             </h2>
                         </div>
                         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
                             <a href="#about" onClick={(e) => { e.preventDefault(); navigateTo('about'); }} className="bg-[#5b6d64] text-white px-10 py-5 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#c5a059] transition-all shadow-xl hover:-translate-y-1 text-center">About Dr. Lippey</a>
                         </div>
                     </div>
-                    <div className="relative animate-fade-in">
-                        <div className="absolute -inset-8 bg-[#8da399] opacity-10 rounded-2xl -rotate-2 blur-3xl"></div>
-                        <img src={BUILDING_URL} alt="Clinic Office" className="relative z-10 rounded-lg shadow-2xl border-[16px] border-white object-cover aspect-[4/3] w-full" />
+                    <div className="lg:col-span-8 relative animate-fade-in">
+                        <div className="absolute -inset-8 bg-[#8da399] opacity-10 -rotate-2 blur-3xl"></div>
+                        <img src={BUILDING_URL} alt="Clinic Office" className="relative z-10 shadow-2xl object-cover aspect-[4/3] w-full" />
                     </div>
                 </div>
             </header>
