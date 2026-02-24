@@ -20,11 +20,11 @@ const AboutPage = () => {
                 <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
                     <div className="mb-12 flex justify-center">
                         <div className="relative group">
-                            <div className="absolute -inset-4 bg-[#8da399] opacity-10 rounded-full blur-lg"></div>
+                            <div className="absolute -inset-4 bg-[#8da399] opacity-10 rounded-lg blur-lg"></div>
                             <img 
                                 src={NINA_URL} 
                                 alt="Dr. Nina Lippey" 
-                                className="relative z-10 w-64 h-64 md:w-96 md:h-96 rounded-full shadow-2xl border-8 border-white object-cover object-center" 
+                                className="relative z-10 w-64 h-80 md:w-96 md:h-[500px] rounded-lg shadow-2xl border-8 border-white object-cover object-center" 
                                 referrerPolicy="no-referrer"
                             />
                         </div>
