@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const ReferralsPage = () => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
+    const PIC3_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Pic_3.jpg";
 
     const [formData, setFormData] = useState({
         patientFirstName: '',
@@ -56,6 +57,18 @@ Urgency: ${formData.urgency}
                 <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
                     <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs mb-6 block">Coordinated Care</span>
                     <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif mb-8">Referrals</h1>
+                    <p className="text-2xl text-[#c5a059] serif italic mb-12">For other clinicians</p>
+                    <div className="flex justify-center">
+                        <div className="relative group max-w-md">
+                            <div className="absolute -inset-4 bg-[#8da399] opacity-10 rounded-lg rotate-2 blur-lg"></div>
+                            <img 
+                                src={PIC3_URL} 
+                                alt="Clinician Collaboration" 
+                                className="relative z-10 w-full rounded-lg shadow-2xl border-8 border-white object-cover" 
+                                referrerPolicy="no-referrer"
+                            />
+                        </div>
+                    </div>
                 </div>
             </section>
 
