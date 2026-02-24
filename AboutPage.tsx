@@ -1,11 +1,14 @@
 import React from 'react';
-import Footer from './Footer';
 
 const AboutPage = () => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
     const LOGO_3_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_3.jpg";
     const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Headshot_14.jpg";
     const BIO_IMG_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Headshot_11.jpg";
+    const ADD4_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Additional_4.jpg";
+    const ADD5_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Additional_5.jpg";
+    const ADD6_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Additional_6.jpg";
+    const ADD7_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Additional_7.jpg";
 
     return (
         <div className="animate-fade-in">
@@ -119,6 +122,9 @@ const AboutPage = () => {
                             <p>
                                 My goal is to provide thoughtful, inclusive, and culturally responsive comprehensive primary care that supports patients throughout their healthcare journey.
                             </p>
+                            <p>
+                                Outside of work, I value opportunities for exploration and connection. I enjoy going on adventures that involve animals, skiing, snorkeling, traveling, and catching live comedy shows.
+                            </p>
                         </div>
 
                         {/* Booking Buttons */}
@@ -142,10 +148,49 @@ const AboutPage = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Additional Images Gallery */}
+                <div className="max-w-7xl mx-auto px-4 mt-24">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                        {[ADD4_URL, ADD5_URL, ADD6_URL, ADD7_URL].map((url, i) => (
+                            <div key={i} className="relative group aspect-square overflow-hidden rounded-lg shadow-lg">
+                                <img 
+                                    src={url} 
+                                    alt={`Life outside work ${i + 1}`} 
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    referrerPolicy="no-referrer"
+                                />
+                                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </section>
 
             {/* Footer Section */}
-            <Footer />
+            <section className="py-24 bg-[#5b6d64] text-white relative overflow-hidden">
+                <div className="max-w-7xl mx-auto px-4 relative z-10">
+                    <div className="grid md:grid-cols-3 gap-12 items-center text-center md:text-left">
+                        <div className="space-y-4">
+                            <div className="flex items-center justify-center md:justify-start space-x-4">
+                                <img src={LOGO_3_URL} className="w-24 h-24 rounded shadow-lg border-2 border-white/20" alt="Palm & Needle Logo" />
+                                <h3 className="text-xl font-bold serif">Palm & Needle<br/>Medical Clinic</h3>
+                            </div>
+                        </div>
+                        <div className="space-y-2">
+                            <p className="text-xs uppercase tracking-widest opacity-60 font-bold">Location</p>
+                            <p className="text-lg">400 Seaport Court, Suite 203</p>
+                            <p className="text-sm opacity-80">Redwood City, CA 94063</p>
+                        </div>
+                        <div className="space-y-2">
+                            <p className="text-xs uppercase tracking-widest opacity-60 font-bold">Contact</p>
+                            <p className="text-lg font-bold">care@palmandneedlemed.com</p>
+                        </div>
+                    </div>
+                    <div className="mt-16 pt-8 border-t border-white/10 text-center">
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };
