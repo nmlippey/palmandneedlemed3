@@ -96,16 +96,18 @@ const DpcPage = () => {
                                         {[
                                             'Same-day or next-day appointments (in-person and virtual visits) when needed',
                                             'Extended appointment times',
-                                            'Annual physical exams/wellness visits',
-                                            'Well woman exams with pap smear',
-                                            'Preventative care, exercise, and nutritional counseling',
+                                            'Preventative care',
+                                            'Annual wellness visits',
+                                            "Women's health",
+                                            'Lifestyle Medicine',
                                             'Chronic disease management',
                                             'Acute care (injuries, rashes, infections, UTIs, etc.)',
+                                            'Sick visits',
                                             'Basic procedures (joint injections, earwax removal, skin biopsies, OMM, acupuncture, etc.)',
+                                            'In-office lab drawing',
+                                            'Select medications offered at cost',
                                             'Coordination of care with specialists',
-                                            'Transparent costs for additional services',
-                                            'In office lab drawing',
-                                            'Select medications offered at cost'
+                                            'Transparent costs for additional services'
                                         ].map((item, i) => (
                                             <li key={i} className="flex items-start space-x-4 text-slate-700">
                                                 <span className="w-2 h-2 rounded-full bg-[#c5a059] mt-2.5 shrink-0"></span>
@@ -219,7 +221,7 @@ const DpcPage = () => {
                                     <div className="space-y-4">
                                         <h3 className="text-xl font-bold text-[#5b6d64] serif">How is the fee structure set?</h3>
                                         <p className="text-slate-600 text-sm leading-relaxed">
-                                            There is a simple monthly billing structure after the additional enrollment fee to start being seen. You can cancel at any time with advanced notice. You can also pay quarterly if this is preferred.
+                                            There is a simple monthly billing structure after the additional enrollment fee to start being seen. You can cancel at any time with advance notice. You can also pay quarterly if this is preferred.
                                         </p>
                                     </div>
                                     <div className="space-y-4">

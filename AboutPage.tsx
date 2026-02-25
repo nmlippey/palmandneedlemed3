@@ -151,11 +151,11 @@ const AboutPage = () => {
 
                 {/* Additional Images Gallery */}
                 <div className="max-w-7xl mx-auto px-4 mt-24">
-                    <div className="flex flex-wrap md:flex-nowrap overflow-hidden rounded-xl shadow-2xl">
+                    <div className="flex flex-wrap md:flex-nowrap overflow-hidden shadow-2xl">
                         {[
                             { url: ADD4_URL, pos: 'center' },
                             { url: ADD6_URL, pos: 'center' },
-                            { url: ADD7_URL, pos: 'center 20%', credit: true },
+                            { url: ADD7_URL, pos: 'center 70%', credit: true },
                             { url: ADD5_URL, pos: 'center' }
                         ].map((item, i) => (
                             <div key={i} className="relative group aspect-square flex-1 min-w-[50%] md:min-w-0 overflow-hidden border-r border-white/10 last:border-0">
