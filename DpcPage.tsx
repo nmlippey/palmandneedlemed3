@@ -252,8 +252,8 @@ const DpcPage = () => {
                                     <div className="bg-slate-50 p-8 rounded-lg space-y-4">
                                         <p className="text-xl font-bold text-[#5b6d64] serif">Monthly Membership Pricing:</p>
                                         <ul className="space-y-2 text-slate-700">
-                                            <li>Adults (18+): $400/month <span className="text-[#c5a059] font-bold">(pre-enrollment price: $350)</span></li>
-                                            <li>Families of Two: $500/month <span className="text-[#c5a059] font-bold">(pre-enrollment price: $450)</span></li>
+                                            <li>Adults (18+): $400/month <span className="text-[#c5a059] font-bold">(pre-enrollment price for first 50 members: $350)</span></li>
+                                            <li>Families of Two: $500/month <span className="text-[#c5a059] font-bold">(pre-enrollment price for first 50 members: $450)</span></li>
                                             <li>Children: $25/month with parent membership</li>
                                         </ul>
                                         <div className="pt-4 text-sm text-slate-500 italic space-y-1">
