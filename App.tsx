@@ -215,11 +215,11 @@ const App = () => {
 
     const renderContent = () => {
         switch (view) {
-            case 'about': return <AboutPage />;
-            case 'dpc': return <DpcPage />;
-            case 'omm': return <OmmPage />;
-            case 'acupuncture': return <AcupuncturePage />;
-            case 'referrals': return <ReferralsPage />;
+            case 'about': return <AboutPage onNavigate={navigateTo} />;
+            case 'dpc': return <DpcPage onNavigate={navigateTo} />;
+            case 'omm': return <OmmPage onNavigate={navigateTo} />;
+            case 'acupuncture': return <AcupuncturePage onNavigate={navigateTo} />;
+            case 'referrals': return <ReferralsPage onNavigate={navigateTo} />;
             default: return <LandingPage />;
         }
     };

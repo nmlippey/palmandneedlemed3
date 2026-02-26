@@ -1,6 +1,12 @@
 import React from 'react';
 
-const AboutPage = () => {
+import { ViewType } from './App';
+
+interface AboutPageProps {
+    onNavigate: (view: ViewType, hash?: string) => void;
+}
+
+const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
     const LOGO_3_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_3.jpg";
     const NINA_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Headshot_14.jpg";
@@ -128,23 +134,24 @@ const AboutPage = () => {
                         </div>
 
                         {/* Booking Buttons */}
-                        <div className="pt-12 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center lg:justify-start">
-                            <a 
-                                href="https://calendly.com/nlippey-palmandneedlemed" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                className="bg-[#c5a059] text-white px-8 py-4 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#5b6d64] transition-all shadow-lg hover:-translate-y-1 text-center"
-                            >
-                                Schedule Appointment
-                            </a>
-                            <a 
-                                href="https://calendly.com/nlippey-palmandneedlemed" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                className="border-2 border-[#5b6d64] text-[#5b6d64] px-8 py-4 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#5b6d64] hover:text-white transition-all shadow-lg hover:-translate-y-1 text-center"
-                            >
-                                Schedule Meet & Greet
-                            </a>
+                        <div className="pt-12 space-y-6">
+                            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center lg:justify-start">
+                                <button 
+                                    onClick={() => onNavigate('home', '#contact')}
+                                    className="bg-[#c5a059] text-white px-8 py-4 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#5b6d64] transition-all shadow-lg hover:-translate-y-1 text-center"
+                                >
+                                    Schedule Appointment
+                                </button>
+                                <button 
+                                    onClick={() => onNavigate('home', '#contact')}
+                                    className="border-2 border-[#5b6d64] text-[#5b6d64] px-8 py-4 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#5b6d64] hover:text-white transition-all shadow-lg hover:-translate-y-1 text-center"
+                                >
+                                    Schedule Meet & Greet
+                                </button>
+                            </div>
+                            <p className="text-xs text-slate-500 max-w-lg leading-relaxed text-center lg:text-left">
+                                A Meet and Greet appointment is a 30 minute, no obligation meeting with Dr. Lippey to ensure that you understand how the practice works. It's a great place to ask any questions you might have. However, no medical advice will be dispensed during this meeting.
+                            </p>
                         </div>
                     </div>
                 </div>

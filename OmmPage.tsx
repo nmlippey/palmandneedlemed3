@@ -1,6 +1,12 @@
 import React from 'react';
 
-const OmmPage = () => {
+import { ViewType } from './App';
+
+interface OmmPageProps {
+    onNavigate: (view: ViewType, hash?: string) => void;
+}
+
+const OmmPage: React.FC<OmmPageProps> = ({ onNavigate }) => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
     const OMM2_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/OMM_2.jpg";
     const OMM9_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/OMM_9.jpg";
@@ -160,14 +166,12 @@ const OmmPage = () => {
                     </div>
 
                     <div className="text-center pt-16">
-                        <a 
-                            href="https://calendly.com/nlippey-palmandneedlemed" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
+                        <button 
+                            onClick={() => onNavigate('home', '#contact')}
                             className="inline-block bg-[#5b6d64] text-white px-10 py-4 rounded-sm font-bold hover:bg-[#c5a059] transition-colors uppercase tracking-widest text-sm"
                         >
                             schedule here
-                        </a>
+                        </button>
                     </div>
                 </div>
             </section>

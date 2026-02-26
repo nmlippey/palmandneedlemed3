@@ -1,6 +1,12 @@
 import React from 'react';
 
-const DpcPage = () => {
+import { ViewType } from './App';
+
+interface DpcPageProps {
+    onNavigate: (view: ViewType, hash?: string) => void;
+}
+
+const DpcPage: React.FC<DpcPageProps> = ({ onNavigate }) => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
     const CARD2_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Card_2.jpg";
     const DPC1_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/DPC_1.jpg";
@@ -261,15 +267,16 @@ const DpcPage = () => {
                                             <p>First Enrollment fee waived. Any cancellations with reenrollment will be $150 to reenroll.</p>
                                         </div>
                                     </div>
-                                    <div className="pt-4">
-                                        <a 
-                                            href="https://calendly.com/nlippey-palmandneedlemed" 
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
+                                    <div className="pt-4 space-y-4">
+                                        <button 
+                                            onClick={() => onNavigate('home', '#contact')}
                                             className="inline-block bg-[#c5a059] text-white px-8 py-4 rounded-sm font-bold hover:bg-[#5b6d64] transition-colors uppercase tracking-widest text-sm"
                                         >
                                             schedule meet & greet
-                                        </a>
+                                        </button>
+                                        <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
+                                            A Meet and Greet appointment is a 30 minute, no obligation meeting with Dr. Lippey to ensure that you understand how the practice works. It's a great place to ask any questions you might have. However, no medical advice will be dispensed during this meeting.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -281,14 +288,12 @@ const DpcPage = () => {
                                     If you are a previous patient of mine and would prefer to skip the Meet & Greet, you can schedule your appointment directly using the link below. I look forward to continuing your care at Palm & Needle Medical Clinic!
                                 </p>
                                 <div className="pt-4">
-                                    <a 
-                                        href="https://calendly.com/nlippey-palmandneedlemed" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
+                                    <button 
+                                        onClick={() => onNavigate('home', '#contact')}
                                         className="inline-block bg-[#5b6d64] text-white px-8 py-4 rounded-sm font-bold hover:bg-[#c5a059] transition-colors uppercase tracking-widest text-sm"
                                     >
                                         schedule appointment
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
 

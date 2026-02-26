@@ -14,8 +14,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
         setIsOpen(false);
     };
 
-    const CALENDLY_URL = "https://calendly.com/nlippey-palmandneedlemed";
-
     return (
         <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,7 +27,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                         <a href="#referrals" onClick={(e) => handleLinkClick(e, 'referrals')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Referrals</a>
                         <div className="flex space-x-2">
                             <a href="#contact" onClick={(e) => handleLinkClick(e, 'home', '#contact')} className="bg-[#5b6d64] text-white px-4 py-2.5 rounded-sm nav-link hover:bg-[#c5a059] whitespace-nowrap">Contact</a>
-                            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="bg-[#c5a059] text-white px-4 py-2.5 rounded-sm nav-link hover:bg-[#5b6d64] whitespace-nowrap">Schedule Appointment</a>
+                            <a href="#contact" onClick={(e) => handleLinkClick(e, 'home', '#contact')} className="bg-[#c5a059] text-white px-4 py-2.5 rounded-sm nav-link hover:bg-[#5b6d64] whitespace-nowrap">Schedule Appointment</a>
                         </div>
                     </div>
 
@@ -61,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                     <a href="#acupuncture" onClick={(e) => handleLinkClick(e, 'acupuncture')} className="block text-slate-600 nav-link">Acupuncture</a>
                     <a href="#referrals" onClick={(e) => handleLinkClick(e, 'referrals')} className="block text-slate-600 nav-link">Referrals</a>
                     <a href="#contact" onClick={(e) => handleLinkClick(e, 'home', '#contact')} className="block bg-[#5b6d64] text-white text-center py-3 rounded-sm nav-link">Contact</a>
-                    <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="block bg-[#c5a059] text-white text-center py-3 rounded-sm nav-link">Schedule Appointment</a>
+                    <a href="#contact" onClick={(e) => handleLinkClick(e, 'home', '#contact')} className="block bg-[#c5a059] text-white text-center py-3 rounded-sm nav-link">Schedule Appointment</a>
                 </div>
             )}
         </nav>
