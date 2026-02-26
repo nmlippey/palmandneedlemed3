@@ -136,18 +136,22 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                         {/* Booking Buttons */}
                         <div className="pt-12 space-y-6">
                             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center lg:justify-start">
-                                <button 
-                                    onClick={() => onNavigate('home', '#contact')}
+                                <a 
+                                    href="https://app.elationemr.com/book/palmandneedlemed"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="bg-[#c5a059] text-white px-8 py-4 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#5b6d64] transition-all shadow-lg hover:-translate-y-1 text-center"
                                 >
                                     Schedule Appointment
-                                </button>
-                                <button 
-                                    onClick={() => onNavigate('home', '#contact')}
+                                </a>
+                                <a 
+                                    href="https://calendly.com/nlippey-palmandneedlemed/40min"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="border-2 border-[#5b6d64] text-[#5b6d64] px-8 py-4 rounded-sm font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#5b6d64] hover:text-white transition-all shadow-lg hover:-translate-y-1 text-center"
                                 >
                                     Schedule Meet & Greet
-                                </button>
+                                </a>
                             </div>
                             <p className="text-xs text-slate-500 max-w-lg leading-relaxed text-center lg:text-left">
                                 A Meet and Greet appointment is a 30 minute, no obligation meeting with Dr. Lippey to ensure that you understand how the practice works. It's a great place to ask any questions you might have. However, no medical advice will be dispensed during this meeting.

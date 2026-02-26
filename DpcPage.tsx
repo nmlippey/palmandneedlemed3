@@ -268,12 +268,14 @@ const DpcPage: React.FC<DpcPageProps> = ({ onNavigate }) => {
                                         </div>
                                     </div>
                                     <div className="pt-4 space-y-4">
-                                        <button 
-                                            onClick={() => onNavigate('home', '#contact')}
-                                            className="inline-block bg-[#c5a059] text-white px-8 py-4 rounded-sm font-bold hover:bg-[#5b6d64] transition-colors uppercase tracking-widest text-sm"
+                                        <a 
+                                            href="https://calendly.com/nlippey-palmandneedlemed/40min"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-block bg-[#c5a059] text-white px-8 py-4 rounded-sm font-bold hover:bg-[#5b6d64] transition-colors uppercase tracking-widest text-sm text-center"
                                         >
                                             schedule meet & greet
-                                        </button>
+                                        </a>
                                         <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
                                             A Meet and Greet appointment is a 30 minute, no obligation meeting with Dr. Lippey to ensure that you understand how the practice works. It's a great place to ask any questions you might have. However, no medical advice will be dispensed during this meeting.
                                         </p>
@@ -288,12 +290,14 @@ const DpcPage: React.FC<DpcPageProps> = ({ onNavigate }) => {
                                     If you are a previous patient of mine and would prefer to skip the Meet & Greet, you can schedule your appointment directly using the link below. I look forward to continuing your care at Palm & Needle Medical Clinic!
                                 </p>
                                 <div className="pt-4">
-                                    <button 
-                                        onClick={() => onNavigate('home', '#contact')}
-                                        className="inline-block bg-[#5b6d64] text-white px-8 py-4 rounded-sm font-bold hover:bg-[#c5a059] transition-colors uppercase tracking-widest text-sm"
+                                    <a 
+                                        href="https://app.elationemr.com/book/palmandneedlemed"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-block bg-[#5b6d64] text-white px-8 py-4 rounded-sm font-bold hover:bg-[#c5a059] transition-colors uppercase tracking-widest text-sm text-center"
                                     >
                                         schedule appointment
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
 

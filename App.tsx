@@ -193,12 +193,14 @@ const App = () => {
                         </div>
                         <div className="text-center space-y-8 w-full">
                             <p className="text-slate-600 serif italic text-lg">Ready to begin your journey to better health?</p>
-                            <button 
-                                onClick={() => window.location.href = 'mailto:care@palmandneedlemed.com?subject=Appointment Inquiry'}
-                                className="w-full bg-[#c5a059] text-white py-6 font-bold uppercase tracking-[0.4em] text-xs hover:bg-[#5b6d64] transition-all shadow-xl hover:-translate-y-1"
+                            <a 
+                                href="https://app.elationemr.com/book/palmandneedlemed"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full bg-[#c5a059] text-white py-6 font-bold uppercase tracking-[0.4em] text-xs hover:bg-[#5b6d64] transition-all shadow-xl hover:-translate-y-1 text-center"
                             >
                                 Schedule your appointment now
-                            </button>
+                            </a>
                             <div className="pt-8">
                                 <img 
                                     src={OMM10_URL} 
