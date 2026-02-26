@@ -154,7 +154,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                                 </a>
                             </div>
                             <p className="text-xs text-slate-500 max-w-lg leading-relaxed text-center lg:text-left">
-                                A Meet and Greet appointment is a 30 minute, no obligation meeting with Dr. Lippey to ensure that you understand how the practice works. It's a great place to ask any questions you might have. However, no medical advice will be dispensed during this meeting.
+                                A Meet and Greet appointment is a 40 minute, no obligation meeting with Dr. Lippey to ensure that you understand how the practice works. It's a great place to ask any questions you might have. However, no medical advice will be dispensed during this meeting.
                             </p>
                         </div>
                     </div>
