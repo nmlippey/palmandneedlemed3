@@ -64,7 +64,7 @@ const App = () => {
                     <div className="lg:col-span-4 space-y-8 animate-fade-in relative z-10">
                         <div className="space-y-4">
                             <div className="text-left">
-                                <p className="text-[#c5a059] uppercase tracking-[0.3em] font-bold text-sm mb-2">Opening April 9th, 2026</p>
+                                <p className="text-[#c5a059] uppercase tracking-[0.3em] font-bold text-xl mb-2">Opening April 9th, 2026</p>
                                 <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif leading-tight">Palm & Needle</h1>
                                 <p className="text-xl md:text-2xl tracking-[0.4em] uppercase text-[#c5a059] font-bold mt-2">Medical Clinic</p>
                             </div>
