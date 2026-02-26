@@ -269,7 +269,7 @@ const DpcPage: React.FC<DpcPageProps> = ({ onNavigate }) => {
                                     </div>
                                     <div className="pt-4 space-y-4">
                                         <a 
-                                            href="https://calendly.com/nlippey-palmandneedlemed/40min"
+                                            href="https://calendly.com/nlippey-palmandneedlemed/30min"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="inline-block bg-[#c5a059] text-white px-8 py-4 rounded-sm font-bold hover:bg-[#5b6d64] transition-colors uppercase tracking-widest text-sm text-center"
@@ -277,7 +277,7 @@ const DpcPage: React.FC<DpcPageProps> = ({ onNavigate }) => {
                                             schedule meet & greet
                                         </a>
                                         <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
-                                            A Meet and Greet appointment is a 40 minute, no obligation meeting with Dr. Lippey to ensure that you understand how the practice works. It's a great place to ask any questions you might have. However, no medical advice will be dispensed during this meeting.
+                                            A Meet and Greet appointment is a 30 minute, no obligation meeting with Dr. Lippey to ensure that you understand how the practice works. It's a great place to ask any questions you might have. However, no medical advice will be dispensed during this meeting.
                                         </p>
                                     </div>
                                 </div>
