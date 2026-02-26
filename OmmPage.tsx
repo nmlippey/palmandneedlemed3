@@ -166,12 +166,14 @@ const OmmPage: React.FC<OmmPageProps> = ({ onNavigate }) => {
                     </div>
 
                     <div className="text-center pt-16">
-                        <button 
-                            onClick={() => onNavigate('home', '#contact')}
-                            className="inline-block bg-[#5b6d64] text-white px-10 py-4 rounded-sm font-bold hover:bg-[#c5a059] transition-colors uppercase tracking-widest text-sm"
+                        <a 
+                            href="https://app.elationemr.com/book/palmandneedlemed"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block bg-[#5b6d64] text-white px-10 py-4 rounded-sm font-bold hover:bg-[#c5a059] transition-colors uppercase tracking-widest text-sm text-center"
                         >
                             schedule here
-                        </button>
+                        </a>
                     </div>
                 </div>
             </section>
