@@ -15,7 +15,12 @@ const Marquee = () => {
     const repeatedItems = Array(10).fill(text);
     
     return (
-        <div className="fixed top-32 w-full bg-[#c5a059] text-white py-2 z-40 overflow-hidden border-b border-white/10 shadow-md">
+        <a 
+            href="https://app.elationemr.com/book/palmandneedlemed" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="fixed top-32 w-full bg-[#c5a059] text-white py-2 z-40 overflow-hidden border-b border-white/10 shadow-md block hover:bg-[#5b6d64] transition-colors cursor-pointer"
+        >
             <div className="animate-marquee whitespace-nowrap">
                 {repeatedItems.map((item, i) => (
                     <span key={i} className="mx-8 text-xs font-bold uppercase tracking-[0.4em]">
@@ -29,7 +34,7 @@ const Marquee = () => {
                     </span>
                 ))}
             </div>
-        </div>
+        </a>
     );
 };
 
