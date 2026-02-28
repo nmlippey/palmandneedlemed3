@@ -164,10 +164,14 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                 <div className="max-w-7xl mx-auto px-4 mt-24">
                     <div className="flex flex-wrap md:flex-nowrap overflow-hidden shadow-2xl">
                         {[
-                            { url: ADD4_URL, pos: 'center' },
-                            { url: ADD6_URL, pos: 'center' },
-                            { url: ADD7_URL, pos: 'center 70%', credit: true },
-                            { url: ADD5_URL, pos: 'center' }
+                            { url: ADD4_URL, pos: 'center', caption: "Hiking The Narrows in Zion National Park" },
+                            { url: ADD6_URL, pos: 'center', caption: "Deer in Nara, Japan" },
+                            { 
+                                url: ADD7_URL, 
+                                pos: 'center 70%', 
+                                caption: "Gray whale encounters in Guerrero Negro, Baja California Sur\nExpedition led by @natsoffthegrid\nPhoto credit: @job_olguin" 
+                            },
+                            { url: ADD5_URL, pos: 'center', caption: "Hiking in Mount Rainier National Park" }
                         ].map((item, i) => (
                             <div key={i} className="relative group aspect-square flex-1 min-w-[50%] md:min-w-0 overflow-hidden border-r border-white/10 last:border-0">
                                 <img 
@@ -178,15 +182,13 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                                     referrerPolicy="no-referrer"
                                 />
                                 <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500"></div>
-                                {item.credit && (
-                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/40 backdrop-blur-[2px]">
-                                        <div className="text-center text-white p-4">
-                                            <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-1 opacity-60">Photography</p>
-                                            <p className="text-sm font-bold serif">PC: Job Olguin</p>
-                                            <p className="text-xs opacity-80 mt-1">@job_olguin</p>
-                                        </div>
+                                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/40 backdrop-blur-[2px]">
+                                    <div className="text-center text-white p-6">
+                                        <p className="text-sm font-medium serif leading-relaxed whitespace-pre-line">
+                                            {item.caption}
+                                        </p>
                                     </div>
-                                )}
+                                </div>
                             </div>
                         ))}
                     </div>
