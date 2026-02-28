@@ -166,7 +166,7 @@ const App = () => {
             </section>
 
             <section id="contact" className="py-32 bg-[#5b6d64] text-white relative z-10">
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="hidden lg:block absolute inset-0 overflow-hidden pointer-events-none">
                      <div className="absolute top-0 right-0 p-24 opacity-5 pointer-events-none -rotate-12 translate-x-1/4">
                           <img src={LOGO_URL} className="w-[1000px] h-[1000px] object-contain invert scale-[1.5]" alt="" />
                      </div>
@@ -193,7 +193,7 @@ const App = () => {
                         </div>
                     </div>
                     <div className="bg-white p-12 rounded shadow-2xl relative text-slate-800 flex flex-col items-center justify-center min-h-[300px]">
-                        <div className="absolute -top-44 -left-12 w-48 h-48 bg-white rounded flex items-center justify-center shadow-2xl border-4 border-[#c5a059] transform hover:rotate-12 transition-transform overflow-hidden p-0 z-20">
+                        <div className="relative lg:absolute lg:-top-44 lg:-left-12 w-32 h-32 lg:w-48 lg:h-48 bg-white rounded flex items-center justify-center shadow-2xl border-4 border-[#c5a059] transform hover:rotate-12 transition-transform overflow-hidden p-0 z-20 mb-8 lg:mb-0">
                             <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.5]" alt="" />
                         </div>
                         <div className="text-center space-y-8 w-full">
