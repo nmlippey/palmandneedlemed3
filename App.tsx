@@ -165,36 +165,36 @@ const App = () => {
                 </div>
             </section>
 
-            <section id="contact" className="py-32 bg-[#5b6d64] text-white relative z-10">
+            <section id="contact" className="py-20 lg:py-32 bg-[#5b6d64] text-white relative z-10">
                 <div className="hidden lg:block absolute inset-0 overflow-hidden pointer-events-none">
                      <div className="absolute top-0 right-0 p-24 opacity-5 pointer-events-none -rotate-12 translate-x-1/4">
                           <img src={LOGO_URL} className="w-[1000px] h-[1000px] object-contain invert scale-[1.5]" alt="" />
                      </div>
                 </div>
-                <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-24 relative z-10">
+                <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 lg:gap-24 relative z-10">
                     <div className="space-y-12">
-                        <h2 className="text-5xl font-bold serif leading-tight">Schedule Your Appointment</h2>
-                        <p className="text-slate-200 text-xl leading-relaxed max-w-lg opacity-90">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold serif leading-tight">Schedule Your Appointment</h2>
+                        <p className="text-slate-200 text-lg md:text-xl leading-relaxed max-w-lg opacity-90">
                             Join our membership-based practice for personalized, unhurried healthcare.
                         </p>
                         <div className="space-y-10 pt-10">
                             <div className="flex items-center space-x-6">
                                 <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center border border-white/20 text-3xl shadow-inner">📍</div>
                                 <div>
-                                    <p className="font-bold text-xl">400 Seaport Court, Suite 203</p>
+                                    <p className="font-bold text-lg md:text-xl">400 Seaport Court, Suite 203</p>
                                     <p className="text-sm opacity-60">Redwood City, CA 94063</p>
                                     <p className="text-xs italic opacity-80 mt-2 max-w-[280px]">Turn right upon entering the marina, and look for the sign "Seaport Health Collective"</p>
                                 </div>
                             </div>
                             <div className="flex items-center space-x-6">
                                 <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center border border-white/20 text-3xl shadow-inner">✉️</div>
-                                <div><p className="font-bold text-xl">care@palmandneedlemed.com</p><p className="text-sm opacity-60">Membership Inquiries</p></div>
+                                <div><p className="font-bold text-lg md:text-xl">care@palmandneedlemed.com</p><p className="text-sm opacity-60">Membership Inquiries</p></div>
                             </div>
                         </div>
                     </div>
-                    <div className="bg-white p-12 rounded shadow-2xl relative text-slate-800 flex flex-col items-center justify-center min-h-[300px]">
-                        <div className="relative lg:absolute lg:-top-44 lg:-left-12 w-32 h-32 lg:w-48 lg:h-48 bg-white rounded flex items-center justify-center shadow-2xl border-4 border-[#c5a059] transform hover:rotate-12 transition-transform overflow-hidden p-0 z-20 mb-8 lg:mb-0">
-                            <img src={LOGO_URL} className="w-full h-full object-contain scale-[1.5]" alt="" />
+                    <div className="bg-white p-6 md:p-8 lg:p-12 rounded shadow-2xl relative text-slate-800 flex flex-col items-center justify-center min-h-[300px]">
+                        <div className="relative lg:absolute lg:-top-44 lg:-left-12 w-24 h-24 md:w-32 md:h-32 lg:w-48 lg:h-48 bg-white rounded flex items-center justify-center shadow-2xl border-4 border-[#c5a059] transform hover:rotate-12 transition-transform overflow-hidden p-0 z-20 mb-8 lg:mb-0">
+                            <img src={LOGO_URL} className="w-full h-full object-contain scale-100 lg:scale-[1.5]" alt="" />
                         </div>
                         <div className="text-center space-y-8 w-full">
                             <p className="text-slate-600 serif italic text-lg">Ready to begin your journey to better health?</p>
@@ -210,7 +210,7 @@ const App = () => {
                                 <img 
                                     src={OMM10_URL} 
                                     alt="Osteopathic Treatment" 
-                                    className="w-full h-48 object-cover rounded shadow-md border border-slate-100"
+                                    className="w-full h-auto md:h-48 md:object-cover rounded shadow-md border border-slate-100"
                                     referrerPolicy="no-referrer"
                                 />
                             </div>
