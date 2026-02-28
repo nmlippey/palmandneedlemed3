@@ -168,10 +168,10 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                             { url: ADD6_URL, pos: 'center', caption: "Deer in Nara, Japan" },
                             { 
                                 url: ADD7_URL, 
-                                pos: 'center 70%', 
+                                pos: 'center 85%', 
                                 caption: "Gray whale encounters in Guerrero Negro, Baja California Sur\nExpedition led by @natsoffthegrid\nPhoto credit: @job_olguin" 
                             },
-                            { url: ADD5_URL, pos: 'center 30%', caption: "Hiking in Mount Rainier National Park" }
+                            { url: ADD5_URL, pos: 'center 15%', caption: "Hiking in Mount Rainier National Park" }
                         ].map((item, i) => (
                             <div key={i} className="relative group aspect-square flex-1 min-w-[50%] md:min-w-0 overflow-hidden border-r border-white/10 last:border-0">
                                 <img 
