@@ -202,7 +202,7 @@ const App = () => {
                                 href="https://app.elationemr.com/book/palmandneedlemed"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block w-full bg-[#c5a059] text-white py-6 font-bold uppercase tracking-[0.4em] text-xs hover:bg-[#5b6d64] transition-all shadow-xl hover:-translate-y-1 text-center"
+                                className="flex items-center justify-center w-full bg-[#c5a059] text-white py-6 font-bold uppercase tracking-[0.4em] text-xs hover:bg-[#5b6d64] transition-all shadow-xl hover:-translate-y-1 text-center pl-[0.4em] md:pl-0 md:block"
                             >
                                 Schedule your appointment now
                             </a>
