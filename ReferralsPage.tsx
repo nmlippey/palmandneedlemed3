@@ -189,9 +189,6 @@ Urgency: ${formData.urgency}
                             <button type="submit" className="w-full bg-[#c5a059] text-white py-6 font-bold uppercase tracking-[0.4em] text-xs hover:bg-[#5b6d64] transition-all shadow-xl hover:-translate-y-1 rounded-sm">
                                 Submit Referral
                             </button>
-                            <p className="mt-4 text-center text-slate-400 text-[10px] uppercase tracking-widest">
-                                This will open your default email client to send the referral details.
-                            </p>
                         </div>
                     </form>
                 </div>
