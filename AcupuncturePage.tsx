@@ -21,11 +21,10 @@ const AcupuncturePage = () => {
             </section>
 
             {/* Featured Image Section - Enhanced Bottom Visibility */}
-            <section className="relative h-[80vh] w-full overflow-hidden">
-                <div className="absolute inset-0 bg-sage-light"></div>
+            <section className="relative h-auto md:h-[80vh] w-full overflow-hidden bg-sage-light">
                 <img 
                     src={ACU1_URL} 
-                    className="w-full h-full object-cover object-center shadow-inner relative z-10 opacity-90" 
+                    className="w-full h-auto md:h-full md:object-cover object-center shadow-inner relative z-10 opacity-90" 
                     alt="Acupuncture Session" 
                 />
                 <div className="absolute inset-0 z-20 bg-gradient-to-b from-sage-light via-transparent to-white pointer-events-none"></div>
