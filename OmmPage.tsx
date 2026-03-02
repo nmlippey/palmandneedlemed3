@@ -139,6 +139,33 @@ const OmmPage: React.FC<OmmPageProps> = ({ onNavigate }) => {
                 </div>
             </section>
 
+            {/* OMM FAQ Section */}
+            <section className="py-24 bg-slate-50 border-t border-slate-100">
+                <div className="max-w-4xl mx-auto px-4">
+                    <div className="grid md:grid-cols-2 gap-12">
+                        <div className="space-y-4">
+                            <h3 className="text-xl font-bold text-[#5b6d64] serif">How often will I receive OMM?</h3>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                New/acute conditions can sometimes be treated in one visit. In the beginning, I typically see patients more frequently- about every 3-4 weeks (sooner if needed). For chronic conditions, I will usually start by treating you 2-3 times to see if OMM is beneficial. Chronic/more complicated conditions often need visits every 4-6 weeks for maintenance if the condition does not resolve and OMM is helping. If you graduate, you can always come back and see me on an as-needed basis without being considered a new patient. You can also do physical therapy while doing OMM.
+                            </p>
+                        </div>
+                        <div className="space-y-4">
+                            <h3 className="text-xl font-bold text-[#5b6d64] serif">Do you accept insurance for visits?</h3>
+                            <div className="space-y-4">
+                                <p className="text-slate-600 text-sm leading-relaxed">
+                                    You will pay for the visit fee up front, and I can give you a receipt (superbill). Many patients send this to their insurance company and sometimes receive reimbursement through their out-of-network coverage.
+                                </p>
+                                <div className="bg-white p-4 rounded border border-slate-200">
+                                    <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2">Typical Codes:</p>
+                                    <p className="text-sm text-slate-600 font-mono">99213, 99214, 99204</p>
+                                    <p className="text-sm text-slate-600 font-mono">98926, 98927, 98928</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* OMM Pricing */}
             <section className="py-24 bg-white border-t border-slate-100">
                 <div className="max-w-5xl mx-auto px-4">
@@ -174,33 +201,6 @@ const OmmPage: React.FC<OmmPageProps> = ({ onNavigate }) => {
                         >
                             schedule here
                         </a>
-                    </div>
-                </div>
-            </section>
-
-            {/* OMM FAQ Section */}
-            <section className="py-24 bg-slate-50 border-t border-slate-100">
-                <div className="max-w-4xl mx-auto px-4">
-                    <div className="grid md:grid-cols-2 gap-12">
-                        <div className="space-y-4">
-                            <h3 className="text-xl font-bold text-[#5b6d64] serif">How often will I receive OMM?</h3>
-                            <p className="text-slate-600 text-sm leading-relaxed">
-                                New/acute conditions can sometimes be treated in one visit. In the beginning, I typically see patients more frequently- about every 3-4 weeks (sooner if needed). For chronic conditions, I will usually start by treating you 2-3 times to see if OMM is beneficial. Chronic/more complicated conditions often need visits every 4-6 weeks for maintenance if the condition does not resolve and OMM is helping. If you graduate, you can always come back and see me on an as-needed basis without being considered a new patient. You can also do physical therapy while doing OMM.
-                            </p>
-                        </div>
-                        <div className="space-y-4">
-                            <h3 className="text-xl font-bold text-[#5b6d64] serif">Do you accept insurance for visits?</h3>
-                            <div className="space-y-4">
-                                <p className="text-slate-600 text-sm leading-relaxed">
-                                    You will pay for the visit fee up front, and I can give you a receipt (superbill). Many patients send this to their insurance company and sometimes receive reimbursement through their out-of-network coverage.
-                                </p>
-                                <div className="bg-white p-4 rounded border border-slate-200">
-                                    <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2">Typical Codes:</p>
-                                    <p className="text-sm text-slate-600 font-mono">99213, 99214, 99204</p>
-                                    <p className="text-sm text-slate-600 font-mono">98926, 98927, 98928</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
