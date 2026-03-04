@@ -178,18 +178,22 @@ const App = () => {
                             Join our membership-based practice for personalized, unhurried healthcare.
                         </p>
                         <div className="space-y-10 pt-10">
-                            <div className="flex items-center space-x-6">
-                                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center border border-white/20 text-3xl shadow-inner">📍</div>
+                            <a href="mailto:care@palmandneedlemed.com" className="flex items-center space-x-6 group hover:opacity-80 transition-opacity">
+                                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center border border-white/20 text-3xl shadow-inner group-hover:bg-white/20 transition-colors">📍</div>
                                 <div>
                                     <p className="font-bold text-lg md:text-xl">400 Seaport Court, Suite 203</p>
                                     <p className="text-sm opacity-60">Redwood City, CA 94063</p>
                                     <p className="text-xs italic opacity-80 mt-2 max-w-[280px]">Turn right upon entering the marina, and look for the sign "Seaport Health Collective"</p>
                                 </div>
-                            </div>
-                            <div className="flex items-center space-x-6">
-                                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center border border-white/20 text-3xl shadow-inner">✉️</div>
+                            </a>
+                            <a href="tel:650-977-4518" className="flex items-center space-x-6 group hover:opacity-80 transition-opacity">
+                                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center border border-white/20 text-3xl shadow-inner group-hover:bg-white/20 transition-colors">📞</div>
+                                <div><p className="font-bold text-lg md:text-xl">650-977-4518</p><p className="text-sm opacity-60">Phone</p></div>
+                            </a>
+                            <a href="mailto:care@palmandneedlemed.com" className="flex items-center space-x-6 group hover:opacity-80 transition-opacity">
+                                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center border border-white/20 text-3xl shadow-inner group-hover:bg-white/20 transition-colors">✉️</div>
                                 <div><p className="font-bold text-lg md:text-xl">care@palmandneedlemed.com</p><p className="text-sm opacity-60">Membership Inquiries</p></div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div className="bg-white p-6 md:p-8 lg:p-12 rounded shadow-2xl relative text-slate-800 flex flex-col items-center justify-center min-h-[300px]">

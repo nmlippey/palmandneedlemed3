@@ -206,14 +206,15 @@ Urgency: ${formData.urgency}
                                 <h3 className="text-xl font-bold serif">Palm & Needle<br/>Medical Clinic</h3>
                             </div>
                         </div>
-                        <div className="space-y-2">
+                        <a href="mailto:care@palmandneedlemed.com" className="space-y-2 hover:opacity-80 transition-opacity block">
                             <p className="text-xs uppercase tracking-widest opacity-60 font-bold">Location</p>
                             <p className="text-lg">400 Seaport Court, Suite 203</p>
                             <p className="text-sm opacity-80">Redwood City, CA 94063</p>
-                        </div>
+                        </a>
                         <div className="space-y-2">
                             <p className="text-xs uppercase tracking-widest opacity-60 font-bold">Contact</p>
-                            <p className="text-lg font-bold">care@palmandneedlemed.com</p>
+                            <a href="tel:650-977-4518" className="text-lg font-bold block hover:opacity-80 transition-opacity">650-977-4518</a>
+                            <a href="mailto:care@palmandneedlemed.com" className="text-lg font-bold block hover:opacity-80 transition-opacity">care@palmandneedlemed.com</a>
                         </div>
                     </div>
                 </div>
