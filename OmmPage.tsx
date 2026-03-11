@@ -161,11 +161,6 @@ const OmmPage: React.FC<OmmPageProps> = ({ onNavigate }) => {
                                 <p className="text-slate-600 text-sm leading-relaxed">
                                     If you'd like to check ahead of time, you can call your insurance company and ask whether OMM is covered using CPT codes <strong>98926</strong>, <strong>98927</strong>, or <strong>98928</strong>, which are the codes I commonly use during those visits.
                                 </p>
-                                <div className="bg-white p-4 rounded border border-slate-200">
-                                    <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2">Typical Codes:</p>
-                                    <p className="text-sm text-slate-600 font-mono">99213, 99214, 99204</p>
-                                    <p className="text-sm text-slate-600 font-mono">98926, 98927, 98928</p>
-                                </div>
                             </div>
                         </div>
                     </div>
