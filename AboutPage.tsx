@@ -17,7 +17,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
     const ADD7_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Additional_7.jpg";
 
     return (
-        <div className="animate-fade-in">
+        <div id="about" className="animate-fade-in">
             {/* Header Section */}
             <section className="pt-80 pb-20 bg-sage-light relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none">

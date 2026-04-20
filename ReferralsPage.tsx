@@ -48,7 +48,7 @@ Urgency: ${formData.urgency}
     const labelClasses = "block text-[10px] uppercase tracking-widest font-bold text-slate-500 mb-2";
 
     return (
-        <div className="animate-fade-in">
+        <div id="referrals" className="animate-fade-in">
             {/* Hero Section */}
             <section className="pt-80 pb-24 bg-sage-light relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-1/4 h-full opacity-5 pointer-events-none">

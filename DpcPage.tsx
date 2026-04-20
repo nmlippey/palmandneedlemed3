@@ -15,7 +15,7 @@ const DpcPage: React.FC<DpcPageProps> = ({ onNavigate }) => {
     const ADD1_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Additional_1.jpeg";
 
     return (
-        <div className="animate-fade-in relative min-h-screen bg-white">
+        <div id="dpc" className="animate-fade-in relative min-h-screen bg-white">
             <div className="relative z-10">
                 {/* Hero Section */}
                 <section className="pt-80 pb-16 bg-sage-light relative overflow-hidden">

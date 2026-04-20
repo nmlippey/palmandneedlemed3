@@ -5,7 +5,7 @@ const AcupuncturePage = () => {
     const ACU1_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Acupuncture_1.jpg";
 
     return (
-        <div className="animate-fade-in bg-white">
+        <div id="acupuncture" className="animate-fade-in bg-white">
             {/* Hero Section */}
             <section className="pt-80 pb-16 bg-sage-light relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none text-right">

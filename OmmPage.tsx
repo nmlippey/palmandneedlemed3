@@ -14,7 +14,7 @@ const OmmPage: React.FC<OmmPageProps> = ({ onNavigate }) => {
     const OMM12_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/OMM_12.jpg";
 
     return (
-        <div className="animate-fade-in">
+        <div id="omm" className="animate-fade-in">
             {/* Hero Section */}
             <section className="pt-80 pb-24 bg-sage-light relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-1/4 h-full opacity-5 pointer-events-none">

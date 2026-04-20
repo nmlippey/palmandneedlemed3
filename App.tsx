@@ -48,19 +48,59 @@ const App = () => {
     const OMM10_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/OMM_10.jpg";
     const ADD2_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Additional_2.jpg";
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [view]);
-
-    const navigateTo = (newView: ViewType, hash?: string) => {
-        setView(newView);
-        if (hash) {
-            setTimeout(() => {
-                const el = document.getElementById(hash.replace('#', ''));
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
+    const navigateTo = (newView: ViewType, hash?: string, skipPushState = false) => {
+        const targetHash = hash || `#${newView}`;
+        
+        if (!skipPushState) {
+            window.history.pushState({ view: newView, hash: targetHash }, '', targetHash);
         }
+
+        setView(newView);
+
+        // We use a small timeout to ensure the DOM has updated if we changed views
+        setTimeout(() => {
+            const elementId = targetHash.startsWith('#') ? targetHash.slice(1) : targetHash;
+            // Special case for home/top
+            if (elementId === 'home' || !elementId) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }, 100);
     };
+
+    useEffect(() => {
+        const handlePopState = () => {
+            const hash = window.location.hash || '#home';
+            let targetView: ViewType = 'home';
+            
+            // Map hash to the correct view
+            if (hash === '#about') targetView = 'about';
+            else if (hash === '#dpc') targetView = 'dpc';
+            else if (hash === '#omm') targetView = 'omm';
+            else if (hash === '#acupuncture') targetView = 'acupuncture';
+            else if (hash === '#referrals') targetView = 'referrals';
+            else if (hash === '#contact' || hash === '#home') targetView = 'home';
+            
+            // Navigate without adding to history again
+            navigateTo(targetView, hash, true);
+        };
+
+        window.addEventListener('popstate', handlePopState);
+        
+        // Handle initial load
+        if (window.location.hash && window.location.hash !== '#home') {
+            handlePopState();
+        }
+        
+        return () => window.removeEventListener('popstate', handlePopState);
+    }, []);
 
     const LandingPage = () => (
         <>
