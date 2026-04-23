@@ -181,8 +181,8 @@ const OmmPage: React.FC<OmmPageProps> = ({ onNavigate }) => {
                             {[
                                 { title: "New Patient Visit: Adult 18+", time: "60 minutes", price: "$350" },
                                 { title: "New Patient Visit: Ages 0-17", time: "60 minutes", price: "$200" },
-                                { title: "Follow-up Patient Visit: Adult 18+", time: "40 minutes", price: "$250" },
-                                { title: "Follow-up Patient Visit: Ages 0-17", time: "40 minutes", price: "$100" }
+                                { title: "Follow-up Patient Visit: Adult 18+", time: "60 minutes", price: "$250" },
+                                { title: "Follow-up Patient Visit: Ages 0-17", time: "60 minutes", price: "$100" }
                             ].map((item, i) => (
                                 <div key={i} className="bg-slate-50 p-8 rounded border border-slate-100 shadow-sm hover:shadow-md transition-shadow text-center space-y-2">
                                     <h4 className="font-bold text-[#5b6d64] serif text-lg">{item.title}</h4>
