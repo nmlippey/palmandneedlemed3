@@ -21,6 +21,24 @@ export const Turnstile: React.FC<TurnstileProps> = ({ siteKey, onVerify, onExpir
     const containerRef = useRef<HTMLDivElement>(null);
     const widgetIdRef = useRef<string | null>(null);
 
+    // Use refs to stabilize callbacks and prevent the widget from constantly remounting/re-rendering
+    const onVerifyRef = useRef(onVerify);
+    const onExpireRef = useRef(onExpire);
+    const onErrorRef = useRef(onError);
+
+    // Keep callback refs updated with the latest props
+    useEffect(() => {
+        onVerifyRef.current = onVerify;
+    }, [onVerify]);
+
+    useEffect(() => {
+        onExpireRef.current = onExpire;
+    }, [onExpire]);
+
+    useEffect(() => {
+        onErrorRef.current = onError;
+    }, [onError]);
+
     useEffect(() => {
         // Load Turnstile script if not already loaded or in progress
         const scriptId = 'cloudflare-turnstile-script';
@@ -49,12 +67,14 @@ export const Turnstile: React.FC<TurnstileProps> = ({ siteKey, onVerify, onExpir
 
                 widgetIdRef.current = window.turnstile.render(containerRef.current, {
                     sitekey: siteKey,
-                    callback: onVerify,
+                    callback: (token: string) => {
+                        if (isMounted) onVerifyRef.current(token);
+                    },
                     'expired-callback': () => {
-                        if (onExpire) onExpire();
+                        if (isMounted && onExpireRef.current) onExpireRef.current();
                     },
                     'error-callback': () => {
-                        if (onError) onError();
+                        if (isMounted && onErrorRef.current) onErrorRef.current();
                     },
                 });
             } catch (err) {
@@ -83,7 +103,7 @@ export const Turnstile: React.FC<TurnstileProps> = ({ siteKey, onVerify, onExpir
                 widgetIdRef.current = null;
             }
         };
-    }, [siteKey, onVerify, onExpire, onError]);
+    }, [siteKey]);
 
     return <div ref={containerRef} className="my-2 flex justify-center" />;
 };
