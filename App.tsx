@@ -6,6 +6,7 @@ import DpcPage from './DpcPage';
 import OmmPage from './OmmPage';
 import AcupuncturePage from './AcupuncturePage';
 import ReferralsPage from './ReferralsPage';
+import { Turnstile } from './Turnstile';
 
 export type ViewType = 'home' | 'about' | 'dpc' | 'omm' | 'acupuncture' | 'referrals';
 
@@ -40,6 +41,38 @@ const Marquee = () => {
 
 const App = () => {
     const [view, setView] = useState<ViewType>('home');
+    const [captchaModal, setCaptchaModal] = useState<{ targetUrl: string; label: string } | null>(null);
+    const [modalToken, setModalToken] = useState<string | null>(null);
+
+    useEffect(() => {
+        if (!captchaModal) {
+            setModalToken(null);
+        }
+    }, [captchaModal]);
+
+    useEffect(() => {
+        const handleGlobalClick = (e: MouseEvent) => {
+            let target = e.target as HTMLElement | null;
+            while (target && target !== document.body) {
+                if (target.tagName === 'A') {
+                    const href = target.getAttribute('href');
+                    if (href && (href.includes('elationemr.com') || href.includes('calendly.com'))) {
+                        e.preventDefault();
+                        const label = href.includes('elationemr.com') ? 'Schedule Appointment' : 'Schedule Meet-and-Greet';
+                        setCaptchaModal({
+                            targetUrl: href,
+                            label: label
+                        });
+                        return;
+                    }
+                }
+                target = target.parentElement;
+            }
+        };
+
+        document.addEventListener('click', handleGlobalClick);
+        return () => document.removeEventListener('click', handleGlobalClick);
+    }, []);
 
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
     const CARD1_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Card_1.jpg";
@@ -282,6 +315,63 @@ const App = () => {
             <Marquee />
             
             {renderContent()}
+
+            {/* Turnstile Modal */}
+            {captchaModal && (
+                <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 animate-fade-in">
+                    <div className="bg-white rounded-lg p-8 max-w-md w-full shadow-2xl border border-slate-100 text-center space-y-6 relative animate-fade-in">
+                        <button 
+                            onClick={() => setCaptchaModal(null)}
+                            className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 font-bold p-2 transition-colors"
+                        >
+                            ✕
+                        </button>
+                        
+                        <div className="flex justify-center">
+                            <img src={LOGO_URL} className="w-16 h-16 object-contain animate-pulse" alt="Palm & Needle Logo" />
+                        </div>
+                        
+                        <div className="space-y-2">
+                            <h3 className="text-2xl font-bold text-[#5b6d64] serif">Security Verification</h3>
+                            <p className="text-slate-500 text-sm">
+                                To proceed securely to your {captchaModal.label}, please complete the quick verification below.
+                            </p>
+                        </div>
+                        
+                        <div className="flex justify-center py-2">
+                            <Turnstile 
+                                siteKey="0x4AAAAAADSpWH5A1RMfp-pN"
+                                onVerify={(token) => setModalToken(token)}
+                                onExpire={() => setModalToken(null)}
+                                onError={() => setModalToken(null)}
+                            />
+                        </div>
+                        
+                        {modalToken ? (
+                            <a 
+                                href={captchaModal.targetUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => setCaptchaModal(null)}
+                                className="block w-full bg-[#c5a059] text-white py-4 px-6 rounded-sm font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#5b6d64] transition-all shadow-md text-center"
+                            >
+                                Proceed to Booking
+                            </a>
+                        ) : (
+                            <button 
+                                disabled
+                                className="w-full bg-slate-100 text-slate-400 py-4 px-6 rounded-sm font-bold uppercase tracking-[0.2em] text-xs cursor-not-allowed text-center"
+                            >
+                                Awaiting Verification...
+                            </button>
+                        )}
+                        
+                        <p className="text-[10px] text-slate-400">
+                            Secured by Cloudflare Turnstile
+                        </p>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

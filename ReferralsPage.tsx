@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { Turnstile } from './Turnstile';
 
 const ReferralsPage = () => {
     const LOGO_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png";
     const OMM7_URL = "https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/OMM_7.jpg";
 
+    const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
     const [formData, setFormData] = useState({
         patientFirstName: '',
         patientLastName: '',
@@ -185,8 +187,25 @@ Urgency: ${formData.urgency}
                             </div>
                         </div>
 
-                        <div className="pt-8">
-                            <button type="submit" className="w-full bg-[#c5a059] text-white py-6 font-bold uppercase tracking-[0.4em] text-xs hover:bg-[#5b6d64] transition-all shadow-xl hover:-translate-y-1 rounded-sm">
+                        <div className="pt-6 flex flex-col items-center">
+                            <Turnstile 
+                                siteKey="0x4AAAAAADSpWH5A1RMfp-pN"
+                                onVerify={(token) => setTurnstileToken(token)}
+                                onExpire={() => setTurnstileToken(null)}
+                                onError={() => setTurnstileToken(null)}
+                            />
+                        </div>
+
+                        <div className="pt-6">
+                            <button 
+                                type="submit" 
+                                disabled={!turnstileToken}
+                                className={`w-full py-6 font-bold uppercase tracking-[0.4em] text-xs transition-all rounded-sm ${
+                                    turnstileToken 
+                                    ? "bg-[#c5a059] text-white hover:bg-[#5b6d64] shadow-xl hover:-translate-y-1 cursor-pointer" 
+                                    : "bg-slate-300 text-slate-500 cursor-not-allowed opacity-70"
+                                }`}
+                            >
                                 Submit Referral
                             </button>
                         </div>
