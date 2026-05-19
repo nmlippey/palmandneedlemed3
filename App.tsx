@@ -57,6 +57,9 @@ const App = () => {
                 if (target.tagName === 'A') {
                     const href = target.getAttribute('href');
                     if (href && (href.includes('elationemr.com') || href.includes('calendly.com'))) {
+                        if (target.getAttribute('data-bypass-captcha') === 'true') {
+                            return;
+                        }
                         e.preventDefault();
                         const label = href.includes('elationemr.com') ? 'Schedule Appointment' : 'Schedule Meet-and-Greet';
                         setCaptchaModal({
@@ -352,6 +355,7 @@ const App = () => {
                                 href={captchaModal.targetUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                data-bypass-captcha="true"
                                 onClick={() => setCaptchaModal(null)}
                                 className="block w-full bg-[#c5a059] text-white py-4 px-6 rounded-sm font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#5b6d64] transition-all shadow-md text-center"
                             >
