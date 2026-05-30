@@ -35,34 +35,46 @@ const AcupuncturePage = () => {
             {/* Content Section */}
             <section className="py-24 bg-white relative">
                 <div className="max-w-4xl mx-auto px-4 relative z-10">
-                    <div className="text-center space-y-12">
-                        <div className="inline-block px-6 py-2 bg-[#c5a059] text-white text-[10px] font-bold uppercase tracking-[0.3em] rounded-full shadow-lg">
-                            Expanding Soon
-                        </div>
-                        
-                        <div className="space-y-8 text-left">
-                            <p className="text-2xl text-slate-700 leading-relaxed font-light text-center">
-                                Integrative care is expanding—acupuncture is coming to support your health.
+                    <div className="space-y-16">
+                        {/* Section 1: Membership Introduction */}
+                        <div className="space-y-6 text-center max-w-3xl mx-auto">
+                            <h2 className="text-3xl md:text-4xl font-bold text-[#5b6d64] serif">Acupuncture as Part of Your Membership</h2>
+                            <div className="w-16 h-1 bg-[#c5a059] mx-auto rounded-full mb-8"></div>
+                            <p className="text-xl text-slate-700 leading-relaxed font-light">
+                                Acupuncture is now available for Palm & Needle Direct Primary Care members as part of an individualized, whole-person approach to care.
                             </p>
-                            
-                            <div className="grid md:grid-cols-2 gap-12 pt-8">
-                                <div className="space-y-6">
-                                    <h3 className="text-2xl font-bold text-[#5b6d64] serif border-l-4 border-[#8da399] pl-6">Deepening My Practice</h3>
-                                    <p className="text-slate-600 leading-relaxed">
-                                        I am currently undergoing advanced training in acupuncture and look forward to offering this service as a core part of my practice soon. Acupuncture is a gentle, evidence-based integrative therapy that stimulates the body’s natural healing processes.
-                                    </p>
-                                </div>
-                                <div className="space-y-6">
-                                    <h3 className="text-2xl font-bold text-[#5b6d64] serif border-l-4 border-[#8da399] pl-6">Holistic Benefits</h3>
-                                    <p className="text-slate-600 leading-relaxed">
-                                        Once available, these services will focus on pain management, stress reduction, and overall constitutional wellness. It will seamlessly complement our current osteopathic and primary care offerings.
-                                    </p>
-                                </div>
+                        </div>
+
+                        {/* Description block */}
+                        <div className="bg-slate-50 p-8 md:p-12 rounded-lg border border-slate-100 shadow-sm leading-relaxed text-slate-600 text-lg">
+                            As a physician, I am currently undergoing advanced training in acupuncture and have begun incorporating acupuncture into care for established DPC patients. Offering acupuncture within the membership model allows me to thoughtfully integrate treatments into each patient's broader health plan while continuing to deepen my clinical training and experience.
+                        </div>
+
+                        {/* Section 2: An Integrated Approach */}
+                        <div className="grid md:grid-cols-2 gap-12 pt-8 border-t border-slate-100">
+                            <div className="space-y-6">
+                                <h3 className="text-2xl font-bold text-[#5b6d64] serif border-l-4 border-[#8da399] pl-6">An Integrated Approach</h3>
+                                <p className="text-slate-600 leading-relaxed">
+                                    Acupuncture is a gentle, evidence-informed treatment that supports the body's natural healing processes. It can be used alongside primary care and Osteopathic Manipulative Medicine (OMM) to help address concerns such as pain, stress, tension, headaches, sleep difficulties, and overall wellness.
+                                </p>
+                            </div>
+                            <div className="space-y-6">
+                                <h3 className="text-2xl font-bold text-[#5b6d64] serif border-l-4 border-[#8da399] pl-6">Coordinated Care</h3>
+                                <p className="text-slate-600 leading-relaxed">
+                                    One of the unique benefits of receiving acupuncture within a Direct Primary Care practice is that your treatment is coordinated with your overall care rather than provided as a standalone service.
+                                </p>
                             </div>
                         </div>
 
-                        <div className="bg-slate-50 p-12 rounded-lg border border-slate-100 shadow-sm mt-16 italic text-slate-600">
-                            While I continue my training, I remain focused on providing comprehensive primary care and OMM, ensuring you receive personalized care tailored to your immediate needs.
+                        {/* Section 3: Coming Soon */}
+                        <div className="pt-12 border-t border-slate-100 text-center max-w-3xl mx-auto space-y-6">
+                            <h3 className="text-2xl md:text-3xl font-bold text-[#5b6d64] serif">Coming Soon: Acupuncture for Non-Members</h3>
+                            <p className="text-slate-600 leading-relaxed">
+                                At this time, acupuncture is offered exclusively to Palm & Needle DPC members. Once my advanced training is complete, I plan to expand availability and offer standalone acupuncture appointments for non-members as well.
+                            </p>
+                            <div className="p-8 bg-[#8da399]/10 rounded-lg max-w-xl mx-auto italic text-[#5b6d64] font-medium text-sm">
+                                If you're interested in learning more about membership or would like to be notified when standalone acupuncture visits become available, please contact us.
+                            </div>
                         </div>
                     </div>
                 </div>
