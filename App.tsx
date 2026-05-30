@@ -7,6 +7,7 @@ import OmmPage from './OmmPage';
 import AcupuncturePage from './AcupuncturePage';
 import ReferralsPage from './ReferralsPage';
 import { Turnstile } from './Turnstile';
+import { Testimonials } from './Testimonials';
 
 export type ViewType = 'home' | 'about' | 'dpc' | 'omm' | 'acupuncture' | 'referrals';
 
@@ -240,6 +241,8 @@ const App = () => {
                     </div>
                 </div>
             </section>
+
+            <Testimonials />
 
             <section id="contact" className="py-20 lg:py-32 bg-[#5b6d64] text-white relative z-10">
                 <div className="hidden lg:block absolute inset-0 overflow-hidden pointer-events-none">
