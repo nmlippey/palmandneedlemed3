@@ -8,7 +8,7 @@ export const SERVICES = [
         desc: 'Gentle, hands-on techniques to relieve pain, improve mobility, and restore balance. OMM supports your body’s natural healing and complements your primary care.'
     },
     { 
-        title: 'Acupuncture (Coming Soon)', 
-        desc: 'I am training in acupuncture and will soon offer this integrative therapy to help with pain relief, stress reduction, and overall wellness.'
+        title: 'Acupuncture (for members)', 
+        desc: 'I am now offering acupuncture to Direct Primary Care members to help with pain relief, stress reduction, and overall wellness.'
     }
 ];
