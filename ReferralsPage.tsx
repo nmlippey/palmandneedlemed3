@@ -114,27 +114,27 @@ Urgency: ${formData.urgency}
                             
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <label className={labelClasses}>First Name (required)</label>
-                                    <input required type="text" value={formData.patientFirstName} onChange={e => setFormData({...formData, patientFirstName: e.target.value})} className={inputClasses} />
+                                    <label htmlFor="patientFirstName" className={labelClasses}>First Name (required)</label>
+                                    <input id="patientFirstName" required type="text" value={formData.patientFirstName} onChange={e => setFormData({...formData, patientFirstName: e.target.value})} className={inputClasses} />
                                 </div>
                                 <div>
-                                    <label className={labelClasses}>Last Name (required)</label>
-                                    <input required type="text" value={formData.patientLastName} onChange={e => setFormData({...formData, patientLastName: e.target.value})} className={inputClasses} />
+                                    <label htmlFor="patientLastName" className={labelClasses}>Last Name (required)</label>
+                                    <input id="patientLastName" required type="text" value={formData.patientLastName} onChange={e => setFormData({...formData, patientLastName: e.target.value})} className={inputClasses} />
                                 </div>
                             </div>
 
                             <div className="grid md:grid-cols-3 gap-6">
                                 <div>
-                                    <label className={labelClasses}>Date of Birth</label>
-                                    <input type="text" placeholder="MM/DD/YYYY" value={formData.patientDob} onChange={e => setFormData({...formData, patientDob: e.target.value})} className={inputClasses} />
+                                    <label htmlFor="patientDob" className={labelClasses}>Date of Birth</label>
+                                    <input id="patientDob" type="text" placeholder="MM/DD/YYYY" value={formData.patientDob} onChange={e => setFormData({...formData, patientDob: e.target.value})} className={inputClasses} />
                                 </div>
                                 <div>
-                                    <label className={labelClasses}>Phone (required)</label>
-                                    <input required type="tel" value={formData.patientPhone} onChange={e => setFormData({...formData, patientPhone: e.target.value})} className={inputClasses} />
+                                    <label htmlFor="patientPhone" className={labelClasses}>Phone (required)</label>
+                                    <input id="patientPhone" required type="tel" value={formData.patientPhone} onChange={e => setFormData({...formData, patientPhone: e.target.value})} className={inputClasses} />
                                 </div>
                                 <div>
-                                    <label className={labelClasses}>Email</label>
-                                    <input type="email" value={formData.patientEmail} onChange={e => setFormData({...formData, patientEmail: e.target.value})} className={inputClasses} />
+                                    <label htmlFor="patientEmail" className={labelClasses}>Email</label>
+                                    <input id="patientEmail" type="email" value={formData.patientEmail} onChange={e => setFormData({...formData, patientEmail: e.target.value})} className={inputClasses} />
                                 </div>
                             </div>
                         </div>
@@ -148,39 +148,39 @@ Urgency: ${formData.urgency}
 
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <label className={labelClasses}>First Name (required)</label>
-                                    <input required type="text" value={formData.clinicianFirstName} onChange={e => setFormData({...formData, clinicianFirstName: e.target.value})} className={inputClasses} />
+                                    <label htmlFor="clinicianFirstName" className={labelClasses}>First Name (required)</label>
+                                    <input id="clinicianFirstName" required type="text" value={formData.clinicianFirstName} onChange={e => setFormData({...formData, clinicianFirstName: e.target.value})} className={inputClasses} />
                                 </div>
                                 <div>
-                                    <label className={labelClasses}>Last Name (required)</label>
-                                    <input required type="text" value={formData.clinicianLastName} onChange={e => setFormData({...formData, clinicianLastName: e.target.value})} className={inputClasses} />
+                                    <label htmlFor="clinicianLastName" className={labelClasses}>Last Name (required)</label>
+                                    <input id="clinicianLastName" required type="text" value={formData.clinicianLastName} onChange={e => setFormData({...formData, clinicianLastName: e.target.value})} className={inputClasses} />
                                 </div>
                             </div>
 
                             <div>
-                                <label className={labelClasses}>Practice Name</label>
-                                <input type="text" value={formData.clinicianPractice} onChange={e => setFormData({...formData, clinicianPractice: e.target.value})} className={inputClasses} />
+                                <label htmlFor="clinicianPractice" className={labelClasses}>Practice Name</label>
+                                <input id="clinicianPractice" type="text" value={formData.clinicianPractice} onChange={e => setFormData({...formData, clinicianPractice: e.target.value})} className={inputClasses} />
                             </div>
 
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <label className={labelClasses}>Phone</label>
-                                    <input type="tel" value={formData.clinicianPhone} onChange={e => setFormData({...formData, clinicianPhone: e.target.value})} className={inputClasses} />
+                                    <label htmlFor="clinicianPhone" className={labelClasses}>Phone</label>
+                                    <input id="clinicianPhone" type="tel" value={formData.clinicianPhone} onChange={e => setFormData({...formData, clinicianPhone: e.target.value})} className={inputClasses} />
                                 </div>
                                 <div>
-                                    <label className={labelClasses}>Fax</label>
-                                    <input type="tel" value={formData.clinicianFax} onChange={e => setFormData({...formData, clinicianFax: e.target.value})} className={inputClasses} />
+                                    <label htmlFor="clinicianFax" className={labelClasses}>Fax</label>
+                                    <input id="clinicianFax" type="tel" value={formData.clinicianFax} onChange={e => setFormData({...formData, clinicianFax: e.target.value})} className={inputClasses} />
                                 </div>
                             </div>
 
                             <div>
-                                <label className={labelClasses}>Reason for Referral (required)</label>
-                                <textarea required rows={4} value={formData.reason} onChange={e => setFormData({...formData, reason: e.target.value})} className={inputClasses} placeholder="Please describe the patient's condition and goals for OMM/Acupuncture..." />
+                                <label htmlFor="reason" className={labelClasses}>Reason for Referral (required)</label>
+                                <textarea id="reason" required rows={4} value={formData.reason} onChange={e => setFormData({...formData, reason: e.target.value})} className={inputClasses} placeholder="Please describe the patient's condition and goals for OMM/Acupuncture..." />
                             </div>
 
                             <div>
-                                <label className={labelClasses}>Urgency</label>
-                                <select value={formData.urgency} onChange={e => setFormData({...formData, urgency: e.target.value})} className={inputClasses}>
+                                <label htmlFor="urgency" className={labelClasses}>Urgency</label>
+                                <select id="urgency" value={formData.urgency} onChange={e => setFormData({...formData, urgency: e.target.value})} className={inputClasses}>
                                     <option value="Routine">Routine</option>
                                     <option value="Urgent">Urgent</option>
                                 </select>

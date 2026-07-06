@@ -19,20 +19,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-32 items-center">
                     <div className="hidden md:flex space-x-4 lg:space-x-6 items-center">
-                        <a href="#home" onClick={(e) => handleLinkClick(e, 'home', '#home')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Home</a>
-                        <a href="#about" onClick={(e) => handleLinkClick(e, 'about')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Meet Dr. Lippey</a>
-                        <a href="#dpc" onClick={(e) => handleLinkClick(e, 'dpc')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Direct Primary Care</a>
-                        <a href="#omm" onClick={(e) => handleLinkClick(e, 'omm')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">OMM</a>
-                        <a href="#acupuncture" onClick={(e) => handleLinkClick(e, 'acupuncture')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Acupuncture</a>
-                        <a href="#referrals" onClick={(e) => handleLinkClick(e, 'referrals')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap">Referrals</a>
+                        <a href="#home" onClick={(e) => handleLinkClick(e, 'home', '#home')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8da399] focus-visible:rounded-sm">Home</a>
+                        <a href="#about" onClick={(e) => handleLinkClick(e, 'about')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8da399] focus-visible:rounded-sm">Meet Dr. Lippey</a>
+                        <a href="#dpc" onClick={(e) => handleLinkClick(e, 'dpc')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8da399] focus-visible:rounded-sm">Direct Primary Care</a>
+                        <a href="#omm" onClick={(e) => handleLinkClick(e, 'omm')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8da399] focus-visible:rounded-sm">OMM</a>
+                        <a href="#acupuncture" onClick={(e) => handleLinkClick(e, 'acupuncture')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8da399] focus-visible:rounded-sm">Acupuncture</a>
+                        <a href="#referrals" onClick={(e) => handleLinkClick(e, 'referrals')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8da399] focus-visible:rounded-sm">Referrals</a>
                         <div className="flex space-x-2">
-                            <a href="#contact" onClick={(e) => handleLinkClick(e, 'home', '#contact')} className="bg-[#5b6d64] text-white px-4 py-2.5 rounded-sm nav-link hover:bg-[#c5a059] whitespace-nowrap">Contact</a>
-                            <a href="https://app.elationemr.com/book/palmandneedlemed" target="_blank" rel="noopener noreferrer" className="bg-[#c5a059] text-white px-4 py-2.5 rounded-sm nav-link hover:bg-[#5b6d64] whitespace-nowrap">Schedule Appointment</a>
+                            <a href="#contact" onClick={(e) => handleLinkClick(e, 'home', '#contact')} className="bg-[#5b6d64] text-white px-4 py-2.5 rounded-sm nav-link hover:bg-[#c5a059] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">Contact</a>
+                            <a href="https://app.elationemr.com/book/palmandneedlemed" target="_blank" rel="noopener noreferrer" className="bg-[#c5a059] text-white px-4 py-2.5 rounded-sm nav-link hover:bg-[#5b6d64] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">Schedule Appointment</a>
                         </div>
                     </div>
 
                     <div className="md:hidden flex items-center">
-                        <button onClick={() => setIsOpen(!isOpen)} className="text-[#5b6d64] p-2">
+                        <button 
+                            onClick={() => setIsOpen(!isOpen)} 
+                            className="text-[#5b6d64] p-2 focus:outline-none focus:ring-2 focus:ring-[#8da399] rounded"
+                            aria-expanded={isOpen}
+                            aria-label="Toggle navigation menu"
+                        >
                             <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} strokeWidth="2" strokeLinecap="round"/>
                             </svg>
@@ -40,13 +45,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                     </div>
 
                     <div className="flex items-center">
-                        <img 
-                            src="https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png" 
-                            alt="Palm & Needle Logo" 
-                            className="w-20 h-20 sm:w-32 sm:h-32 object-contain cursor-pointer scale-125"
-                            onClick={(e) => handleLinkClick(e as any, 'home', '#home')}
-                            referrerPolicy="no-referrer"
-                        />
+                        <a 
+                            href="#home" 
+                            onClick={(e) => handleLinkClick(e, 'home', '#home')} 
+                            aria-label="Palm & Needle Home" 
+                            className="focus:outline-none focus:ring-2 focus:ring-[#8da399] rounded-sm inline-block"
+                        >
+                            <img 
+                                src="https://raw.githubusercontent.com/nmlippey/palmandneedlemed-assets/main/Logo_2.png" 
+                                alt="Palm & Needle Logo" 
+                                className="w-20 h-20 sm:w-32 sm:h-32 object-contain scale-125"
+                                referrerPolicy="no-referrer"
+                            />
+                        </a>
                     </div>
                 </div>
             </div>

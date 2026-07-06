@@ -183,15 +183,17 @@ const App = () => {
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {SERVICES.map((s, i) => (
-                            <div 
+                            <button 
                                 key={i} 
+                                type="button"
                                 onClick={() => navigateTo(i === 0 ? 'dpc' : i === 1 ? 'omm' : 'acupuncture')}
-                                className="group p-10 bg-white rounded-lg border border-slate-100 transition-all hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden cursor-pointer"
+                                className="group p-10 bg-white rounded-lg border border-slate-100 transition-all hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8da399] cursor-pointer"
+                                aria-label={`Learn more about ${s.title}`}
                             >
-                                <h3 className="text-2xl font-bold text-[#5b6d64] serif mb-4">{s.title}</h3>
-                                <p className="text-slate-500 text-sm leading-relaxed mb-6">{s.desc}</p>
+                                <span className="block text-2xl font-bold text-[#5b6d64] serif mb-4">{s.title}</span>
+                                <span className="block text-slate-500 text-sm leading-relaxed mb-6 font-sans">{s.desc}</span>
                                 <span className="text-[#c5a059] text-[10px] font-bold uppercase tracking-widest border-b border-transparent group-hover:border-[#c5a059] transition-all">Learn More →</span>
-                            </div>
+                            </button>
                         ))}
                     </div>
                 </div>
@@ -317,18 +319,27 @@ const App = () => {
 
     return (
         <div className="min-h-screen bg-white">
+            <a 
+                href="#main-content" 
+                className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#c5a059] focus:text-white focus:px-6 focus:py-3 focus:rounded focus:outline-none focus:ring-2 focus:ring-[#8da399] font-bold text-sm tracking-wider uppercase transition-all shadow-xl"
+            >
+                Skip to Main Content
+            </a>
             <Navbar onNavigate={navigateTo} />
             <Marquee />
             
-            {renderContent()}
+            <main id="main-content" className="outline-none" tabIndex={-1}>
+                {renderContent()}
+            </main>
 
             {/* Turnstile Modal */}
             {captchaModal && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 animate-fade-in">
+                <div role="dialog" aria-modal="true" aria-labelledby="modal-title" className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 animate-fade-in">
                     <div className="bg-white rounded-lg p-8 max-w-md w-full shadow-2xl border border-slate-100 text-center space-y-6 relative animate-fade-in">
                         <button 
                             onClick={() => setCaptchaModal(null)}
-                            className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 font-bold p-2 transition-colors"
+                            className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 font-bold p-2 transition-colors focus:outline-none focus:ring-2 focus:ring-[#8da399] rounded"
+                            aria-label="Close security verification modal"
                         >
                             ✕
                         </button>
@@ -338,7 +349,7 @@ const App = () => {
                         </div>
                         
                         <div className="space-y-2">
-                            <h3 className="text-2xl font-bold text-[#5b6d64] serif">Security Verification</h3>
+                            <h3 id="modal-title" className="text-2xl font-bold text-[#5b6d64] serif">Security Verification</h3>
                             <p className="text-slate-500 text-sm">
                                 To proceed securely to your {captchaModal.label}, please complete the quick verification below.
                             </p>

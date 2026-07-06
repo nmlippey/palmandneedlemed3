@@ -91,7 +91,7 @@ export const Testimonials: React.FC = () => {
                     <button 
                         onClick={handlePrev} 
                         aria-label="Previous testimonial"
-                        className="hidden md:flex absolute left-0 w-12 h-12 items-center justify-center rounded-full bg-white border border-slate-100 text-slate-400 hover:text-[#5b6d64] hover:shadow-lg hover:-translate-x-0.5 transition-all outline-none"
+                        className="hidden md:flex absolute left-0 w-12 h-12 items-center justify-center rounded-full bg-white border border-slate-100 text-slate-400 hover:text-[#5b6d64] hover:shadow-lg hover:-translate-x-0.5 transition-all outline-none focus-visible:ring-2 focus-visible:ring-[#8da399]"
                     >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
@@ -128,7 +128,7 @@ export const Testimonials: React.FC = () => {
                     <button 
                         onClick={handleNext} 
                         aria-label="Next testimonial"
-                        className="hidden md:flex absolute right-0 w-12 h-12 items-center justify-center rounded-full bg-white border border-slate-100 text-slate-400 hover:text-[#5b6d64] hover:shadow-lg hover:translate-x-0.5 transition-all outline-none"
+                        className="hidden md:flex absolute right-0 w-12 h-12 items-center justify-center rounded-full bg-white border border-slate-100 text-slate-400 hover:text-[#5b6d64] hover:shadow-lg hover:translate-x-0.5 transition-all outline-none focus-visible:ring-2 focus-visible:ring-[#8da399]"
                     >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
@@ -144,7 +144,7 @@ export const Testimonials: React.FC = () => {
                                 key={index}
                                 onClick={() => handleDotClick(index)}
                                 aria-label={`Go to testimonial ${index + 1}`}
-                                className={`h-2 rounded-full transition-all duration-300 ${
+                                className={`h-2 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8da399] ${
                                     index === currentIndex 
                                         ? "w-8 bg-[#c5a059]" 
                                         : "w-2 bg-slate-300 hover:bg-slate-400"
