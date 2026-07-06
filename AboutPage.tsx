@@ -176,7 +176,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                             <div key={i} className="relative group aspect-square flex-1 min-w-[50%] md:min-w-0 overflow-hidden border-r border-white/10 last:border-0">
                                 <img 
                                     src={item.url} 
-                                    alt={`Life outside work ${i + 1}`} 
+                                    alt={item.caption} 
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     style={{ objectPosition: item.pos }}
                                     referrerPolicy="no-referrer"
