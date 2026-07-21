@@ -13,7 +13,7 @@ const AcupuncturePage = () => {
                 </div>
                 <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
                     <span className="text-[#c5a059] uppercase tracking-[0.4em] font-bold text-xs mb-6 block">Integrative Care</span>
-                    <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif mb-8">Acupuncture</h1>
+                    <h1 className="text-5xl md:text-7xl font-bold text-[#5b6d64] serif mb-8">Integrative Acupuncture</h1>
                     <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto serif italic">
                         Finding balance through traditional Chinese medicine and modern clinical insight.
                     </p>
@@ -36,45 +36,123 @@ const AcupuncturePage = () => {
             <section className="py-24 bg-white relative">
                 <div className="max-w-4xl mx-auto px-4 relative z-10">
                     <div className="space-y-16">
-                        {/* Section 1: Membership Introduction */}
+                        {/* Section 1: Introduction */}
                         <div className="space-y-6 text-center max-w-3xl mx-auto">
-                            <h2 className="text-3xl md:text-4xl font-bold text-[#5b6d64] serif">Acupuncture as Part of Your Membership</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-[#5b6d64] serif">Acupuncture is offered at Palm & Needle in two ways:</h2>
                             <div className="w-16 h-1 bg-[#c5a059] mx-auto rounded-full mb-8"></div>
-                            <p className="text-xl text-slate-700 leading-relaxed font-light">
-                                Acupuncture is now available for Palm & Needle Direct Primary Care members as part of an individualized, whole-person approach to care.
-                            </p>
                         </div>
 
-                        {/* Description block */}
-                        <div className="bg-slate-50 p-8 md:p-12 rounded-lg border border-slate-100 shadow-sm leading-relaxed text-slate-600 text-lg">
-                            As a physician, I am currently undergoing advanced training in acupuncture and have begun incorporating acupuncture into care for established DPC patients. Offering acupuncture within the membership model allows me to thoughtfully integrate treatments into each patient's broader health plan while continuing to deepen my clinical training and experience.
+                        {/* Members vs Non-Members Grid */}
+                        <div className="grid md:grid-cols-2 gap-8 pt-4">
+                            {/* DPC Members */}
+                            <div className="bg-[#5b6d64]/5 border border-[#5b6d64]/10 rounded-lg p-8 md:p-10 flex flex-col justify-between space-y-6">
+                                <div className="space-y-4">
+                                    <span className="text-[#c5a059] uppercase tracking-[0.2em] font-bold text-xs block">Option 1</span>
+                                    <h3 className="text-2xl font-bold text-[#5b6d64] serif">Direct Primary Care Members</h3>
+                                    <p className="text-slate-600 leading-relaxed text-base">
+                                        Acupuncture is included as part of your Direct Primary Care membership when clinically appropriate and may be incorporated into your individualized treatment plan at no additional cost.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Non-Members */}
+                            <div className="bg-slate-50 border border-slate-100 rounded-lg p-8 md:p-10 flex flex-col justify-between space-y-6">
+                                <div className="space-y-4">
+                                    <span className="text-slate-400 uppercase tracking-[0.2em] font-bold text-xs block">Option 2</span>
+                                    <h3 className="text-2xl font-bold text-[#5b6d64] serif">Non-Members</h3>
+                                    <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+                                        At this time, acupuncture for non-members is offered as part of an Integrative OMM + Acupuncture visit rather than as a standalone acupuncture appointment.
+                                    </p>
+                                    <p className="text-slate-500 leading-relaxed text-xs md:text-sm italic">
+                                        This way, acupuncture can be thoughtfully combined with Osteopathic Manipulative Medicine (OMM), creating a comprehensive treatment that addresses musculoskeletal function, pain, nervous system regulation, and overall wellness.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
-                        {/* Section 2: An Integrated Approach */}
-                        <div className="grid md:grid-cols-2 gap-12 pt-8 border-t border-slate-100">
-                            <div className="space-y-6">
-                                <h3 className="text-2xl font-bold text-[#5b6d64] serif border-l-4 border-[#8da399] pl-6">An Integrated Approach</h3>
-                                <p className="text-slate-600 leading-relaxed">
-                                    Acupuncture is a gentle, evidence-informed treatment that supports the body's natural healing processes. It can be used alongside primary care and Osteopathic Manipulative Medicine (OMM) to help address concerns such as pain, stress, tension, headaches, sleep difficulties, and overall wellness.
+                        {/* Section 2: A Thoughtful, Integrated Approach */}
+                        <div className="pt-16 border-t border-slate-100 max-w-3xl mx-auto space-y-8">
+                            <div className="text-center space-y-4">
+                                <h3 className="text-2xl md:text-3xl font-bold text-[#5b6d64] serif">A Thoughtful, Integrated Approach</h3>
+                                <div className="w-12 h-0.5 bg-[#c5a059] mx-auto rounded-full"></div>
+                            </div>
+                            <div className="space-y-6 text-slate-600 leading-relaxed text-base md:text-lg">
+                                <p>
+                                    As a physician, I am currently completing advanced training in acupuncture. During this stage, I have chosen to integrate acupuncture into comprehensive osteopathic treatment rather than offer standalone acupuncture visits.
+                                </p>
+                                <p className="bg-slate-50 p-6 md:p-8 rounded-lg border border-slate-100 shadow-sm font-light italic">
+                                    This approach allows me to combine the hands-on principles of Osteopathic Manipulative Medicine (OMM) with physician-delivered acupuncture to create personalized treatments that address pain, mobility, nervous system regulation, stress, and overall wellness while continuing to advance my acupuncture training and clinical expertise.
                                 </p>
                             </div>
-                            <div className="space-y-6">
-                                <h3 className="text-2xl font-bold text-[#5b6d64] serif border-l-4 border-[#8da399] pl-6">Coordinated Care</h3>
-                                <p className="text-slate-600 leading-relaxed">
-                                    One of the unique benefits of receiving acupuncture within a Direct Primary Care practice is that your treatment is coordinated with your overall care rather than provided as a standalone service.
-                                </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Integrative OMM + Acupuncture Pricing */}
+            <section className="py-24 bg-slate-50 border-t border-slate-100">
+                <div className="max-w-5xl mx-auto px-4">
+                    {/* Header */}
+                    <div className="text-center mb-16 max-w-3xl mx-auto space-y-6">
+                        <h2 className="text-4xl font-bold text-[#5b6d64] serif">Integrative OMM + Acupuncture Pricing</h2>
+                        <div className="w-24 h-1 bg-[#c5a059] mx-auto"></div>
+                    </div>
+
+                    <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 mb-16">
+                        {/* Adults Column */}
+                        <div className="space-y-6">
+                            <div className="border-b border-slate-200 pb-4">
+                                <h3 className="text-xl font-bold text-[#5b6d64] serif">Adults</h3>
+                            </div>
+                            <div className="space-y-4">
+                                {[
+                                    { title: "Integrative OMM + Acupuncture", time: "60 minutes", price: "$375" },
+                                    { title: "Extended Integrative OMM + Acupuncture", time: "90 minutes", price: "$475" }
+                                ].map((item, idx) => (
+                                    <div key={idx} className="bg-white p-6 rounded-lg border border-slate-100 flex justify-between items-center group hover:shadow-md transition-shadow">
+                                        <div className="space-y-1">
+                                            <h4 className="font-bold text-[#5b6d64] text-sm md:text-base">{item.title}</h4>
+                                            <p className="text-slate-500 text-xs">{item.time}</p>
+                                        </div>
+                                        <div className="text-xl font-bold text-[#c5a059] whitespace-nowrap pl-4">
+                                            {item.price}
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
 
-                        {/* Section 3: Coming Soon */}
-                        <div className="pt-12 border-t border-slate-100 text-center max-w-3xl mx-auto space-y-6">
-                            <h3 className="text-2xl md:text-3xl font-bold text-[#5b6d64] serif">Coming Soon: Acupuncture for Non-Members</h3>
-                            <p className="text-slate-600 leading-relaxed">
-                                At this time, acupuncture is offered exclusively to Palm & Needle DPC members. Once my advanced training is complete, I plan to expand availability and offer standalone acupuncture appointments for non-members as well.
-                            </p>
-                            <div className="p-8 bg-[#8da399]/10 rounded-lg max-w-xl mx-auto italic text-[#5b6d64] font-medium text-sm">
-                                If you're interested in learning more about membership or would like to be notified when standalone acupuncture visits become available, please contact us.
+                        {/* Children Column */}
+                        <div className="space-y-6">
+                            <div className="border-b border-slate-200 pb-4">
+                                <h3 className="text-xl font-bold text-[#5b6d64] serif">Children</h3>
                             </div>
+                            <div className="space-y-4">
+                                {[
+                                    { title: "Integrative OMM + Acupuncture", time: "60 minutes", price: "$150" }
+                                ].map((item, idx) => (
+                                    <div key={idx} className="bg-white p-6 rounded-lg border border-slate-100 flex justify-between items-center group hover:shadow-md transition-shadow">
+                                        <div className="space-y-1">
+                                            <h4 className="font-bold text-[#5b6d64] text-sm md:text-base">{item.title}</h4>
+                                            <p className="text-slate-500 text-xs">{item.time}</p>
+                                        </div>
+                                        <div className="text-xl font-bold text-[#c5a059] whitespace-nowrap pl-4">
+                                            {item.price}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* DPC Members Integration */}
+                    <div className="max-w-4xl mx-auto">
+                        <div className="bg-[#5b6d64]/5 border border-[#5b6d64]/10 rounded-lg p-8 md:p-10 text-center space-y-4">
+                            <span className="text-[#c5a059] uppercase tracking-[0.2em] font-bold text-xs block">DPC Membership Benefit</span>
+                            <h3 className="text-2xl font-bold text-[#5b6d64] serif">Included for Direct Primary Care Members</h3>
+                            <p className="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed md:text-base">
+                                One of the unique benefits of Palm & Needle Direct Primary Care is that both OMM and acupuncture are included as part of your membership whenever clinically appropriate.
+                            </p>
                         </div>
                     </div>
                 </div>

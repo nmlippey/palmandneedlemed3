@@ -167,29 +167,88 @@ const OmmPage: React.FC<OmmPageProps> = ({ onNavigate }) => {
                 </div>
             </section>
 
-            {/* OMM Pricing */}
+            {/* OMM & Integrative Treatment Pricing */}
             <section className="py-24 bg-white border-t border-slate-100">
                 <div className="max-w-5xl mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold text-[#5b6d64] serif">OMM Pricing</h2>
-                        <h3 className="text-2xl font-bold text-[#5b6d64] serif mt-8">DPC members: free as OMM is included</h3>
+                    {/* Header */}
+                    <div className="text-center mb-16 max-w-3xl mx-auto space-y-6">
+                        <h2 className="text-4xl font-bold text-[#5b6d64] serif">OMM & Integrative Treatment Pricing</h2>
+                        <div className="w-24 h-1 bg-[#c5a059] mx-auto"></div>
+                        <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+                            Integrative OMM + Acupuncture combines Osteopathic Manipulative Medicine (OMM) with physician-delivered acupuncture in a single visit. These appointments are designed for patients who may benefit from both hands-on osteopathic treatment and acupuncture as part of a personalized treatment plan.
+                        </p>
                     </div>
-                    
-                    <div className="max-w-4xl mx-auto">
-                        <h3 className="text-2xl font-bold text-[#5b6d64] serif mb-8 text-center">Non-members:</h3>
-                        <div className="grid md:grid-cols-2 gap-8">
-                            {[
-                                { title: "New Patient Visit: Adult 18+", time: "60 minutes", price: "$350" },
-                                { title: "New Patient Visit: Ages 0-17", time: "60 minutes", price: "$200" },
-                                { title: "Follow-up Patient Visit: Adult 18+", time: "60 minutes", price: "$250" },
-                                { title: "Follow-up Patient Visit: Ages 0-17", time: "60 minutes", price: "$100" }
-                            ].map((item, i) => (
-                                <div key={i} className="bg-slate-50 p-8 rounded border border-slate-100 shadow-sm hover:shadow-md transition-shadow text-center space-y-2">
-                                    <h4 className="font-bold text-[#5b6d64] serif text-lg">{item.title}</h4>
-                                    <p className="text-slate-500 text-sm">{item.time}</p>
-                                    <p className="text-2xl font-bold text-[#c5a059] pt-2">{item.price}</p>
+
+                    {/* DPC Members Highlights */}
+                    <div className="max-w-4xl mx-auto mb-16">
+                        <div className="bg-[#5b6d64]/5 border border-[#5b6d64]/10 rounded-lg p-8 md:p-10 text-center space-y-4">
+                            <span className="text-[#c5a059] uppercase tracking-[0.2em] font-bold text-xs block">Exclusive Benefit</span>
+                            <h3 className="text-2xl font-bold text-[#5b6d64] serif">Direct Primary Care Members</h3>
+                            <div className="text-[#c5a059] font-bold uppercase tracking-wider text-lg">
+                                Included with membership
+                            </div>
+                            <p className="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed">
+                                Osteopathic Manipulative Medicine (OMM) and Integrative OMM + Acupuncture treatments are included as part of your Direct Primary Care membership when clinically appropriate.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Non-Members Columns */}
+                    <div className="max-w-4xl mx-auto space-y-16">
+                        <div className="text-center">
+                            <h3 className="text-2xl font-bold text-[#5b6d64] serif mb-2">Non-Member Rates</h3>
+                            <p className="text-slate-500 text-sm">For patients who are not currently enrolled in Direct Primary Care</p>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-10">
+                            {/* Adults Column */}
+                            <div className="space-y-6">
+                                <div className="border-b border-slate-100 pb-4">
+                                    <h4 className="text-xl font-bold text-[#5b6d64] serif">Adults (18+)</h4>
                                 </div>
-                            ))}
+                                <div className="space-y-4">
+                                    {[
+                                        { title: "Initial OMM Visit", time: "60 minutes", price: "$350" },
+                                        { title: "Follow-Up OMM Visit", time: "60 minutes", price: "$250" },
+                                        { title: "Integrative OMM + Acupuncture", time: "60 minutes", price: "$375" },
+                                        { title: "Extended Integrative OMM + Acupuncture", time: "90 minutes", price: "$475" }
+                                    ].map((item, idx) => (
+                                        <div key={idx} className="bg-slate-50 p-6 rounded border border-slate-100 flex justify-between items-center group hover:shadow-md transition-shadow">
+                                            <div className="space-y-1">
+                                                <h5 className="font-bold text-[#5b6d64] text-sm md:text-base">{item.title}</h5>
+                                                <p className="text-slate-500 text-xs">{item.time}</p>
+                                            </div>
+                                            <div className="text-xl font-bold text-[#c5a059] whitespace-nowrap pl-4">
+                                                {item.price}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Children Column */}
+                            <div className="space-y-6">
+                                <div className="border-b border-slate-100 pb-4">
+                                    <h4 className="text-xl font-bold text-[#5b6d64] serif">Children (0–17)</h4>
+                                </div>
+                                <div className="space-y-4">
+                                    {[
+                                        { title: "Initial OMM Visit", time: "60 minutes", price: "$200" },
+                                        { title: "Follow-Up OMM Visit", time: "60 minutes", price: "$100" },
+                                        { title: "Integrative OMM + Acupuncture (or Acupuncture-adjacent techniques)", time: "60 minutes", price: "$150" }
+                                    ].map((item, idx) => (
+                                        <div key={idx} className="bg-slate-50 p-6 rounded border border-slate-100 flex justify-between items-center group hover:shadow-md transition-shadow">
+                                            <div className="space-y-1">
+                                                <h5 className="font-bold text-[#5b6d64] text-sm md:text-base">{item.title}</h5>
+                                                <p className="text-slate-500 text-xs">{item.time}</p>
+                                            </div>
+                                            <div className="text-xl font-bold text-[#c5a059] whitespace-nowrap pl-4">
+                                                {item.price}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -198,7 +257,7 @@ const OmmPage: React.FC<OmmPageProps> = ({ onNavigate }) => {
                             href="https://app.elationemr.com/book/palmandneedlemed"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block bg-[#5b6d64] text-white px-10 py-4 rounded-sm font-bold hover:bg-[#c5a059] transition-colors uppercase tracking-widest text-sm text-center"
+                            className="inline-block bg-[#5b6d64] text-white px-10 py-4 rounded-sm font-bold hover:bg-[#c5a059] transition-colors uppercase tracking-widest text-sm text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8da399]"
                         >
                             schedule here
                         </a>
