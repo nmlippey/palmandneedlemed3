@@ -102,7 +102,7 @@ const AcupuncturePage = () => {
                         {/* Adults Column */}
                         <div className="space-y-6">
                             <div className="border-b border-slate-200 pb-4">
-                                <h3 className="text-xl font-bold text-[#5b6d64] serif">Adults</h3>
+                                <h3 className="text-xl font-bold text-[#5b6d64] serif">Adults (18+)</h3>
                             </div>
                             <div className="space-y-4">
                                 {[
@@ -125,7 +125,7 @@ const AcupuncturePage = () => {
                         {/* Children Column */}
                         <div className="space-y-6">
                             <div className="border-b border-slate-200 pb-4">
-                                <h3 className="text-xl font-bold text-[#5b6d64] serif">Children</h3>
+                                <h3 className="text-xl font-bold text-[#5b6d64] serif">Children (0-17)</h3>
                             </div>
                             <div className="space-y-4">
                                 {[
