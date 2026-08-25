@@ -26,8 +26,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                         <a href="#acupuncture" onClick={(e) => handleLinkClick(e, 'acupuncture')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8da399] focus-visible:rounded-sm">Acupuncture</a>
                         <a href="#referrals" onClick={(e) => handleLinkClick(e, 'referrals')} className="text-slate-600 hover:text-[#c5a059] nav-link whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8da399] focus-visible:rounded-sm">Referrals</a>
                         <div className="flex space-x-2">
-                            <a href="#contact" onClick={(e) => handleLinkClick(e, 'home', '#contact')} className="bg-[#5b6d64] text-white px-4 py-2.5 rounded-sm nav-link hover:bg-[#c5a059] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">Contact</a>
                             <a href="https://app.elationemr.com/book/palmandneedlemed" target="_blank" rel="noopener noreferrer" className="bg-[#c5a059] text-white px-4 py-2.5 rounded-sm nav-link hover:bg-[#5b6d64] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">Schedule Appointment</a>
+                            <a href="https://calendly.com/nlippey-palmandneedlemed/30min?" target="_blank" rel="noopener noreferrer" className="bg-[#5b6d64] text-white px-4 py-2.5 rounded-sm nav-link hover:bg-[#c5a059] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">Schedule Meet & Greet</a>
                         </div>
                     </div>
 
@@ -69,8 +69,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                     <a href="#omm" onClick={(e) => handleLinkClick(e, 'omm')} className="block text-slate-600 nav-link">OMM</a>
                     <a href="#acupuncture" onClick={(e) => handleLinkClick(e, 'acupuncture')} className="block text-slate-600 nav-link">Acupuncture</a>
                     <a href="#referrals" onClick={(e) => handleLinkClick(e, 'referrals')} className="block text-slate-600 nav-link">Referrals</a>
-                    <a href="#contact" onClick={(e) => handleLinkClick(e, 'home', '#contact')} className="block bg-[#5b6d64] text-white text-center py-3 rounded-sm nav-link">Contact</a>
                     <a href="https://app.elationemr.com/book/palmandneedlemed" target="_blank" rel="noopener noreferrer" className="block bg-[#c5a059] text-white text-center py-3 rounded-sm nav-link">Schedule Appointment</a>
+                    <a href="https://calendly.com/nlippey-palmandneedlemed/30min?" target="_blank" rel="noopener noreferrer" className="block bg-[#5b6d64] text-white text-center py-3 rounded-sm nav-link">Schedule Meet & Greet</a>
                 </div>
             )}
         </nav>
